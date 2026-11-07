@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import AppCta from '../components/AppCta.astro';
+import Arrow from '../components/Arrow.astro';
+import discovery from '../assets/app-discovery.png';
+import watchlist from '../assets/app-watchlist.png';
+import financials from '../assets/app-financials.png';
+import { SITE } from '../lib/site';
+---
+
+<SiteLayout
+  title="Stocker for iPhone and iPad"
+  description="Discover companies with a swipe, explore financial information and save stocks to revisit. Stocker is available for iPhone and iPad."
+  ><div class="container">
+    <header class="page-intro">
+      <h1>Follow your curiosity.<br />Find your next discovery.</h1><p>
+        Choose your interests, explore companies, and keep the ones you want to
+        understand better in your watchlist.
+      </p><div class="hero-actions">
+        <a class="button button-blue" href={SITE.appStore}
+          >Download on the App Store <Arrow diagonal /></a
+        >
+      </div><p class="disclosure">
+        Free to download. Premium purchases available. Prices, limits and
+        eligible trials are shown in the app.
+      </p>
+    </header><div class="product-shots">
+      <figure>
+        <Image
+          src={discovery}
+          alt="Stocker company discovery screen"
+          width={330}
+          format="webp"
+        /><figcaption>Discover a company. Open what interests you.</figcaption>
+      </figure><figure>
+        <Image
+          src={watchlist}
+          alt="Stocker saved watchlist screen"
+          width={330}
+          format="webp"
+        /><figcaption>Keep the companies you want to revisit.</figcaption>
+      </figure><figure>
+        <Image
+          src={financials}
+          alt="Stocker company financials screen"
+          width={330}
+          format="webp"
+        /><figcaption>Explore annual and quarterly financials.</figcaption>
+      </figure>
+    </div><p class="disclosure">
+      App screenshots show historical example data, not live quotes or
+      investment recommendations.
+    </p><section class="section prose">
+      <h2>A place to start your research</h2><p>
+        Stocker connects company discovery with profiles, price charts,
+        valuation metrics, financial results, dividends and related news. Search
+        by ticker or company name, or explore through the discovery experience.
+      </p><h2>Discovery that reflects your interests</h2><p>
+        Your selected sectors and activity help shape the companies you see.
+        Personalization is about relevance to your interests; it does not
+        predict returns or determine whether a stock is suitable for you.
+      </p><h2>Research, not brokerage</h2><p>
+        Stocker does not buy or sell securities. Use the information to ask
+        better questions and continue your research with primary sources. Start
+        with our <a href="/learn/how-to-research-stocks/"
+          >company research guide</a
+        >, or see <a href="/compare/apple-stocks-vs-stocker/"
+          >how Stocker compares with Apple Stocks</a
+        >.
+      </p><h2>Questions before downloading?</h2><p>
+        The <a href={SITE.appStore}>current App Store listing</a> contains compatibility,
+        available purchases and product information. See the <a
+          href={SITE.privacy}>app privacy policy</a
+        > and <a href={SITE.terms}>terms of service</a> for more detail.
+      </p>
+    </section><AppCta />
+  </div></SiteLayout
+>

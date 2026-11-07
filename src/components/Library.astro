@@ -1,0 +1,81 @@
+---
+import ArticleCard from './ArticleCard.astro';
+import type { Article } from '../lib/articles';
+interface Props {
+  articles: Article[];
+  grouped?: boolean;
+}
+const { articles, grouped = false } = Astro.props;
+const groups = [
+  {
+    id: 'app-comparisons',
+    title: 'Find your research companion.',
+    category: 'App comparison',
+  },
+  {
+    id: 'company-comparisons',
+    title: 'Compare the businesses.',
+    category: 'Company comparison',
+  },
+];
+const categories = [
+  ...new Set(articles.map((article) => article.data.category)),
+];
+---
+
+<div class="library" data-library>
+  <div class="library-controls">
+    <label class="search-field"
+      >Search the library<input
+        type="search"
+        placeholder="Try valuation, watchlist, or Nvidia…"
+        data-library-search
+      /></label
+    ><label class="category-field"
+      >Browse by topic<select data-library-category
+        ><option value="all">All topics</option>{
+          categories.map((category) => (
+            <option value={category}>{category}</option>
+          ))
+        }</select
+      ></label
+    >
+  </div>
+  <p class="result-count" data-library-count aria-live="polite">
+    {articles.length} articles
+  </p>
+  {
+    grouped ? (
+      groups.map((group) => (
+        <section class="section" id={group.id} data-library-group>
+          <div class="section-header">
+            <h2>{group.title}</h2>
+          </div>
+          <div class="library-grid">
+            {articles
+              .filter((article) => article.data.category === group.category)
+              .map((article) => (
+                <ArticleCard article={article} />
+              ))}
+          </div>
+        </section>
+      ))
+    ) : (
+      <div class="library-grid">
+        {articles.map((article) => (
+          <ArticleCard article={article} />
+        ))}
+      </div>
+    )
+  }
+  <div class="empty-state" data-library-empty hidden>
+    <h2>No articles found.</h2><p>
+      Try another search or choose a different topic.
+    </p><button type="button" class="button button-dark" data-library-reset
+      >Clear filters</button
+    >
+  </div>
+</div>
+<script>
+  import '../scripts/library';
+</script>

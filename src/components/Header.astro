@@ -1,0 +1,40 @@
+---
+import Brand from './Brand.astro';
+import Arrow from './Arrow.astro';
+import { SITE } from '../lib/site';
+const links = [
+  { href: '/learn/', title: 'Learn' },
+  { href: '/compare/', title: 'Compare' },
+  { href: '/tools/', title: 'Tools' },
+  { href: '/app/', title: 'The app' },
+];
+---
+
+<header class="site-header container">
+  <Brand />
+  <nav aria-label="Main navigation" class="desktop-nav">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          aria-current={
+            Astro.url.pathname.startsWith(link.href) ? 'page' : undefined
+          }
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </nav>
+  <a class="button button-blue header-download" href={SITE.appStore}
+    >Get Stocker <Arrow diagonal /></a
+  >
+  <details class="mobile-menu">
+    <summary>Menu <span aria-hidden="true">+</span></summary>
+    <nav aria-label="Mobile navigation">
+      {links.map((link) => <a href={link.href}>{link.title}</a>)}<a
+        href="/companies/">Companies</a
+      ><a href={SITE.appStore}>Get Stocker ↗</a>
+    </nav>
+  </details>
+</header>

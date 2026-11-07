@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Library from '../../components/Library.astro';
+import AppCta from '../../components/AppCta.astro';
+import { getArticles } from '../../lib/articles';
+const articles = await getArticles('learn');
+---
+
+<SiteLayout
+  title="Learn to research stocks"
+  description="Understand valuation, financial statements, stock watchlists and investment research with clear explanations and worked examples."
+  ><div class="container">
+    <header class="page-intro">
+      <h1>A little understanding<br />goes a long way.</h1><p>
+        Start with the question on your mind. Build a clearer picture of a
+        business, one concept at a time.
+      </p>
+    </header><Library articles={articles} /><AppCta />
+  </div></SiteLayout
+>

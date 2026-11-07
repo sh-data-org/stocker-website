@@ -1,0 +1,59 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import AppCta from '../components/AppCta.astro';
+import { SITE } from '../lib/site';
+---
+
+<SiteLayout
+  title="About Stocker and our editorial approach"
+  description="Meet the purpose behind Stocker and learn how we write guides, compare products, source company information, and handle corrections."
+  ><div class="container text-page">
+    <h1>Curiosity is a good<br />place to start.</h1><div class="prose">
+      <p>
+        Stocker helps people discover companies and organize a stock research
+        list. This website is published by the team behind the Stocker app,
+        listed on the App Store under Yoav Tzori.
+      </p><p>
+        We write for people who want to understand the business behind a ticker.
+        The aim is a clearer question, a useful explanation, or a practical next
+        step in research.
+      </p><h2 id="editorial-policy">How we write</h2><ul>
+        <li>
+          <strong>Sources come first.</strong> We link to company disclosures, product
+          documentation and educational sources so you can check the original information.
+        </li><li>
+          <strong>Examples are labelled.</strong> Fictional figures explain a calculation.
+          They are not live market data or forecasts.
+        </li><li>
+          <strong>Our relationship is visible.</strong> We make Stocker. App comparisons
+          disclose that relationship and explain when another product may fit a different
+          task.
+        </li><li>
+          <strong>Methods matter.</strong> A documentation-based comparison is described
+          that way. We do not claim hands-on testing or independent scoring without
+          evidence.
+        </li><li>
+          <strong>Uncertainty stays visible.</strong> Company comparisons describe
+          business differences and research questions. They do not promise returns
+          or select an investment for you.
+        </li>
+      </ul><h2>Authors and review</h2><p>
+        Articles are attributed to the Stocker team. We do not present the site
+        as a licensed investment advisory service or claim a qualified financial
+        reviewer has checked an article unless one is explicitly named. Source
+        links and publication dates make the basis of each piece visible.
+      </p><h2>Updates and corrections</h2><p>
+        Product features and company information change. Check the dated source
+        material, particularly before relying on a price, forecast or feature.
+        To report a problem, use the support contact provided through our <a
+          href={SITE.appStore}>App Store listing</a
+        >.
+      </p><h2>What this site does not do</h2><p>
+        We do not execute trades, provide individualized investment advice, or
+        guarantee that an app, metric or research process will produce a return.
+        Calculators use the values you supply and explain the assumptions they
+        leave out.
+      </p>
+    </div><AppCta />
+  </div></SiteLayout
+>

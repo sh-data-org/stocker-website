@@ -1,0 +1,35 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { SITE } from '../lib/site';
+---
+
+<SiteLayout
+  title="Website privacy"
+  description="How the Stocker website handles library searches and calculator inputs, and where to find the app’s separate privacy policy."
+  ><div class="container text-page">
+    <h1>Website privacy</h1><div class="prose">
+      <p>Last updated: November 7, 2026.</p><h2>Searches and calculations</h2><p
+      >
+        The website's library search and calculators run in your browser. This
+        version does not send the text you enter or your calculator inputs to
+        Stocker, store them in an account, or set analytics or advertising
+        cookies.
+      </p><h2>Pages and hosting</h2><p>
+        Loading a website necessarily sends a request to its host. Hosting and
+        infrastructure providers may process technical connection information
+        such as an IP address to serve and protect the site. Any production
+        hosting configuration and additional analytics must be reflected here
+        before they are introduced.
+      </p><h2>External links</h2><p>
+        Links to the App Store, company filings and other websites take you to
+        services with their own privacy practices. A download button does not
+        create a Stocker account on this website.
+      </p><h2>The Stocker app</h2><p>
+        The app has its own data practices, which are described in the <a
+          href={SITE.privacy}>Stocker app privacy policy</a
+        > and <a href={SITE.appStore}>App Store privacy information</a>. This
+        website notice does not replace those documents.
+      </p>
+    </div>
+  </div></SiteLayout
+>

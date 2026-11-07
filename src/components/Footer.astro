@@ -1,0 +1,21 @@
+---
+import Brand from './Brand.astro';
+import { SITE } from '../lib/site';
+---
+
+<footer class="site-footer container">
+  <div class="footer-top">
+    <Brand /><nav aria-label="Footer navigation">
+      <a href="/learn/">Learn</a><a href="/compare/">Compare</a><a
+        href="/companies/">Companies</a
+      ><a href="/tools/">Tools</a><a href="/about/">About</a><a href="/privacy/"
+        >Privacy</a
+      ><a href={SITE.terms}>Terms</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p>For education and research. Not investment advice.</p><p>
+      © {new Date().getFullYear()} Stocker · Made for curious minds.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,42 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Arrow from '../../components/Arrow.astro';
+import AppCta from '../../components/AppCta.astro';
+import { calculatorIds, calculatorContent } from '../../lib/calculators';
+---
+
+<SiteLayout
+  title="Free stock research tools"
+  description="Free P/E ratio, market cap and dividend yield calculators, plus a stock research worksheet. Clear formulas with your own inputs."
+  ><div class="container">
+    <header class="page-intro">
+      <h1>Make the numbers<br />make sense.</h1><p>
+        Bring your own inputs. Understand the calculation. Take a better
+        question into your research.
+      </p>
+    </header><div class="tools-grid">
+      {
+        calculatorIds.map((id) => (
+          <a class="tool-card" href={`/tools/${id}/`}>
+            <>
+              <h2>{calculatorContent[id].title}</h2>
+              <p>{calculatorContent[id].description}</p>
+              <span class="text-link">
+                Open calculator <Arrow diagonal />
+              </span>
+              <span class="formula">{calculatorContent[id].formula}</span>
+            </>
+          </a>
+        ))
+      }<a class="tool-card" href="/tools/research-template/"
+        ><h2>Stock research worksheet</h2><p>
+          A simple place to record the business, your questions, the evidence
+          and what could change your mind.
+        </p><span class="text-link">Get the worksheet <Arrow diagonal /></span
+        ><span class="formula"
+          >Free CSV · Works with Excel and Google Sheets</span
+        ></a
+      >
+    </div><AppCta />
+  </div></SiteLayout
+>

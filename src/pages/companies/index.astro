@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Library from '../../components/Library.astro';
+import AppCta from '../../components/AppCta.astro';
+import { getArticles } from '../../lib/articles';
+const articles = await getArticles('companies');
+---
+
+<SiteLayout
+  title="How companies make money"
+  description="Understand the business models behind public companies. Explore what they sell, who pays them, and which questions matter in your research."
+  ><div class="container">
+    <header class="page-intro">
+      <h1>Behind every ticker,<br />there’s a business.</h1><p>
+        What does it sell? Who pays for it? Start with the business model, then
+        explore the numbers.
+      </p>
+    </header><Library articles={articles} /><AppCta />
+  </div></SiteLayout
+>

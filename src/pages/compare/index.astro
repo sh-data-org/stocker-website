@@ -1,0 +1,27 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Library from '../../components/Library.astro';
+import AppCta from '../../components/AppCta.astro';
+import { getArticles } from '../../lib/articles';
+const articles = await getArticles('compare');
+---
+
+<SiteLayout
+  title="Stock and app comparisons"
+  description="Compare stock research apps and understand the businesses behind familiar tickers. Clear differences, source-backed facts, and questions to research."
+  ><div class="container">
+    <header class="page-intro">
+      <h1>Look at both sides.</h1><p>
+        Different apps. Different businesses. Understand what sets them apart
+        before deciding what deserves a closer look.
+      </p>
+    </header>
+    <p class="disclosure">
+      We make Stocker. Our app comparisons use published product information,
+      disclose our relationship, and explain when another product may fit
+      better.
+    </p>
+    <Library articles={articles} grouped />
+    <AppCta />
+  </div></SiteLayout
+>

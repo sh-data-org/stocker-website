@@ -1,0 +1,152 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import AppCta from '../../components/AppCta.astro';
+import {
+  calculatorIds,
+  calculatorContent,
+  type CalculatorId,
+} from '../../lib/calculators';
+export function getStaticPaths() {
+  return calculatorIds.map((slug) => ({
+    params: { slug },
+    props: { id: slug },
+  }));
+}
+interface Props {
+  id: CalculatorId;
+}
+const { id } = Astro.props;
+const content = calculatorContent[id];
+---
+
+<SiteLayout title={content.title} description={content.description}>
+  <div class="container">
+    <header class="page-intro">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>/</span><a href="/tools/">Tools</a>
+      </nav><h1>{content.title}</h1><p>{content.description}</p>
+    </header>
+    <div class="calculator-layout">
+      <form class="calculator-form" data-calculator={id} novalidate>
+        <fieldset disabled data-calculator-inputs>
+          <label
+            >{content.firstLabel}<input
+              name="first"
+              type="number"
+              step="any"
+              value={content.firstDefault}
+              required
+            /></label
+          ><label
+            >{content.secondLabel}<input
+              name="second"
+              type="number"
+              step="any"
+              value={content.secondDefault}
+              required
+            /><span class="field-hint">{content.secondHint}</span></label
+          ><button class="button button-blue" type="submit">Calculate</button>
+        </fieldset><div
+          class="calculator-result"
+          data-result
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <output>—</output><p>Enter your values to see the result.</p>
+        </div><noscript
+          >Enable JavaScript to use the calculator, or use the formula shown
+          alongside it.</noscript
+        >
+      </form>
+      <section class="prose">
+        <h2>How it works</h2><blockquote>
+          <p><strong>{content.formula}</strong></p>
+        </blockquote><p>
+          The starting numbers are fictional examples. This calculator does not
+          fetch market data or identify a suitable investment.
+        </p>
+        {
+          id === 'pe-ratio-calculator' && (
+            <>
+              <>
+                <h2>Keep the earnings period consistent</h2>
+                <p>
+                  A $60 share price divided by $3 in earnings per share produces
+                  a P/E of 20. Use trailing earnings for a trailing P/E, or an
+                  estimate for forward P/E. Comparisons become misleading if the
+                  periods or accounting measures differ.
+                </p>
+                <p>
+                  When earnings are zero the ratio is undefined. Negative
+                  earnings can produce a mathematical negative ratio, but it is
+                  not useful for the usual P/E valuation comparison. This tool
+                  flags that situation instead of presenting a negative result
+                  as cheap.
+                </p>
+              </>
+            </>
+          )
+        }
+        {
+          id === 'market-cap-calculator' && (
+            <>
+              <>
+                <h2>Count the shares, not just the price</h2>
+                <p>
+                  A $25 share price multiplied by 40 million outstanding shares
+                  gives a $1 billion market capitalization. A lower share price
+                  alone does not make one company smaller or cheaper than
+                  another.
+                </p>
+                <p>
+                  Shares outstanding can change through issuance, repurchases
+                  and splits. Companies with multiple share classes may need a
+                  more detailed calculation. Market capitalization excludes the
+                  debt and cash adjustments used in enterprise value.
+                </p>
+              </>
+            </>
+          )
+        }
+        {
+          id === 'dividend-yield-calculator' && (
+            <>
+              <>
+                <h2>Use an annual amount</h2>
+                <p>
+                  A $2 annual dividend and a $50 share price imply a 4% yield.
+                  If you enter one quarterly payment instead of the annual
+                  total, the result will understate an otherwise consistent
+                  four-payment schedule.
+                </p>
+                <p>
+                  A past payment is not a promise of future income. Special
+                  dividends, cuts, currency changes, withholding taxes and a
+                  falling share price can all make the headline yield
+                  misleading. Yield also excludes capital gains and losses.
+                </p>
+              </>
+            </>
+          )
+        }
+        <h2>Keep researching</h2><p>
+          Check the source and date of your inputs, use the same currency, and
+          understand what the calculation leaves out. <a href={content.related}
+            >Read the related research guide</a
+          >.
+        </p><p>
+          <a
+            href="https://www.sec.gov/investor/pubs/begfinstmtguide.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            >SEC: Understanding financial statements ↗</a
+          >
+        </p>
+      </section>
+    </div><AppCta />
+  </div>
+</SiteLayout>
+<script>
+  import '../../scripts/calculator';
+</script>

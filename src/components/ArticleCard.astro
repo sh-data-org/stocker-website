@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import Arrow from './Arrow.astro';
+import {
+  articleImages,
+  articleUrl,
+  readingTime,
+  type Article,
+} from '../lib/articles';
+interface Props {
+  article: Article;
+  featured?: boolean;
+}
+const { article, featured = false } = Astro.props;
+---
+
+<a
+  class:list={['article-card', article.data.image, { featured }]}
+  href={articleUrl(article)}
+  data-article
+  data-category={article.data.category}
+  data-search={`${article.data.title} ${article.data.description} ${article.data.category}`.toLowerCase()}
+>
+  <div class="article-card-copy">
+    <span class="category-label">{article.data.category}</span><h3>
+      {article.data.title}
+    </h3><p>{article.data.description}</p><span class="card-bottom"
+      >{readingTime(article.body)} min read <Arrow /></span
+    >
+  </div>
+  <Image
+    src={articleImages[article.data.image]}
+    alt=""
+    width={520}
+    height={400}
+    fit="cover"
+    format="webp"
+    loading="lazy"
+  />
+</a>
