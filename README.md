@@ -1,6 +1,6 @@
 # Stocker Invest
 
-Website source for **https://stocker-invest.com**. Static editorial website with 14 articles, three calculators, a downloadable worksheet and direct App Store links. No deployment or DNS change has been made.
+Website source for **https://stocker-invest.com**, live on Cloudflare Pages. Static editorial website with 14 articles, three calculators, a downloadable worksheet and direct App Store links.
 
 ## Run
 
@@ -33,19 +33,31 @@ Astro 7 needs Node 22+. A project-local Node 22 runtime is installed by npm and 
 
 The library works without JavaScript. Calculator inputs stay disabled until local handlers initialize, so no native form submission sends entered values. Calculators do not fetch market data.
 
-## Launch work
+## Production
 
-The canonical domain and sitemap are configured. Hosting, DNS, HTTPS, preferred-host redirects, Search Console and install attribution are not configured. Yoav authorized launch on 7 November 2026; Shoham owns deployment to the domain. Static output is `dist/`; build command is `npm run build`.
+Launched 8 November 2026. Cloudflare Pages project `stocker-website` serves the apex domain over HTTPS. The www host returns a 301 redirect preserving the path and query. Static output is `dist/`; build command is `npm run build`.
+
+This is a **direct-upload Pages project**, not a GitHub-linked build. Pushing source does not deploy it. Build locally, ZIP the contents of `dist/` at the archive root, then upload a production deployment in the [Cloudflare project](https://dash.cloudflare.com/e646bcff38192c38c43d9bd838125600/pages/view/stocker-website). The Pages production label `main` is a hosting label; source remains on `yoav-dev`.
+
+Google ownership uses **Gaver Apps (`gaverapps@gmail.com`)**:
+
+- Search Console domain property: `sc-domain:stocker-invest.com`, DNS ownership verified.
+- Analytics account: `410024069`; property **Stocker — Website**: `563215065`.
+- Web stream: `16296213728`; measurement ID: `G-4EJ7RNNCP8`.
+- Search Console and GA4 are linked.
+- Google Analytics loads only after consent on the canonical host. Footer preferences allow changing the choice. Advertising personalization and Google signals are disabled.
+- Realtime verified page views and `app_store_click` receipt; the latter is a key event with no default monetary value.
+
+Sitemaps were submitted, but Google currently reports **Couldn't fetch**. The homepage live test reports **Robots.txt unreachable**. Public robots.txt and sitemap checks return HTTP 200. Google's robots report has not populated, so its recrawl control is unavailable. This remains an open indexing issue; see [launch verification](docs/launch-verification.md).
 
 Install links currently go directly to app ID 6443543680. Configure valid App Store campaign links and agreed analytics before claiming measured installs. Search Console clicks, website outbound clicks and app installs are different metrics. Review the website privacy text against the chosen host and any measurement added.
 
-Repository: https://github.com/sh-data-org/stocker-website. Reviewed source is on `yoav-dev`. Public deployment is pending. The separate iOS project was not changed. Dependency audit: no production vulnerabilities reported; seven moderate development-only minimatch findings remained in the ESLint toolchain at verification. No forced dependency downgrade was applied.
-
+Repository: https://github.com/sh-data-org/stocker-website. Source is on `yoav-dev`. The separate iOS project was not changed. Dependency audit at initial verification: no production vulnerabilities reported; seven moderate development-only minimatch findings remained in the ESLint toolchain. No forced dependency downgrade was applied.
 
 ## Shoham handoff
 
-Publish the static `dist/` output to **stocker-invest.com**, configure HTTPS and the www-to-apex redirect, then verify representative articles, tools and the sitemap. Build with Node 22+ and `npm ci && npm run build`; no server, database or private API keys are required for the current website.
+Keep deployment instructions above with the existing publish task. Build with Node 22+ and `npm ci && npm run build`; no server, database or private API keys are required for the website.
 
-Shoham owns Search Console and website analytics. Create/verify the domain property, create or select the GA4 web stream, and provide the measurement ID for website integration. Tracking is not installed yet. Connect provider data to the existing admin dashboard with separate search, visit, outbound-click and attributable-install metrics. Show source freshness and unavailable data explicitly. Reconcile a matching date range against the provider UI before moving the task to Review.
+Shoham owns the remaining indexing follow-up and admin dashboard integration. Use the shared Gaver Apps providers above. Connect Search Console API and Google Analytics Data API server-side with separate search, visit, outbound-click and attributable-install metrics. Show source freshness and unavailable data explicitly. Reconcile a matching date range against the provider UI before moving the task to Review.
 
-Record final hosting URL, deployment identifier, GSC property, GA4 property/stream and verified campaign-link setup in the launch task. Credentials belong in the approved secret store, not this repository.
+App Store campaign attribution remains unconfigured. Credentials belong in the approved secret store, not this repository.

@@ -32,6 +32,8 @@ Browser screenshots were inspected inline during testing; no persisted implement
 4. Content hierarchy: retained paired blue/green comparison features, educational links and dark tools band. Corrected generated copy to avoid unsupported app capabilities.
 5. Article template: retained split hero, source/date disclosure and left-hand contents on desktop; contents becomes a compact in-flow section on mobile. Body copy and comparison claims are source-based rather than copied from the concept.
 
-## Pending before a public launch
+## Initial prelaunch status (7 November)
 
 Hosting selection, production HTTPS, DNS and www/apex redirect; editorial approval; privacy text matched to hosting/analytics; Search Console verification and sitemap submission; valid App Store campaign attribution and analytics choices. No production crawl, indexing, speed measurement or install attribution has been claimed. No push, PR or deployment was performed.
+
+Superseded by [8 November launch verification](launch-verification.md), which records the live deployment, Google setup and remaining indexing/attribution gaps.
