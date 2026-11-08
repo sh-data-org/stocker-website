@@ -15,20 +15,8 @@ const { variant } = Astro.props;
   {variant === 'bar' && <SwipePreview compact />}
   <div class="download-copy">
     <p class="download-title">
-      {
-        variant === 'sidebar'
-          ? 'Your next discovery is a swipe away.'
-          : 'Discover with Stocker'
-      }
+      {variant === 'sidebar' ? 'Swipe to discover.' : 'Stocker'}
     </p>
-    <p class="download-description">
-      Explore companies. Save what interests you.
-    </p>
-    {
-      variant === 'bar' && (
-        <span class="download-availability">iPhone &amp; iPad</span>
-      )
-    }
   </div>
   {variant === 'sidebar' && <SwipePreview />}
   <a
@@ -38,10 +26,9 @@ const { variant } = Astro.props;
     data-primary-download={variant === 'sidebar' ? '' : undefined}
   >
     <span class="download-desktop-label">Download Stocker</span>
-    <span class="download-mobile-label">Get the app</span>
+    <span class="download-mobile-label">Download</span>
     <Arrow diagonal />
   </a>
-  <p class="download-platform">For iPhone and iPad</p>
 </aside>
 
 <script>

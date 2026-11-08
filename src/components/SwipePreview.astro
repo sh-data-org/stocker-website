@@ -1,38 +1,33 @@
 ---
-import { Image } from 'astro:assets';
-import discovery from '../assets/app-discovery.png';
+import { getImage } from 'astro:assets';
+import poster from '../assets/swipe-demo-poster.png';
 interface Props {
   compact?: boolean;
 }
 const { compact = false } = Astro.props;
+const preview = await getImage({ src: poster, width: 720, format: 'webp' });
 ---
 
 <div class:list={['swipe-preview', { 'swipe-preview-small': compact }]}>
-  <div class="swipe-phone" data-swipe-preview>
-    <Image
-      src={discovery}
-      alt={compact
-        ? ''
-        : 'Stocker’s company discovery screen, showing historical example data'}
-      width={300}
-      format="webp"
-      loading="lazy"
-    />
-    <div class="swipe-card-crop" aria-hidden="true">
-      <Image src={discovery} alt="" width={300} format="webp" loading="lazy" />
-    </div>
-    <span class="swipe-gesture" aria-hidden="true">↔</span>
-  </div>
-  {
-    !compact && (
-      <div class="swipe-preview-caption">
-        <span>App screenshot · example data</span>
-        <button type="button" data-replay-swipe>
-          Replay swipe
-        </button>
-      </div>
-    )
-  }
+  <button
+    class="swipe-preview-control"
+    type="button"
+    aria-label="Play Stocker swipe demo"
+    data-swipe-control
+  >
+    <video
+      width="720"
+      height="926"
+      poster={preview.src}
+      data-source="/videos/stocker-swipe-liked.mp4"
+      muted
+      playsinline
+      preload="none"
+      aria-hidden="true"
+    >
+      Your browser does not support this app preview.
+    </video>
+  </button>
 </div>
 
 <script>

@@ -95,18 +95,22 @@
   margin-top: 20px;
 }
 .journal-download {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
   align-items: center;
-  gap: 40px;
+  gap: 20px 40px;
   margin-top: 40px;
-  padding: 32px 36px 0;
+  padding: 32px 36px;
   border-radius: 10px;
   overflow: hidden;
   background: #f2f7ff;
 }
-.journal-download > div:first-child {
-  padding-bottom: 32px;
+.journal-download-copy {
+  max-width: 490px;
+  align-self: end;
+}
+.journal-download-action {
+  align-self: start;
 }
 .journal-download h2 {
   font-size: 28px;
@@ -117,27 +121,10 @@
   color: var(--muted);
   font-size: 15px;
 }
-.journal-platform {
-  display: block;
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 11px;
-}
 .journal-app-visual {
-  align-self: end;
-  margin-right: 45px;
-}
-.journal-app-visual .swipe-preview-small {
-  width: 175px;
-  height: 220px;
-}
-.journal-app-visual .swipe-phone {
-  width: 175px;
-  border-width: 4px;
-  border-radius: 28px;
-}
-.journal-app-visual .swipe-card-crop {
-  border-radius: 16px;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 230px;
 }
 .journal-tools-link {
   margin-block: 24px 40px;
@@ -200,16 +187,29 @@
     line-height: 1.45;
   }
   .journal-download {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
     margin-top: 30px;
-    padding: 25px;
+    padding: 22px 20px;
   }
-  .journal-download > div:first-child {
-    padding-bottom: 0;
+  .journal-download p {
+    margin-block: 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
   }
   .journal-download h2 {
-    font-size: 25px;
+    font-size: 24px;
+    line-height: 1.25;
   }
   .journal-app-visual {
-    display: none;
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: center;
+  }
+  .journal-download-action .button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
   }
 }

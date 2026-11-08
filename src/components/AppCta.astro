@@ -1,21 +1,22 @@
 ---
 import Arrow from './Arrow.astro';
+import SwipePreview from './SwipePreview.astro';
 import { SITE } from '../lib/site';
 interface Props {
   title?: string;
   compact?: boolean;
 }
-const { title = 'Keep your next discovery close.', compact = false } =
-  Astro.props;
+const { title = 'Swipe to discover.', compact = false } = Astro.props;
 ---
 
 <aside class:list={['app-cta', { compact }]} aria-label="Explore Stocker">
   <div>
-    <h2>{title}</h2><p>
-      Explore companies and build your watchlist with Stocker.
-    </p>
+    <h2>{title}</h2>
   </div>
-  <a class="button button-blue" href={SITE.appStore} data-primary-download
-    >Get Stocker <Arrow diagonal /></a
-  >
+  <div class="app-cta-action">
+    <SwipePreview />
+    <a class="button button-blue" href={SITE.appStore} data-primary-download
+      >Download Stocker <Arrow diagonal /></a
+    >
+  </div>
 </aside>
