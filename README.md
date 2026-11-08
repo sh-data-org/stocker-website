@@ -30,6 +30,7 @@ Astro 7 needs Node 22+. A project-local Node 22 runtime is installed by npm and 
 - `docs/research/stocker-research-log.md`: requests, cost, limitations and sources.
 - `docs/design/site-spec.md`: design and implementation decisions.
 - `docs/design/article-images-and-download.md`: article illustrations, real app swipe preview and responsive download CTA verification.
+- `docs/design/clean-journal.md`: Inter typography, compact article-first homepage, all-articles library and download visibility behavior.
 - `docs/verification.md`: checks and remaining launch work.
 
 The library works without JavaScript. Calculator inputs stay disabled until local handlers initialize, so no native form submission sends entered values. Calculators do not fetch market data.

@@ -22,8 +22,8 @@ Astro produces WebP assets at build time. Inline images load lazily and include 
 ## Download behavior
 
 - Article desktop layout has a sticky sidebar with the real discovery screen and download button.
-- A fixed bar appears whenever the desktop sidebar button is outside the viewport. Other pages always use the bar.
-- Mobile and tablet use the compact fixed bar, with a real app screenshot and an iPhone/iPad label.
+- A fixed bar appears whenever no primary header, sidebar or inline download button is fully visible. This keeps the download action available without showing two competing promotions.
+- Mobile and tablet use the compact fixed bar when needed, with a real app screenshot and an iPhone/iPad label.
 - The screenshot card animates once for 3.8 seconds. Desktop readers can replay it. This is an animated screenshot preview, not an app recording or live quote feed.
 - Reduced-motion preferences disable the animation and replay control. The App Store link works without JavaScript.
 - Footer spacing, safe-area insets and the consent banner account for the fixed bar.

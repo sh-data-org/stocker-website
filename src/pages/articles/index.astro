@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Library from '../../components/Library.astro';
+import AppCta from '../../components/AppCta.astro';
+import { getArticles } from '../../lib/articles';
+const articles = await getArticles();
+---
+
+<SiteLayout
+  title="Stock research articles"
+  description="Browse Stocker’s investing guides, research app comparisons and company explainers. Find an answer, then keep exploring."
+>
+  <div class="container">
+    <header class="page-intro">
+      <h1>Find your next read.</h1>
+      <p>
+        Investing basics, app comparisons and company research, in one place.
+      </p>
+    </header>
+    <Library articles={articles} />
+    <AppCta />
+  </div>
+</SiteLayout>

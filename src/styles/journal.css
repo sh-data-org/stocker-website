@@ -1,0 +1,215 @@
+.journal-intro {
+  padding-block: 38px 30px;
+}
+.journal-intro h1 {
+  margin-top: 12px;
+  font-size: clamp(32px, 3.2vw, 44px);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.journal-description {
+  max-width: 700px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.journal-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 36px;
+  padding-block: 16px;
+  border-block: 1px solid var(--line);
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 500;
+}
+.journal-topics a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.journal-topics a:hover,
+.journal-tools-link a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.journal-section {
+  padding-top: 30px;
+}
+.journal-section .section-header {
+  margin-bottom: 18px;
+}
+.journal-section h2 {
+  font-size: 24px;
+}
+.journal-featured {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--line);
+}
+.journal-featured .category-label {
+  display: none;
+}
+.journal-featured .featured > img {
+  height: 150px;
+  object-fit: cover;
+}
+.journal-featured .featured h3 {
+  margin-block: 0;
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+.journal-featured .card-bottom {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.journal-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 17px;
+  border-bottom: 1px solid var(--line);
+}
+.journal-list h3 {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.journal-list span {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.journal-list a:hover h3 {
+  color: var(--blue);
+}
+.journal-browse {
+  margin-top: 20px;
+}
+.journal-download {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+  padding: 32px 36px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f2f7ff;
+}
+.journal-download > div:first-child {
+  padding-bottom: 32px;
+}
+.journal-download h2 {
+  font-size: 28px;
+}
+.journal-download p {
+  max-width: 490px;
+  margin-block: 12px 22px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.journal-platform {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.journal-app-visual {
+  align-self: end;
+  margin-right: 45px;
+}
+.journal-app-visual .swipe-preview-small {
+  width: 175px;
+  height: 220px;
+}
+.journal-app-visual .swipe-phone {
+  width: 175px;
+  border-width: 4px;
+  border-radius: 28px;
+}
+.journal-app-visual .swipe-card-crop {
+  border-radius: 16px;
+}
+.journal-tools-link {
+  margin-block: 24px 40px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.journal-tools-link a {
+  color: var(--blue);
+}
+@media (max-width: 760px) {
+  .journal-intro {
+    padding-block: 26px 22px;
+  }
+  .journal-intro h1 {
+    max-width: 440px;
+    font-size: clamp(30px, 7.6vw, 38px);
+    line-height: 1.18;
+  }
+  .journal-description {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .journal-topics {
+    gap: 12px 22px;
+    padding-block: 15px;
+    font-size: 13px;
+  }
+  .journal-topics a {
+    gap: 8px;
+  }
+  .journal-section {
+    padding-top: 25px;
+  }
+  .journal-section h2 {
+    font-size: 22px;
+  }
+  .journal-featured {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 25px;
+  }
+  .journal-featured .featured {
+    gap: 12px;
+  }
+  .journal-featured .featured > img {
+    height: 145px;
+  }
+  .journal-featured .featured h3 {
+    font-size: 21px;
+  }
+  .journal-list a {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    padding-block: 16px;
+  }
+  .journal-list h3 {
+    font-size: 17px;
+    line-height: 1.45;
+  }
+  .journal-download {
+    margin-top: 30px;
+    padding: 25px;
+  }
+  .journal-download > div:first-child {
+    padding-bottom: 0;
+  }
+  .journal-download h2 {
+    font-size: 25px;
+  }
+  .journal-app-visual {
+    display: none;
+  }
+}

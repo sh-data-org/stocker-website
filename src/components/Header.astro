@@ -3,11 +3,16 @@ import Brand from './Brand.astro';
 import Arrow from './Arrow.astro';
 import { SITE } from '../lib/site';
 const links = [
-  { href: '/learn/', title: 'Learn' },
-  { href: '/compare/', title: 'Compare' },
+  { href: '/articles/', title: 'Articles' },
   { href: '/tools/', title: 'Tools' },
   { href: '/app/', title: 'The app' },
 ];
+const isArticlePage = [
+  '/articles/',
+  '/learn/',
+  '/compare/',
+  '/companies/',
+].some((path) => Astro.url.pathname.startsWith(path));
 ---
 
 <header class="site-header container">
@@ -18,7 +23,13 @@ const links = [
         <a
           href={link.href}
           aria-current={
-            Astro.url.pathname.startsWith(link.href) ? 'page' : undefined
+            (
+              link.href === '/articles/'
+                ? isArticlePage
+                : Astro.url.pathname.startsWith(link.href)
+            )
+              ? 'page'
+              : undefined
           }
         >
           {link.title}
@@ -26,15 +37,16 @@ const links = [
       ))
     }
   </nav>
-  <a class="button button-blue header-download" href={SITE.appStore}
-    >Get Stocker <Arrow diagonal /></a
+  <a
+    class="button button-blue header-download"
+    href={SITE.appStore}
+    data-primary-download>Download Stocker <Arrow diagonal /></a
   >
   <details class="mobile-menu">
     <summary>Menu <span aria-hidden="true">+</span></summary>
     <nav aria-label="Mobile navigation">
-      {links.map((link) => <a href={link.href}>{link.title}</a>)}<a
-        href="/companies/">Companies</a
-      ><a href={SITE.appStore}>Get Stocker ↗</a>
+      {links.map((link) => <a href={link.href}>{link.title}</a>)}
+      <a href={SITE.appStore}>Download Stocker ↗</a>
     </nav>
   </details>
 </header>

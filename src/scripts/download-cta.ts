@@ -1,13 +1,20 @@
-const sidebarDownload = document.querySelector('[data-sidebar-download]');
+const primaryDownloads = document.querySelectorAll('[data-primary-download]');
 
-if (sidebarDownload && 'IntersectionObserver' in window) {
+if (primaryDownloads.length > 0 && 'IntersectionObserver' in window) {
+  const visible = new Map<Element, boolean>();
   const observer = new IntersectionObserver(
-    ([entry]) => {
-      document.body.dataset.articleDownloadVisible = String(
-        entry?.isIntersecting && entry.intersectionRatio === 1,
+    (entries) => {
+      for (const entry of entries) {
+        visible.set(
+          entry.target,
+          entry.isIntersecting && entry.intersectionRatio === 1,
+        );
+      }
+      document.body.dataset.downloadCtaVisible = String(
+        [...visible.values()].some(Boolean),
       );
     },
     { threshold: 1 },
   );
-  observer.observe(sidebarDownload);
+  primaryDownloads.forEach((download) => observer.observe(download));
 }
