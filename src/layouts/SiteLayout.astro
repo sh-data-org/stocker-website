@@ -4,24 +4,29 @@ import AnalyticsConsent from '../components/AnalyticsConsent.astro';
 import Footer from '../components/Footer.astro';
 import DownloadCta from '../components/DownloadCta.astro';
 import { SITE, canonicalUrl, safeJson } from '../lib/site';
+import { websiteSchema } from '../lib/structured-data';
 import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  image?: string;
 }
 const {
   title,
   description = SITE.description,
   noindex = false,
   schema,
+  image = canonicalUrl('/images/social.png'),
 } = Astro.props;
 const canonical = canonicalUrl(Astro.url.pathname);
 const pageTitle =
   title === 'Stocker'
     ? 'Stocker — Stock research guides & app comparisons'
     : `${title} | Stocker`;
+const pageSchema = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const isArticle = pageSchema.some((item) => item['@type'] === 'Article');
 ---
 
 <!doctype html>
@@ -43,18 +48,23 @@ const pageTitle =
     />
     <meta
       name="robots"
-      content={noindex ? 'noindex, follow' : 'index, follow'}
+      content={noindex
+        ? 'noindex, follow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
     />
-    <meta property="og:type" content={schema ? 'article' : 'website'} />
+    <meta property="og:type" content={isArticle ? 'article' : 'website'} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={canonicalUrl('/images/social.png')} />
+    <meta property="og:image" content={image} />
     <meta property="og:site_name" content="Stocker" />
     <meta name="twitter:card" content="summary_large_image" />
     {
-      schema && (
-        <script type="application/ld+json" set:html={safeJson(schema)} />
+      (
+        <script
+          type="application/ld+json"
+          set:html={safeJson([...websiteSchema, ...pageSchema])}
+        />
       )
     }
   </head>

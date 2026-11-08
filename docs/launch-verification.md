@@ -5,7 +5,7 @@
 - https://stocker-invest.com serves the production website over HTTPS.
 - Cloudflare Pages project: `stocker-website` in Shoham's Cloudflare account.
 - Direct upload; no automatic GitHub deployment.
-- Current production deployment: `142111b3-9cbb-4aa5-b7fa-0cf342747ad8` ([Cloudflare detail](https://dash.cloudflare.com/e646bcff38192c38c43d9bd838125600/pages/view/stocker-website/142111b3-9cbb-4aa5-b7fa-0cf342747ad8)). This adds approved Inter typography, the compact article-first homepage, the all-articles library and download CTAs that avoid duplicate promotions.
+- Current production deployment: `beaed2b1-6616-48e7-8a41-dd0df27d840c` ([Cloudflare detail](https://dash.cloudflare.com/e646bcff38192c38c43d9bd838125600/pages/view/stocker-website/beaed2b1-6616-48e7-8a41-dd0df27d840c)). This publishes the minimal mobile title/real swipe recording/download CTA and SEO/GEO metadata. The native recording finishes on the green checkmark.
 - https://www.stocker-invest.com/learn/?test=canonical returned HTTP 301 to the same path and query on the apex host.
 - Public robots.txt and both sitemap XML files returned HTTP 200. Googlebot user-agent request also returned the expected robots directives. This is a public HTTP check, not proof of Google's successful fetch.
 
@@ -20,17 +20,17 @@
 - Declining Google Analytics then reloading produced no Google Analytics or Google Tag Manager requests. Allowing produced the expected measurement request. Consent can be changed in the footer.
 - Cloudflare's separate cookieless performance beacon is enabled by the hosting platform and disclosed in the privacy page.
 
-## Open indexing issue
+## Indexing recovery — 8 November, Bangkok
 
-Both `/sitemap-index.xml` and `/sitemap-0.xml` were submitted. Search Console reports **Couldn't fetch / General HTTP error**. Homepage live test reports **Failed: Robots.txt unreachable** and currently disables Request indexing.
+The earlier robots-fetch failure cleared. The homepage live test at approximately 15:42 reports **URL is available to Google** and **Page can be indexed**. The homepage indexing request was accepted into Google's priority crawl queue after publication.
 
-Settings confirms verified ownership and the Analytics association, but shows **No robots.txt file** with its report button disabled. Cloudflare's security event list showed four local Python requests blocked by Browser Integrity Check; no Google blocks were shown in that sampled list. No security protections were disabled.
+Both sitemap submissions now show **Success**. The direct `/sitemap-0.xml` was read on 8 November and reports **27 discovered pages**. Evidence is saved in `docs/research/sitemap-success.png`.
 
-Recheck Google's live test and sitemap status after its next robots fetch. If the error persists, inspect Cloudflare logs for the actual Google robots request and response. Do not describe the site as indexed until Google confirms it. Google's [robots update documentation](https://developers.google.com/crawling/docs/robots-txt/submit-updated-robots-txt) explains its cache and recrawl control; that control is unavailable until this property's robots report populates.
+The stored index result has not yet confirmed completed indexing. Do not report discovery, successful submission or live-test eligibility as indexed pages.
 
 ## Source checks
 
-Typecheck: zero errors, warnings or hints. ESLint passed. Four calculator tests passed. Build generated 28 HTML pages. Static checker verified 894 local links/assets, metadata, canonical URLs and JSON-LD. All 27 live content pages returned HTTP 200 with the new font preload and article navigation. Both webfonts returned valid WOFF2 data. Chrome confirmed Inter Variable rendering on the live homepage. The live mobile library search returned the expected result and reset to all 14 articles.
+Typecheck: zero errors, warnings or hints. ESLint passed. Four calculator tests passed. Build generated 28 HTML pages. Static checker verified 944 local links/assets, all 27 indexable sitemap URLs and all 14 articles with images and source citations. Public HTTP checks verified all 27 pages, article schema, reachable images, robots access and the deployed video. The native recording and minimal title/visual/download CTA were checked on mobile; viewport and reduced-motion overrides were restored after review.
 
 ## Remaining measurement work
 

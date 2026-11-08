@@ -77,24 +77,22 @@ const more = articles
       >
     </section>
     <aside class="journal-download" aria-label="Discover the Stocker app">
-      <div>
-        <h2>Put your research into practice.</h2>
-        <p>
-          Discover companies, explore their financials, and keep a watchlist
-          with Stocker.
-        </p>
+      <div class="journal-download-copy">
+        <h2>Swipe to discover.</h2>
+      </div>
+      <div class="journal-app-visual">
+        <SwipePreview />
+      </div>
+      <div class="journal-download-action">
         <a class="button button-blue" href={SITE.appStore} data-primary-download
           >Download Stocker <Arrow diagonal /></a
         >
-        <span class="journal-platform">For iPhone and iPad</span>
-      </div>
-      <div class="journal-app-visual" aria-hidden="true">
-        <SwipePreview compact />
       </div>
     </aside>
     <p class="journal-tools-link">
       Working through a number? <a href="/tools/"
-        >Try the free calculators <Arrow /></a>
+        >Try the free calculators <Arrow /></a
+      >
     </p>
   </div>
 </SiteLayout>

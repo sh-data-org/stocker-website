@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { MarkdownHeading } from 'astro';
 import SiteLayout from './SiteLayout.astro';
 import AppCta from '../components/AppCta.astro';
@@ -11,6 +11,7 @@ import {
   type Article,
 } from '../lib/articles';
 import { canonicalUrl } from '../lib/site';
+import { organizationId } from '../lib/structured-data';
 interface Props {
   article: Article;
   headings: MarkdownHeading[];
@@ -18,6 +19,14 @@ interface Props {
 }
 const { article, headings, related } = Astro.props;
 const { data } = article;
+const socialImage = await getImage({
+  src: articleImages[data.image],
+  width: 1200,
+  height: 800,
+  format: 'webp',
+  fit: 'cover',
+});
+const imageUrl = canonicalUrl(socialImage.src);
 const publishedDate = new Intl.DateTimeFormat('en-US', {
   month: 'long',
   day: 'numeric',
@@ -37,15 +46,21 @@ const schema = [
     '@type': 'Article',
     headline: data.title,
     description: data.description,
+    image: [imageUrl],
+    inLanguage: 'en',
+    articleSection: data.category,
+    citation: data.sources.map((source) => source.url),
     datePublished: data.date,
     dateModified: data.date,
     author: {
       '@type': 'Organization',
+      '@id': organizationId,
       name: 'Stocker',
       url: canonicalUrl('/about/'),
     },
     publisher: {
       '@type': 'Organization',
+      '@id': organizationId,
       name: 'Stocker',
       url: canonicalUrl('/'),
     },
@@ -78,7 +93,12 @@ const schema = [
 ];
 ---
 
-<SiteLayout title={data.title} description={data.description} schema={schema}>
+<SiteLayout
+  title={data.title}
+  description={data.description}
+  schema={schema}
+  image={imageUrl}
+>
   <article class="container">
     <div class="article-hero">
       <div>
@@ -137,7 +157,7 @@ const schema = [
             }
           </ul>
         </section>
-        <AppCta title={data.cta} compact />
+        <AppCta compact />
         <p class="editorial-note">
           Stocker makes tools for discovery and research. This article is
           educational and is not a recommendation to buy, sell or hold any

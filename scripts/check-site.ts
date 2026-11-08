@@ -17,6 +17,8 @@ async function files(directory: string): Promise<string[]> {
 const all = await files(fileURLToPath(root));
 const pages = all.filter((file) => file.endsWith('.html'));
 const titles = new Set<string>();
+const indexableUrls = new Set<string>();
+let articleSchemas = 0;
 let links = 0;
 for (const file of pages) {
   const html = await readFile(file, 'utf8');
@@ -39,8 +41,14 @@ for (const file of pages) {
     /rel="canonical" href="https:\/\/stocker-invest.com\//,
     `${file}: canonical missing`,
   );
+  if (!file.endsWith('/404.html')) {
+    assert.doesNotMatch(html, /name="robots" content="[^"]*noindex/);
+    const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1];
+    assert.ok(canonical);
+    indexableUrls.add(canonical);
+  }
   for (const match of html.matchAll(
-    /(?:href|src)="(\/(?!\/)[^"?#]*)(?:[?#][^"]*)?"/g,
+    /(?:href|src|poster|data-source)="(\/(?!\/)[^"?#]*)(?:[?#][^"]*)?"/g,
   )) {
     const pathname = match[1];
     if (!pathname) continue;
@@ -56,7 +64,32 @@ for (const file of pages) {
   for (const match of html.matchAll(
     /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
   )) {
-    JSON.parse(match[1] ?? '');
+    const parsed: unknown = JSON.parse(match[1] ?? '');
+    const schemas: unknown[] = Array.isArray(parsed) ? parsed : [parsed];
+    let hasOrganization = false;
+    let hasWebsite = false;
+    for (const item of schemas) {
+      assert.ok(item && typeof item === 'object' && '@type' in item);
+      hasOrganization ||= item['@type'] === 'Organization';
+      hasWebsite ||= item['@type'] === 'WebSite';
+      if (item['@type'] !== 'Article') continue;
+      articleSchemas += 1;
+      assert.ok(
+        'image' in item && Array.isArray(item.image) && item.image.length,
+      );
+      assert.ok(
+        'citation' in item &&
+          Array.isArray(item.citation) &&
+          item.citation.length,
+      );
+      for (const image of item.image) {
+        assert.equal(typeof image, 'string');
+        const url = new URL(image);
+        assert.equal(url.origin, 'https://stocker-invest.com');
+        await access(join(fileURLToPath(root), url.pathname));
+      }
+    }
+    assert.ok(hasOrganization && hasWebsite, `${file}: site identity missing`);
   }
 }
 assert.ok(
@@ -65,6 +98,20 @@ assert.ok(
 );
 await access(new URL('sitemap-index.xml', root));
 await access(new URL('robots.txt', root));
+const sitemap = await readFile(new URL('sitemap-0.xml', root), 'utf8');
+const sitemapUrls = new Set(
+  [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]),
+);
+assert.deepEqual(
+  sitemapUrls,
+  indexableUrls,
+  'Sitemap must cover every indexable page exactly.',
+);
+assert.equal(
+  articleSchemas,
+  14,
+  'Every article needs image and source metadata.',
+);
 console.log(
-  `Verified ${pages.length} HTML pages, ${links} local links/assets, unique titles, canonical metadata and JSON-LD.`,
+  `Verified ${pages.length} HTML pages, ${links} local links/assets, ${indexableUrls.size} indexable sitemap URLs and ${articleSchemas} articles with images and citations.`,
 );

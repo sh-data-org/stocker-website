@@ -1,0 +1,202 @@
+{
+  "date": "2026-11-08",
+  "origin": "https://stocker-invest.com",
+  "content_pages": 27,
+  "article_schemas": 14,
+  "article_images": 3,
+  "native_video_bytes": 223966,
+  "native_video_sha256": "0c1ec72e3eaa28e364fa60d14c86cde381131961531cfe2ba725c5428200b963",
+  "pages": [
+    {
+      "url": "https://stocker-invest.com/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/about/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/app/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/articles/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/companies/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/companies/how-nvidia-makes-money/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/chips.Pa9lTGjd_ZP6pv8.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/companies/how-visa-makes-money/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/compare/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/compare/apple-stocks-vs-stocker/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/phones.BH93WUbE_2eiIfq.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/compare/nvidia-vs-amd/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/chips.Pa9lTGjd_ZP6pv8.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/compare/stock-research-apps/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/phones.BH93WUbE_2eiIfq.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/compare/visa-vs-mastercard/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/compare/yahoo-finance-vs-stocker/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/phones.BH93WUbE_2eiIfq.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/learn/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/learn/how-to-research-stocks/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/learn/negative-pe-ratio/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/learn/revenue-vs-earnings/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/learn/sector-vs-industry/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/learn/stock-watchlist/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/learn/stocks-vs-etfs/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/learn/trailing-vs-forward-pe/",
+      "status": 200,
+      "article": true,
+      "images": [
+        "https://stocker-invest.com/_astro/research.v7vT1rEh_2itVqp.webp"
+      ]
+    },
+    {
+      "url": "https://stocker-invest.com/privacy/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/tools/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/tools/dividend-yield-calculator/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/tools/market-cap-calculator/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/tools/pe-ratio-calculator/",
+      "status": 200,
+      "article": false,
+      "images": []
+    },
+    {
+      "url": "https://stocker-invest.com/tools/research-template/",
+      "status": 200,
+      "article": false,
+      "images": []
+    }
+  ],
+  "native_video_url": "https://stocker-invest.com/videos/stocker-swipe-liked.mp4"
+}
