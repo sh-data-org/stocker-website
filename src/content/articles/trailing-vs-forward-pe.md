@@ -35,6 +35,10 @@ Nothing about the share price changed between these calculations. The earnings i
 
 This is why a comparison should show the inputs and periods rather than simply selecting the smaller multiple.
 
+![Two company reports representing different earnings inputs](../../assets/article-valuation.png)
+
+_Keep the share price constant, then label whether the earnings input is historical or forecast._
+
 ## Ask what the forecast assumes
 
 An estimate can depend on sales growth, margins, financing costs, taxes and share count. You do not need to build a detailed model immediately, but you should know which assumptions drive the direction.

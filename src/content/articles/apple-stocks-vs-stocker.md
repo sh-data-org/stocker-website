@@ -39,6 +39,10 @@ Neither is a brokerage. The choice is about how you want to find and organize in
 
 This is a comparison of published product descriptions. It is not a claim that every field, symbol or news story has identical availability in both apps. Features can change with versions and region.
 
+![The actual Stocker company discovery screen showing a company research card](../../assets/app-discovery.png)
+
+_Stocker’s discovery view introduces companies to investigate. Screenshot shows historical example data._
+
 ## Discovery and research
 
 If your question is “What happened to the companies I already follow?”, a familiar list can be the most direct route. Apple documents symbol search, charts, details and news within its Stocks app.

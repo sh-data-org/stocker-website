@@ -43,6 +43,10 @@ Nvidia describes products and platforms across data center, gaming, professional
 
 Reporting labels are not standardized comparison buckets. Do not assume a similarly named market has the same revenue composition or economics in both companies.
 
+![Two different processor chips with data center and computer customers](../../assets/article-chips.png)
+
+_Shared end markets do not mean identical products, customers or revenue mixes._
+
 ## Three questions that improve the comparison
 
 **What does the customer actually buy?** A component, a broader system and supporting software can create different relationships with the customer. Explain the product being compared before treating two revenue figures as equivalent.

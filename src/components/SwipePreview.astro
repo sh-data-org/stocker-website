@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import discovery from '../assets/app-discovery.png';
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+---
+
+<div class:list={['swipe-preview', { 'swipe-preview-small': compact }]}>
+  <div class="swipe-phone" data-swipe-preview>
+    <Image
+      src={discovery}
+      alt={compact
+        ? ''
+        : 'Stocker’s company discovery screen, showing historical example data'}
+      width={300}
+      format="webp"
+      loading="lazy"
+    />
+    <div class="swipe-card-crop" aria-hidden="true">
+      <Image src={discovery} alt="" width={300} format="webp" loading="lazy" />
+    </div>
+    <span class="swipe-gesture" aria-hidden="true">↔</span>
+  </div>
+  {
+    !compact && (
+      <div class="swipe-preview-caption">
+        <span>App screenshot · example data</span>
+        <button type="button" data-replay-swipe>
+          Replay swipe
+        </button>
+      </div>
+    )
+  }
+</div>
+
+<script>
+  import '../scripts/swipe-preview';
+</script>

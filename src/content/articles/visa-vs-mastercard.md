@@ -38,6 +38,10 @@ A useful stock comparison begins by mapping those roles. Then it examines the co
 
 Visa's corporate description includes payment connectivity and services such as fraud management, data products and consulting. Mastercard's investor materials provide the counterpart evidence for researching its own activities. Similar product language should lead to a closer comparison, not an assumption of identical economics.
 
+![A merchant checkout connected to banks through a central payment network](../../assets/article-payments.png)
+
+_Compare how each network defines activity, revenue and incentives before comparing the reported numbers._
+
 ## Read the definitions beside the numbers
 
 A percentage change is only useful when you understand what changed. Volume, transaction count, revenue and earnings measure different things. Currency effects, geographic mix and business mix can influence the relationship between them.

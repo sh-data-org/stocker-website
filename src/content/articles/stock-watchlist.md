@@ -39,6 +39,10 @@ You do not need a large list. Add only as many companies as you can realisticall
 | An unfamiliar competitor | Where does it actually overlap with the company I know? |
 | A surprising price move  | Did the business change, or only expectations?          |
 
+![The actual Stocker saved watchlist screen with historical example data](../../assets/app-watchlist.png)
+
+_A watchlist is a place to revisit research questions. Stocker app screenshot; example data is historical._
+
 ## Separate observation from action
 
 A daily price change can draw attention without changing your understanding of a business. Before reacting, identify what new evidence you have. A price movement and a new financial report are different kinds of information.

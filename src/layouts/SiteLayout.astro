@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import AnalyticsConsent from '../components/AnalyticsConsent.astro';
 import Footer from '../components/Footer.astro';
+import DownloadCta from '../components/DownloadCta.astro';
 import { SITE, canonicalUrl, safeJson } from '../lib/site';
 import '../styles/global.css';
 interface Props {
@@ -9,12 +10,14 @@ interface Props {
   description?: string;
   noindex?: boolean;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  article?: boolean;
 }
 const {
   title,
   description = SITE.description,
   noindex = false,
   schema,
+  article = false,
 } = Astro.props;
 const canonical = canonicalUrl(Astro.url.pathname);
 const pageTitle =
@@ -57,11 +60,12 @@ const pageTitle =
       )
     }
   </head>
-  <body>
+  <body class="has-download-cta">
     <a class="skip-link" href="#main">Skip to content</a>
     <Header />
     <main id="main"><slot /></main>
     <Footer />
+    <DownloadCta variant="bar" article={article} />
     <AnalyticsConsent />
   </body>
 </html>

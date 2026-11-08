@@ -39,6 +39,10 @@ Its fiscal 2026 annual report separates revenue into four categories:
 
 Client incentives generally reduce the revenue Visa reports. Value-added services appear within several revenue categories; adding them again would double-count activity. [Visa's revenue-recognition notes](https://www.sec.gov/Archives/edgar/data/1403161/000140316126000134/v-20260930.htm) explain the accounting.
 
+![A checkout terminal connected through a payment network to two banks](../../assets/article-payments.png)
+
+_The network connects participants. Its reported revenue is different from the full fee a merchant pays._
+
 ## Avoid the checkout-fee shortcut
 
 A merchant's total card-acceptance cost is not all Visa revenue. Interchange generally flows from the merchant's acquiring institution to the card issuer. Visa occupies a different role in the chain.

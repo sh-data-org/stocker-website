@@ -38,6 +38,10 @@ Think of classification as a map with different zoom levels. At the widest view,
 
 Two businesses can belong to the same sector and still have different customers, capital requirements and profit margins. The label is an organizing starting point, not evidence that their financial ratios should be identical.
 
+![A broad category branching into more specific groups of companies](../../assets/article-sectors.png)
+
+_A sector is a broad grouping. An industry describes a more specific type of business within it._
+
 ## Use peers carefully
 
 When comparing two companies, ask whether their products, customers and economics really overlap. A broad category may put very different activities together. Conversely, a company can compete with businesses whose primary classifications differ.

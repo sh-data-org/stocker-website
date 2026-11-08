@@ -37,6 +37,10 @@ Imagine two fictional companies, both trading at $30 per share:
 
 Now suppose Example B's loss narrows to $1 per share. The quotient becomes −30. The more negative number does not mean its operating situation became worse; in this example the loss actually got smaller. This is why ordering loss-making businesses by their negative multiples can mislead.
 
+![Two financial reports and a magnifying glass highlighting a negative earnings result](../../assets/article-valuation.png)
+
+_A loss changes how P/E should be interpreted. A negative multiple is not a conventional bargain score._
+
 ## Negative and unavailable are different
 
 N/A can mean the provider does not calculate a ratio for negative or zero earnings. It can also mean data is unavailable. You need the underlying earnings figure and the provider's definition to distinguish those cases.

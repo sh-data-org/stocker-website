@@ -38,6 +38,10 @@ A useful first pass looks like this:
 | What could interrupt the story? | Risk factors and material changes            | Listing only reasons to be optimistic         |
 | What is reflected in the price? | Valuation measures with consistent periods   | Treating a low share price as cheap valuation |
 
+![The actual Stocker company financials screen with annual and quarterly views](../../assets/app-financials.png)
+
+_Use company financials to frame questions, then check the original filings. Stocker screenshot with historical example data._
+
 ## Read the numbers in context
 
 The SEC's financial-statement guide explains how income statements, balance sheets and cash-flow statements connect. Use it to learn the vocabulary, then return to the company's own reporting. A summary in an app is a convenient doorway into that research, not the complete filing.

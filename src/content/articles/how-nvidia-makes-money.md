@@ -32,6 +32,10 @@ Nvidia describes itself as a GPU-accelerated computing company serving markets i
 
 That keeps the business model separate from a broad technology theme. A theme can create demand without telling you how the value is divided among suppliers, customers and competitors.
 
+![Processor chips connected to a data center and a desktop computer](../../assets/article-chips.png)
+
+_Follow the products, customers and systems behind the reported business results._
+
 ## Products sit inside a wider system
 
 Nvidia's filings discuss computing and networking activities alongside graphics. Research the relationship between processors, systems, networking and software rather than treating the company as one undifferentiated chip product.

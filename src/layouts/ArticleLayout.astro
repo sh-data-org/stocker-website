@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import type { MarkdownHeading } from 'astro';
 import SiteLayout from './SiteLayout.astro';
 import AppCta from '../components/AppCta.astro';
+import DownloadCta from '../components/DownloadCta.astro';
 import {
   articleImages,
   articleUrl,
@@ -77,7 +78,12 @@ const schema = [
 ];
 ---
 
-<SiteLayout title={data.title} description={data.description} schema={schema}>
+<SiteLayout
+  title={data.title}
+  description={data.description}
+  schema={schema}
+  article
+>
   <article class="container">
     <div class="article-hero">
       <div>
@@ -143,6 +149,7 @@ const schema = [
           security. <a href="/about/#editorial-policy">How we write</a>
         </p>
       </div>
+      <DownloadCta variant="sidebar" />
     </div>
     {
       related.length > 0 && (

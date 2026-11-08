@@ -5,7 +5,7 @@
 - https://stocker-invest.com serves the production website over HTTPS.
 - Cloudflare Pages project: `stocker-website` in Shoham's Cloudflare account.
 - Direct upload; no automatic GitHub deployment.
-- Final production deployment: `ee65b2cc-097a-4ad3-a9cd-3f6ee80e8398` ([Cloudflare detail](https://dash.cloudflare.com/e646bcff38192c38c43d9bd838125600/pages/view/stocker-website/ee65b2cc-097a-4ad3-a9cd-3f6ee80e8398)).
+- Current production deployment: `4e351681-203b-43b8-ab0a-1d2251811895` ([Cloudflare detail](https://dash.cloudflare.com/e646bcff38192c38c43d9bd838125600/pages/view/stocker-website/4e351681-203b-43b8-ab0a-1d2251811895)). This adds the approved article illustrations and persistent download CTAs.
 - https://www.stocker-invest.com/learn/?test=canonical returned HTTP 301 to the same path and query on the apex host.
 - Public robots.txt and both sitemap XML files returned HTTP 200. Googlebot user-agent request also returned the expected robots directives. This is a public HTTP check, not proof of Google's successful fetch.
 
@@ -30,7 +30,7 @@ Recheck Google's live test and sitemap status after its next robots fetch. If th
 
 ## Source checks
 
-Typecheck: zero errors, warnings or hints. ESLint passed. Four calculator tests passed. Build generated 27 HTML pages. Static checker verified 827 local links/assets, metadata, canonical URLs and JSON-LD.
+Typecheck: zero errors, warnings or hints. ESLint passed. Four calculator tests passed. Build generated 27 HTML pages. Static checker verified 923 local links/assets, metadata, canonical URLs and JSON-LD. All 14 live article URLs returned HTTP 200 and contained the new inline image and download CTA.
 
 ## Remaining measurement work
 

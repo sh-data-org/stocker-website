@@ -51,6 +51,10 @@ Start by identifying the part of your process that feels difficult. Then compare
 
 This is a documentation-based overview, not a scored product test. We publish Stocker and do not claim an independent laboratory ranking. Feature availability, data coverage and paid-plan limits should be checked with each provider.
 
+![The actual Stocker financial statements screen](../../assets/app-financials.png)
+
+_Test research apps against the questions you need answered. Stocker screenshot with historical example data._
+
 ## Discovery is different from screening
 
 A screener starts with criteria and returns candidates that match. Discovery can begin with interests and introduce you to companies without requiring a detailed filter setup first.

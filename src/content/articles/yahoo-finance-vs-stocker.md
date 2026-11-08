@@ -38,6 +38,10 @@ If you need a comprehensive market destination, breadth may matter most. If you 
 
 The table describes the role of each product rather than promising identical coverage. Check current feature availability, region and plan requirements on the original product pages.
 
+![The actual Stocker company discovery screen with profile and financial information](../../assets/app-discovery.png)
+
+_Stocker’s discovery workflow starts with a company card. Screenshot shows historical example data._
+
 ## Breadth can be useful
 
 A broad platform can reduce the number of places you visit for market context. It can also bring more navigation and information than you need for a short research session. Whether that feels helpful or distracting depends on the task.

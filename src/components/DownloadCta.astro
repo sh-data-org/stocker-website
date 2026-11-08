@@ -1,0 +1,54 @@
+---
+import SwipePreview from './SwipePreview.astro';
+import Arrow from './Arrow.astro';
+import { SITE } from '../lib/site';
+interface Props {
+  variant: 'sidebar' | 'bar';
+  article?: boolean;
+}
+const { variant, article = false } = Astro.props;
+---
+
+<aside
+  class:list={[
+    'download-cta',
+    `download-${variant}`,
+    { 'download-article-bar': article },
+  ]}
+  aria-label="Download Stocker"
+>
+  {variant === 'bar' && <SwipePreview compact />}
+  <div class="download-copy">
+    <p class="download-title">
+      {
+        variant === 'sidebar'
+          ? 'Your next discovery is a swipe away.'
+          : 'Discover with Stocker'
+      }
+    </p>
+    <p class="download-description">
+      Explore companies. Save what interests you.
+    </p>
+    {
+      variant === 'bar' && (
+        <span class="download-availability">iPhone &amp; iPad</span>
+      )
+    }
+  </div>
+  {variant === 'sidebar' && <SwipePreview />}
+  <a
+    class="button button-blue download-button"
+    href={SITE.appStore}
+    aria-label="Download Stocker on the App Store"
+    data-sidebar-download={variant === 'sidebar' ? '' : undefined}
+  >
+    <span class="download-desktop-label">Download Stocker</span>
+    <span class="download-mobile-label">Get the app</span>
+    <Arrow diagonal />
+  </a>
+  <p class="download-platform">For iPhone and iPad</p>
+</aside>
+
+<script>
+  import '../scripts/download-cta';
+</script>

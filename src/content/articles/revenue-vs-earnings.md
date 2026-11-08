@@ -37,6 +37,10 @@ Consider a small fictional business over one year:
 
 The company brought in $1 million of recognized sales, but its net earnings were $180,000. This simplified example is not a template for every industry; actual statements contain additional lines and accounting judgments.
 
+![Illustration of business activity flowing past operating costs to a smaller remaining amount](../../assets/article-business.png)
+
+_Revenue is the starting point. Earnings reflect the costs and other items recognized along the way._
+
 ## Sales can rise while profit falls
 
 Suppose revenue grows from $1 million to $1.2 million next year. That sounds encouraging. But if the combined costs rise from $820,000 to $1.08 million, net earnings fall from $180,000 to $120,000.

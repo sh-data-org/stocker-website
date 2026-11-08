@@ -37,6 +37,10 @@ Both can trade on an exchange, but buying one fund share is not the same researc
 
 A lower share price does not establish that either product is cheaper in an economic sense. The units and underlying exposures differ.
 
+![One company tile beside a basket holding several different company tiles](../../assets/article-portfolio.png)
+
+_A stock focuses your research on one business; an ETF also requires examining the fund and its holdings._
+
 ## Diversification depends on the holdings
 
 A broad fund can spread exposure across many businesses. But the letters ETF do not guarantee broad diversification. Some funds focus on a narrow industry, a small number of holdings or a specialized strategy.
