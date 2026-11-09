@@ -1,6 +1,6 @@
 # Stocker Invest
 
-Website source for **https://stocker-invest.com**, live on Cloudflare Pages. Static editorial website with 14 illustrated articles, three calculators, a downloadable worksheet and persistent App Store download links on desktop and mobile.
+Website source for **https://stocker-invest.com**, live on Cloudflare Pages. Static editorial website with 17 illustrated articles, three calculators, a downloadable worksheet and persistent App Store download links on desktop and mobile.
 
 ## Run
 
@@ -28,6 +28,7 @@ Astro 7 needs Node 22+. A project-local Node 22 runtime is installed by npm and 
 - `docs/research/stocker-dataforseo-keywords.csv`: initial 60-seed study.
 - `docs/research/stocker-expanded-keywords.csv`: additional 52 comparison, business-model and tool seeds.
 - `docs/research/stocker-research-log.md`: requests, cost, limitations and sources.
+- `docs/research/seasonal-content-2026-11-09.md`: seasonal keyword research, three new articles and first traffic measurements.
 - `docs/design/site-spec.md`: design and implementation decisions.
 - `docs/design/article-images-and-download.md`: article illustrations, real app swipe preview and responsive download CTA verification.
 - `docs/design/clean-journal.md`: Inter typography, compact article-first homepage, all-articles library and download visibility behavior.

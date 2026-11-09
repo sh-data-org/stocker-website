@@ -15,6 +15,11 @@ async function files(directory: string): Promise<string[]> {
   return nested.flat();
 }
 const all = await files(fileURLToPath(root));
+const articleFiles = (
+  await files(
+    fileURLToPath(new URL('../src/content/articles/', import.meta.url)),
+  )
+).filter((file) => file.endsWith('.md'));
 const pages = all.filter((file) => file.endsWith('.html'));
 const titles = new Set<string>();
 const indexableUrls = new Set<string>();
@@ -109,7 +114,7 @@ assert.deepEqual(
 );
 assert.equal(
   articleSchemas,
-  14,
+  articleFiles.length,
   'Every article needs image and source metadata.',
 );
 console.log(
