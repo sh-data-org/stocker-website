@@ -389,12 +389,26 @@ select {
 .article-hero h1 {
   font-size: clamp(32px, 3.4vw, 46px);
 }
-.article-hero > img {
+.article-hero-image {
+  margin: 0;
+  min-width: 0;
+}
+.article-hero-image > img {
   border-radius: var(--radius);
   width: 100%;
   max-height: 250px;
   aspect-ratio: 1.5;
   object-fit: cover;
+}
+.article-hero-image figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.article-hero-image figcaption a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 .article-intro {
   font-size: 16px;
@@ -831,7 +845,7 @@ a:hover .arrow {
   .article-intro {
     font-size: 17px;
   }
-  .article-hero > img {
+  .article-hero-image > img {
     max-height: 180px;
   }
   .article-layout {

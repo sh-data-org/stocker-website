@@ -11,8 +11,18 @@ const articles = defineCollection({
     section: z.enum(SECTIONS),
     category: z.string(),
     date: z.iso.date(),
-    image: z.enum(['research', 'phones', 'chips']),
+    image: z.enum([
+      'research',
+      'phones',
+      'chips',
+      'retail',
+      'dataCenter',
+      'exchange',
+    ]),
     imageAlt: z.string(),
+    imageCredit: z
+      .object({ photographer: z.string(), url: z.url() })
+      .optional(),
     order: z.number(),
     disclosure: z.string().optional(),
     cta: z.string().default('Find your next company to research.'),

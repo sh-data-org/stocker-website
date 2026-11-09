@@ -115,15 +115,31 @@ const schema = [
         </p>
         {data.disclosure && <p class="disclosure">{data.disclosure}</p>}
       </div>
-      <Image
-        src={articleImages[data.image]}
-        alt={data.imageAlt}
-        width={640}
-        height={460}
-        format="webp"
-        fit="cover"
-        loading="eager"
-      />
+      <figure class="article-hero-image">
+        <Image
+          src={articleImages[data.image]}
+          alt={data.imageAlt}
+          width={640}
+          height={460}
+          format="webp"
+          fit="cover"
+          loading="eager"
+        />
+        {
+          data.imageCredit && (
+            <figcaption>
+              Photo by{' '}
+              <a
+                href={data.imageCredit.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.imageCredit.photographer} on Pexels
+              </a>
+            </figcaption>
+          )
+        }
+      </figure>
     </div>
     <div class="article-layout">
       <aside class="contents">
