@@ -4,8 +4,11 @@ description: 'Check NYSE and Nasdaq holiday closures, Thanksgiving and Christmas
 section: 'learn'
 category: 'Market calendar'
 date: '2026-11-09'
-image: 'research'
-imageAlt: 'Illustration of research documents for planning a stock research routine'
+image: 'exchange'
+imageAlt: 'The New York Stock Exchange facade with American flags'
+imageCredit:
+  photographer: 'Vlada Karpovich'
+  url: 'https://www.pexels.com/photo/new-york-stock-exchange-4451945/'
 order: 0.2
 sources:
   - title: 'NYSE: official holidays and trading hours, 2026–2028'

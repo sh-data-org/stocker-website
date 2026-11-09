@@ -4,8 +4,11 @@ description: 'A 2027 research shortlist of Microsoft, Nvidia and Visa, with date
 section: 'companies'
 category: '2027 watchlist'
 date: '2026-11-09'
-image: 'chips'
-imageAlt: 'Illustration of processor chips representing technology businesses to research'
+image: 'dataCenter'
+imageAlt: 'Blue-lit server equipment illustrating cloud and computing infrastructure'
+imageCredit:
+  photographer: 'panumas nikhomkhai'
+  url: 'https://www.pexels.com/photo/computer-server-in-data-center-room-17489163/'
 order: 0.1
 disclosure: 'Prepared November 9, 2026. An unranked research shortlist, not a forecast, model portfolio or recommendation to buy any stock.'
 sources:

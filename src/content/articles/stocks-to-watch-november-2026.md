@@ -4,8 +4,11 @@ description: 'Nvidia, Target and Walmart have November earnings calls scheduled.
 section: 'companies'
 category: 'Monthly watchlist'
 date: '2026-11-09'
-image: 'research'
-imageAlt: 'Illustration of company research documents and a magnifying glass'
+image: 'retail'
+imageAlt: 'A supermarket aisle with stocked shelves, illustrating the retail earnings research theme'
+imageCredit:
+  photographer: 'Clément Proust'
+  url: 'https://www.pexels.com/photo/stocked-grocery-store-aisle-in-tadoussac-40069127/'
 order: 0
 disclosure: 'A research watchlist as of November 9, 2026. These are scheduled events, not buy recommendations or predictions of a price increase.'
 sources:
