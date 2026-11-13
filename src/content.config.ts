@@ -25,7 +25,7 @@ const articles = defineCollection({
       .optional(),
     order: z.number(),
     disclosure: z.string().optional(),
-    cta: z.string().default('Find your next company to research.'),
+    cta: z.string().optional(),
     sources: z.array(z.object({ title: z.string(), url: z.url() })).min(1),
   }),
 });

@@ -157,7 +157,7 @@ const schema = [
       <div class="article-content">
         <div class="prose">
           <Fragment set:html={articleHtml.slice(0, promoOffset)} />
-          <ArticleAppPromo />
+          <ArticleAppPromo title={article.data.cta} />
           <Fragment set:html={articleHtml.slice(promoOffset)} />
         </div>
         <section class="sources" id="sources">
