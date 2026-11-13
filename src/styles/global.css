@@ -732,15 +732,24 @@ a:hover .arrow {
   }
   .mobile-menu summary {
     list-style: none;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 12px;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    cursor: pointer;
   }
   .mobile-menu summary::-webkit-details-marker {
     display: none;
   }
-  .mobile-menu summary span {
-    margin-left: 10px;
+  .mobile-menu .menu-icon {
+    display: grid;
+    width: 22px;
+    gap: 4px;
+  }
+  .mobile-menu .menu-icon span {
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
   }
   .mobile-menu nav {
     position: absolute;
