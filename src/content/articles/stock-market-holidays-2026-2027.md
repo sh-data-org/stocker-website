@@ -1,5 +1,5 @@
 ---
-title: 'US stock market holidays 2026 and 2027'
+title: 'US Stock Market Holidays 2026–2027 (NYSE and Nasdaq)'
 description: 'Check NYSE and Nasdaq holiday closures, Thanksgiving and Christmas early closes, and regular US stock market hours for 2026 and 2027.'
 section: 'learn'
 category: 'Market calendar'
@@ -17,11 +17,13 @@ sources:
     url: 'https://nasdaqtrader.com/Trader.aspx?id=Calendar'
 ---
 
-## The next US market holidays
+## Thanksgiving and Christmas trading hours
 
-**The next full US stock market holiday is Thanksgiving, Thursday, November 26, 2026. On Friday, November 27, the regular stock session closes early at 1 p.m. Eastern.** Christmas Day, December 25, is also closed; Christmas Eve, December 24, has a 1 p.m. Eastern early close.
+NYSE and Nasdaq close for Thanksgiving on **November 26, 2026**, then close early at **1 p.m. Eastern on November 27**. Both exchanges close early at **1 p.m. Eastern on December 24** and close all day on **December 25**.
 
-This calendar was checked November 9, 2026. It covers scheduled regular equity sessions, not every options, bond, futures or broker-specific session. Confirm your exchange and broker's current notices before placing an order.
+In 2027, the NYSE closes for Thanksgiving on November 25, closes at 1 p.m. Eastern on November 26, and observes Christmas with a full closure on December 24. The 2027 table below follows the published NYSE schedule.
+
+Sources: [NYSE holidays and trading hours](https://www.nyse.com/trade/hours-calendars) and the [Nasdaq trading calendar](https://nasdaqtrader.com/Trader.aspx?id=Calendar). The hours below cover regular equity sessions. Options and extended trading can follow different hours.
 
 ## Stock market holidays in 2026
 
@@ -85,6 +87,6 @@ The regular stock session is scheduled to open on November 27, 2026 and November
 
 A closure tells you when regular trading is unavailable; it does not predict what a stock will do when trading resumes. You can use the time to read a filing, compare a business with a peer or update the reason a company is on your watchlist.
 
-Start with the [November 2026 earnings watchlist](/companies/stocks-to-watch-november-2026/) or our [2027 company research shortlist](/companies/best-stocks-for-2027/). The [stock research guide](/learn/how-to-research-stocks/) explains how to turn a company name into a set of questions.
+Start with the [November 2026 earnings watchlist](/companies/stocks-to-watch-november-2026/) or our [2027 company research shortlist](/companies/best-stocks-for-2027/). Use the [free stock research worksheet](/tools/research-template/) to record the next earnings release or filing you plan to review. The [stock research guide](/learn/how-to-research-stocks/) explains how to turn a company name into a set of questions.
 
 **[Download Stocker](https://apps.apple.com/app/id6443543680)** to discover companies and save the ones you want to research. Keep market and earnings reminders in your calendar.

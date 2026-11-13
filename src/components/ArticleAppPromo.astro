@@ -1,0 +1,113 @@
+---
+import { Image } from 'astro:assets';
+import watchlist from '../assets/app-watchlist.png';
+import SwipePreview from './SwipePreview.astro';
+import { SITE } from '../lib/site';
+
+interface Props {
+  placement?: 'article_inline' | 'article_end';
+}
+
+const { placement = 'article_inline' } = Astro.props;
+const inline = placement === 'article_inline';
+---
+
+<aside
+  class:list={[inline && 'article-app-promo', 'article-promo-card']}
+  id={inline ? 'stocker-app-preview' : undefined}
+  aria-label={inline ? 'Stocker watchlist' : 'Stocker swipe demo'}
+  data-app-placement={placement}
+>
+  <div class="promo-copy">
+    <p class="promo-title">
+      {
+        inline
+          ? 'Keep the stocks you want to research'
+          : 'See how a swipe saves a stock'
+      }
+    </p>
+    <p>
+      {
+        inline
+          ? 'Save companies to one watchlist and come back to their charts, earnings and news.'
+          : 'Watch a stock go from discovery to your watchlist in Stocker.'
+      }
+    </p>
+  </div>
+  {
+    inline ? (
+      <Image
+        src={watchlist}
+        width={440}
+        format="webp"
+        alt="Stocker’s Saved watchlist showing company tickers and price charts"
+      />
+    ) : (
+      <SwipePreview manual />
+    )
+  }
+  <div class="promo-actions">
+    <a class="button button-blue" href={SITE.appStore} data-primary-download>
+      Download on the App Store
+    </a>
+    <a class="app-details" href="/app/">See what’s inside Stocker</a>
+  </div>
+</aside>
+
+<style>
+  .article-promo-card {
+    display: grid;
+    justify-items: center;
+    gap: 18px;
+    margin-block: 32px;
+    padding: 24px 18px 16px;
+    border: 1px solid #dbe6f6;
+    border-radius: 16px;
+    background: #f4f8ff;
+    text-align: center;
+    scroll-margin-top: 16px;
+  }
+
+  .promo-copy {
+    max-width: 34ch;
+  }
+
+  .article-promo-card .promo-copy p {
+    margin: 0;
+  }
+
+  .article-promo-card .promo-copy .promo-title {
+    margin-bottom: 6px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  img {
+    display: block;
+    width: 186px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .promo-actions {
+    display: grid;
+    justify-items: center;
+    width: min(100%, 320px);
+  }
+
+  .article-promo-card .button {
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .app-details {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+</style>

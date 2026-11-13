@@ -952,10 +952,10 @@ a:hover .arrow {
   }
 }
 .has-download-cta {
-  padding-bottom: calc(116px + env(safe-area-inset-bottom));
+  padding-bottom: calc(132px + env(safe-area-inset-bottom));
 }
 html {
-  scroll-padding-bottom: 116px;
+  scroll-padding-bottom: 132px;
 }
 .article-layout {
   grid-template-columns: 150px minmax(0, 1fr) 240px;
@@ -1036,11 +1036,11 @@ html {
 }
 .swipe-preview-small {
   flex-shrink: 0;
-  width: 56px;
+  width: 80px;
   margin: 0;
 }
 .swipe-preview-small .swipe-preview-control {
-  height: 58px;
+  height: 96px;
   border-radius: 8px;
 }
 .swipe-preview-small video {
@@ -1054,7 +1054,7 @@ html {
   display: none;
 }
 .analytics-consent {
-  bottom: calc(126px + env(safe-area-inset-bottom));
+  bottom: calc(142px + env(safe-area-inset-bottom));
 }
 .prose p:has(> img) {
   margin-block: 30px 10px;
@@ -1125,10 +1125,13 @@ html {
     min-width: 0;
   }
   .analytics-consent {
-    bottom: calc(98px + env(safe-area-inset-bottom));
+    bottom: calc(126px + env(safe-area-inset-bottom));
   }
   .prose p > img {
     max-height: 280px;
+  }
+  .prose p > img[src*='app-'] {
+    max-height: 380px;
   }
   .app-cta-action,
   .app-cta-action > .button {

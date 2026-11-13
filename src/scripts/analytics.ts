@@ -71,12 +71,27 @@ document
 document.addEventListener('click', (event) => {
   if (!enabled || !(event.target instanceof Element)) return;
   const link = event.target.closest('a');
-  if (!link || new URL(link.href).hostname !== 'apps.apple.com') return;
+  if (!link) return;
+  const destination = new URL(link.href);
+  const isArticle =
+    document.querySelector('[data-stock-research-article]') !== null;
+  const isAppPage =
+    isArticle &&
+    destination.origin === location.origin &&
+    destination.pathname === '/app/';
+  const eventName = isAppPage ? 'article_app_page_click' : 'app_store_click';
+  if (!isAppPage && destination.hostname !== 'apps.apple.com') return;
 
-  window.gtag?.('event', 'app_store_click', {
+  window.gtag?.('event', eventName, {
     page_path: location.pathname,
-    link_url: link.href,
-    link_text: link.textContent?.trim().slice(0, 100),
+    link_url: isAppPage
+      ? `${destination.origin}${destination.pathname}`
+      : link.href,
+    page_type: isArticle ? 'article' : undefined,
+    link_placement:
+      link
+        .closest('[data-app-placement]')
+        ?.getAttribute('data-app-placement') ?? undefined,
     transport_type: 'beacon',
   });
 });
