@@ -5,10 +5,11 @@ import SwipePreview from './SwipePreview.astro';
 import { SITE } from '../lib/site';
 
 interface Props {
+  title?: string | undefined;
   placement?: 'article_inline' | 'article_end';
 }
 
-const { placement = 'article_inline' } = Astro.props;
+const { placement = 'article_inline', title } = Astro.props;
 const inline = placement === 'article_inline';
 ---
 
@@ -22,7 +23,7 @@ const inline = placement === 'article_inline';
     <p class="promo-title">
       {
         inline
-          ? 'Keep the stocks you want to research'
+          ? (title ?? 'Keep the stocks you want to research')
           : 'See how a swipe saves a stock'
       }
     </p>
