@@ -79,6 +79,22 @@ for (const file of pages) {
       hasWebsite ||= item['@type'] === 'WebSite';
       if (item['@type'] !== 'Article') continue;
       articleSchemas += 1;
+      const promo = html.match(
+        /<aside class="article-app-promo\b[^>]*>[\s\S]*?<\/aside>/g,
+      );
+      assert.equal(
+        promo?.length,
+        1,
+        `${file}: expected one inline Stocker promo`,
+      );
+      assert.ok(
+        promo?.[0]?.includes('href="/app/"'),
+        `${file}: missing Stocker app page link`,
+      );
+      assert.ok(
+        promo?.[0]?.includes('https://apps.apple.com/app/id6443543680'),
+        `${file}: missing Stocker download link`,
+      );
       assert.ok(
         'image' in item && Array.isArray(item.image) && item.image.length,
       );

@@ -1,6 +1,6 @@
 ---
 title: 'Revenue vs earnings'
-description: 'Sales and profit answer different questions. Learn to read both without mixing periods or accounting measures.'
+description: 'Revenue is sales and earnings are profit after costs. Follow a sample income statement and see how sales can rise while earnings fall.'
 section: 'learn'
 category: 'Financials'
 date: '2026-11-07'
@@ -45,7 +45,7 @@ _Revenue is the starting point. Earnings reflect the costs and other items recog
 
 Suppose revenue grows from $1 million to $1.2 million next year. That sounds encouraging. But if the combined costs rise from $820,000 to $1.08 million, net earnings fall from $180,000 to $120,000.
 
-The next question is why. The company might be investing in a new product, facing higher input costs, discounting to retain customers, or experiencing a combination of factors. The growth percentage alone cannot choose among those explanations.
+Revenue grew **20%**, but net earnings fell **33%**. Net profit margin fell from **18% to 10%** (net earnings divided by revenue). Look at which costs rose faster than sales. The company might be investing in a new product, facing higher input costs, discounting to retain customers, or experiencing a combination of factors. The growth percentage alone cannot choose among those explanations.
 
 A useful research note states both the change and the explanation you need to verify. “Revenue rose; determine whether the lower margin comes from temporary investment or a lasting cost change” is more useful than “growth is good.”
 
@@ -59,4 +59,4 @@ Do not treat adjusted profit and reported profit as equivalent. Read the reconci
 
 Stocker's financial views let you explore annual and quarterly revenue and earnings. Use them to spot questions worth taking to the company's actual reports. If a value is missing, do not assume it is zero.
 
-Continue with [how to research stocks](/learn/how-to-research-stocks/) or examine how losses affect a [negative P/E ratio](/learn/negative-pe-ratio/). The goal is to connect the numbers to the business, not to judge an investment from a single line.
+Use the [stock research worksheet](/tools/research-template/) to save the reporting period, the original filing, and your explanation for the margin change. Continue with [how to research stocks](/learn/how-to-research-stocks/) or examine how losses affect a [negative P/E ratio](/learn/negative-pe-ratio/). The goal is to connect the numbers to the business, not to judge an investment from a single line.

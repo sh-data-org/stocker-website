@@ -2,7 +2,7 @@
 import { Image, getImage } from 'astro:assets';
 import type { MarkdownHeading } from 'astro';
 import SiteLayout from './SiteLayout.astro';
-import AppCta from '../components/AppCta.astro';
+import ArticleAppPromo from '../components/ArticleAppPromo.astro';
 import DownloadCta from '../components/DownloadCta.astro';
 import {
   articleImages,
@@ -40,6 +40,9 @@ const label =
       ? 'Compare'
       : 'Companies';
 const contents = headings.filter((heading) => heading.depth === 2);
+const articleHtml = await Astro.slots.render('default');
+const sectionStarts = [...articleHtml.matchAll(/<h2(?:\s[^>]*)?>/g)];
+const promoOffset = sectionStarts[1]?.index ?? articleHtml.length;
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -99,7 +102,7 @@ const schema = [
   schema={schema}
   image={imageUrl}
 >
-  <article class="container">
+  <article class="container" data-stock-research-article>
     <div class="article-hero">
       <div>
         <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -152,7 +155,11 @@ const schema = [
         </nav>
       </aside>
       <div class="article-content">
-        <div class="prose"><slot /></div>
+        <div class="prose">
+          <Fragment set:html={articleHtml.slice(0, promoOffset)} />
+          <ArticleAppPromo />
+          <Fragment set:html={articleHtml.slice(promoOffset)} />
+        </div>
         <section class="sources" id="sources">
           <h2>Sources & further reading</h2><p>
             Based on the sources below. Company and app information can change;
@@ -173,7 +180,7 @@ const schema = [
             }
           </ul>
         </section>
-        <AppCta compact />
+        <ArticleAppPromo placement="article_end" />
         <p class="editorial-note">
           Stocker makes tools for discovery and research. This article is
           educational and is not a recommendation to buy, sell or hold any
