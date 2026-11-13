@@ -43,7 +43,13 @@ const isArticlePage = [
     data-primary-download>Download Stocker <Arrow diagonal /></a
   >
   <details class="mobile-menu">
-    <summary>Menu <span aria-hidden="true">+</span></summary>
+    <summary aria-label="Menu">
+      <span class="menu-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </summary>
     <nav aria-label="Mobile navigation">
       {links.map((link) => <a href={link.href}>{link.title}</a>)}
       <a href={SITE.appStore}>Download Stocker ↗</a>
