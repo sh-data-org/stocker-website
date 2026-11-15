@@ -52,6 +52,8 @@ Pick one company from the table and write down one question the next filing can 
 
 [Open the free stock research worksheet](/tools/research-template/) to record the source and follow-up. Save the ticker in Stocker if you want it in your watchlist.
 
+Use the [2027 AI stock watchlist](/companies/ai-stocks-2027/) to compare how chip designers, suppliers and cloud providers make money.
+
 ## Microsoft: connect cloud growth with investment
 
 [Microsoft’s 2026 annual report](https://www.microsoft.com/investor/reports/ar26/index.html) reports Microsoft Cloud revenue of $214.4 billion, up 27%, and Azure and other cloud services revenue growth of 41%. Those measures describe different scopes; Microsoft Cloud is broader than Azure.
