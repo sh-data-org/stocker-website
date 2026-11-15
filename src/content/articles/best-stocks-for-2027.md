@@ -4,6 +4,9 @@ description: 'A 2027 research shortlist of Microsoft, Nvidia and Visa, with date
 section: 'companies'
 category: '2027 watchlist'
 cta: 'Save MSFT, NVDA, and V to your Stocker watchlist.'
+inlinePromo:
+  afterHeading: 'build-a-2027-watchlist-you-can-revisit'
+  detailsLabel: 'See the Stocker watchlist'
 date: '2026-11-09'
 image: 'dataCenter'
 imageAlt: 'Blue-lit server equipment illustrating cloud and computing infrastructure'
@@ -38,6 +41,16 @@ We did not screen the whole market, calculate a target price or backtest a strat
 | Microsoft (MSFT) | Fiscal 2026 annual report | Can cloud growth support the cost of expansion?    | Investment spending and competitive pressure |
 | Nvidia (NVDA)    | Fiscal 2027 Q2 results    | How durable is infrastructure demand?              | Customer spending and product transitions    |
 | Visa (V)         | Fiscal 2026 results       | How do payment activity and revenue grow together? | Competition, regulation and weaker spending  |
+
+## Build a 2027 watchlist you can revisit
+
+Pick one company from the table and write down one question the next filing can answer. For Nvidia, that might be whether growth in Data Center revenue is still showing up in companywide operating profit. Open the same reporting period for both figures and record the original source.
+
+1. **Write the question.** What would you need to learn before you put more time into this company?
+2. **Record the evidence.** Save the filing link, reporting period and one figure you can compare later.
+3. **Pick a follow-up.** Set a point to revisit your question, such as the next quarterly filing.
+
+[Open the free stock research worksheet](/tools/research-template/) to record the source and follow-up. Save the ticker in Stocker if you want it in your watchlist.
 
 ## Microsoft: connect cloud growth with investment
 

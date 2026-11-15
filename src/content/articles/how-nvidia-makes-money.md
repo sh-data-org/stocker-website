@@ -1,6 +1,8 @@
 ---
 title: 'How does Nvidia make money?'
 description: 'Look past the ticker and the AI headlines. Start with the products, the customers and the questions behind the business.'
+seoTitle: 'How Does Nvidia Make Money? Revenue by Business'
+seoDescription: 'See what Nvidia sells, who buys its products and how to read its Data Center and Gaming revenue in the company’s filings.'
 section: 'companies'
 category: 'Business models'
 date: '2026-11-07'
@@ -22,9 +24,9 @@ sources:
 
 ## The short answer
 
-Nvidia makes money by selling computing products, including processors, systems and networking, alongside software and related offerings. Its direct buyers include equipment manufacturers, distributors, cloud providers, AI model makers and system integrators. Other businesses buy through those intermediaries.
+Nvidia earns revenue from processors, networking, computing systems and software. Its Data Center business serves customers building and operating computing infrastructure. Its Gaming business includes graphics products for PCs. Equipment makers, distributors and cloud providers can buy directly, while many users access the technology through those buyers.
 
-For example, a cloud provider can purchase infrastructure to offer computing services to its own customers. The provider's service sales and Nvidia's product sales are different revenue streams. Nvidia's [quarterly filing](https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf) distinguishes direct and indirect customers, which helps explain why the end user is not always the company paying Nvidia.
+Nvidia reports **Compute & Networking** and **Graphics** as operating segments. **Data Center** and **Gaming** are end markets. In its [FY 2026 annual filing](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/R25.htm), Nvidia reported $193.7 billion in Data Center revenue for the year ended January 25, 2026. To see where growth came from, compare the same end markets across periods and record what management says changed. Then compare [revenue and earnings](/learn/revenue-vs-earnings/) to see how sales growth translated into profit. Use the [stock research worksheet](/tools/research-template/) to save the original filing and your next question.
 
 ## Start with the customer problem
 

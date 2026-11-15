@@ -8,6 +8,8 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
     section: z.enum(SECTIONS),
     category: z.string(),
     date: z.iso.date(),
@@ -26,6 +28,9 @@ const articles = defineCollection({
     order: z.number(),
     disclosure: z.string().optional(),
     cta: z.string().optional(),
+    inlinePromo: z
+      .object({ afterHeading: z.string(), detailsLabel: z.string() })
+      .optional(),
     sources: z.array(z.object({ title: z.string(), url: z.url() })).min(1),
   }),
 });
