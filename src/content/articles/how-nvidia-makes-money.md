@@ -65,6 +65,8 @@ A strong product announcement may be important, but its financial effect depends
 
 Use [revenue and earnings together](/learn/revenue-vs-earnings/), and check the period behind each figure. Growth in one market is not the same as growth in every part of the business.
 
+Use the [November 2026 earnings watchlist](/companies/stocks-to-watch-november-2026/) for specific questions to bring to Nvidia’s fiscal third-quarter report.
+
 ## Compare before concluding
 
 [Nvidia and AMD](/compare/nvidia-vs-amd/) overlap in some markets while retaining different product mixes. A useful comparison explains those differences rather than picking a winner from one headline.
