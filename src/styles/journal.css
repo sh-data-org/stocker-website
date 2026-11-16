@@ -96,11 +96,13 @@
 }
 .journal-download {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 230px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 210px);
   align-items: center;
-  gap: 20px 40px;
+  gap: 18px 36px;
+  max-width: 640px;
   margin-top: 40px;
-  padding: 32px 36px;
+  margin-inline: auto;
+  padding: 28px 36px;
   border-radius: 10px;
   overflow: hidden;
   background: #f2f7ff;
@@ -124,7 +126,7 @@
 .journal-app-visual {
   grid-column: 2;
   grid-row: 1 / span 2;
-  width: 230px;
+  width: 100%;
 }
 .journal-tools-link {
   margin-block: 24px 40px;
@@ -189,6 +191,7 @@
   .journal-download {
     grid-template-columns: minmax(0, 1fr);
     gap: 18px;
+    max-width: 420px;
     margin-top: 30px;
     padding: 22px 20px;
   }
@@ -200,11 +203,13 @@
   .journal-download h2 {
     font-size: 24px;
     line-height: 1.25;
+    text-align: center;
   }
   .journal-app-visual {
     grid-column: auto;
     grid-row: auto;
     justify-self: center;
+    max-width: 230px;
   }
   .journal-download-action .button {
     display: flex;
