@@ -60,4 +60,6 @@ Separate what management forecasts from what has already happened. Forecasts are
 
 A [watchlist](/learn/stock-watchlist/) gives you a place to revisit interesting companies without buying them. In Stocker, you can discover a company, inspect its profile and financial information, and save it for another look.
 
+For an example, see the [2027 stock research shortlist](/companies/best-stocks-for-2027/). It pairs each company with a source filing, a research question and a risk to investigate.
+
 Use our [free research worksheet](/tools/research-template/) to record questions and sources outside the app. The useful outcome of this first pass may be a clearer question—or a decision that you do not yet understand the company well enough. Neither requires a trade.
