@@ -1,3 +1,5 @@
+import { socialCampaignParameters } from './social-campaign';
+
 const MEASUREMENT_ID = 'G-4EJ7RNNCP8';
 const CONSENT_KEY = 'stocker-analytics-consent';
 type Consent = 'granted' | 'denied';
@@ -32,6 +34,7 @@ function startAnalytics(): void {
   };
   window.gtag('js', new Date());
   window.gtag('config', MEASUREMENT_ID, {
+    ...socialCampaignParameters(new URL(location.href)),
     page_location: `${location.origin}${location.pathname}`,
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
