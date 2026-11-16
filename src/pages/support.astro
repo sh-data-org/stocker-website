@@ -1,0 +1,19 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { SITE } from '../lib/site';
+---
+
+<SiteLayout
+  title="Stocker Support"
+  description="Contact Stocker for help with the app, subscriptions, or your account."
+>
+  <div class="container text-page">
+    <h1>Stocker Support</h1>
+    <div class="prose">
+      <p>
+        For help with Stocker or to report a problem, email
+        <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+      </p>
+    </div>
+  </div>
+</SiteLayout>

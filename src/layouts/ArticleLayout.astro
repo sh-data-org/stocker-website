@@ -97,8 +97,8 @@ const schema = [
 ---
 
 <SiteLayout
-  title={data.title}
-  description={data.description}
+  title={data.seoTitle ?? data.title}
+  description={data.seoDescription ?? data.description}
   schema={schema}
   image={imageUrl}
 >
@@ -157,7 +157,10 @@ const schema = [
       <div class="article-content">
         <div class="prose">
           <Fragment set:html={articleHtml.slice(0, promoOffset)} />
-          <ArticleAppPromo title={article.data.cta} />
+          <ArticleAppPromo
+            title={data.cta}
+            detailsLabel={data.inlinePromo?.detailsLabel}
+          />
           <Fragment set:html={articleHtml.slice(promoOffset)} />
         </div>
         <section class="sources" id="sources">

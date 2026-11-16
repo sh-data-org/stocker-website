@@ -13,6 +13,10 @@ sources:
       'title': "SEC: Beginners\u2019 guide to financial statements",
       'url': 'https://www.sec.gov/investor/pubs/begfinstmtguide.htm',
     },
+    {
+      'title': 'Costco Wholesale: fiscal 2026 Form 10-K',
+      'url': 'https://www.sec.gov/Archives/edgar/data/909832/000090983226000093/cost-20260830.htm',
+    },
   ]
 ---
 
@@ -41,6 +45,20 @@ A useful first pass looks like this:
 ![The actual Stocker company financials screen with annual and quarterly views](../../assets/app-financials.png)
 
 _Use company financials to frame questions, then check the original filings. Stocker screenshot with historical example data._
+
+## Worked example: find Costco’s revenue in a 10-K
+
+Open Costco’s fiscal 2026 10-K. In **Item 8, Financial Statements and Supplementary Data**, look for the **Consolidated Statements of Income**. Use the column for the 52 weeks ended **August 30, 2026**. The statement reports dollars in millions.
+
+| Worksheet field    | What to record                                                                                                                            |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Company and period | Costco Wholesale (COST), fiscal 2026, 52 weeks ended August 30                                                                            |
+| Net sales          | $297,247 million                                                                                                                          |
+| Membership fees    | $5,907 million                                                                                                                            |
+| Total revenue      | $303,154 million, the sum of the two lines                                                                                                |
+| What to check next | Read Item 7 to understand how sign-ups and fee increases affected the membership line. Check renewal rates in the next comparable filing. |
+
+Try the [free research worksheet](/tools/research-template/) with a company you already follow. Save the filing URL, the period and your next question. Use the same units and reporting period when comparing figures.
 
 ## Read the numbers in context
 

@@ -7,9 +7,14 @@ import { SITE } from '../lib/site';
 interface Props {
   title?: string | undefined;
   placement?: 'article_inline' | 'article_end';
+  detailsLabel?: string | undefined;
 }
 
-const { placement = 'article_inline', title } = Astro.props;
+const {
+  placement = 'article_inline',
+  title,
+  detailsLabel = 'See what’s inside Stocker',
+} = Astro.props;
 const inline = placement === 'article_inline';
 ---
 
@@ -44,14 +49,14 @@ const inline = placement === 'article_inline';
         alt="Stocker’s Saved watchlist showing company tickers and price charts"
       />
     ) : (
-      <SwipePreview manual />
+      <SwipePreview controls={false} />
     )
   }
   <div class="promo-actions">
     <a class="button button-blue" href={SITE.appStore} data-primary-download>
       Download on the App Store
     </a>
-    <a class="app-details" href="/app/">See what’s inside Stocker</a>
+    <a class="app-details" href="/app/">{detailsLabel}</a>
   </div>
 </aside>
 

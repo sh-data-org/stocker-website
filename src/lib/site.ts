@@ -2,6 +2,7 @@ export const SITE = {
   name: 'Stocker',
   origin: 'https://stocker-invest.com',
   appStore: 'https://apps.apple.com/app/id6443543680',
+  supportEmail: 'hello@stocker-invest.com',
   privacy: 'https://stocker-privacy-policy.sh-data.site/',
   terms: 'https://stocker-terms-of-service.sh-data.site/',
   description:
