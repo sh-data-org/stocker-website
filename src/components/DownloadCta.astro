@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import icon from '../assets/stocker-icon.png';
 import SwipePreview from './SwipePreview.astro';
 import Arrow from './Arrow.astro';
 import { SITE } from '../lib/site';
@@ -12,11 +14,30 @@ const { variant } = Astro.props;
   class:list={['download-cta', `download-${variant}`]}
   aria-label="Download Stocker"
 >
-  {variant === 'bar' && <SwipePreview compact />}
+  {
+    variant === 'bar' && (
+      <>
+        <SwipePreview compact />
+        <Image
+          class="download-bar-icon"
+          src={icon}
+          width={48}
+          height={48}
+          format="webp"
+          alt=""
+        />
+      </>
+    )
+  }
   <div class="download-copy">
     <p class="download-title">
       {variant === 'sidebar' ? 'Swipe to discover.' : 'Stocker'}
     </p>
+    {
+      variant === 'bar' && (
+        <p class="download-bar-description">Discover new stocks</p>
+      )
+    }
   </div>
   {variant === 'sidebar' && <SwipePreview />}
   <a

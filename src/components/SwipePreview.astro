@@ -3,19 +3,19 @@ import { getImage } from 'astro:assets';
 import poster from '../assets/swipe-demo-poster.png';
 interface Props {
   compact?: boolean;
-  manual?: boolean;
+  controls?: boolean;
 }
-const { compact = false, manual = false } = Astro.props;
+const { compact = false, controls = true } = Astro.props;
+const Frame = controls ? 'button' : 'div';
 const preview = await getImage({ src: poster, width: 720, format: 'webp' });
 ---
 
 <div class:list={['swipe-preview', { 'swipe-preview-small': compact }]}>
-  <button
-    class="swipe-preview-control"
-    type="button"
-    aria-label="Play Stocker swipe demo"
-    data-swipe-control
-    data-manual-preview={manual ? true : undefined}
+  <Frame
+    class:list={['swipe-preview-screen', { 'swipe-preview-control': controls }]}
+    type={controls ? 'button' : undefined}
+    aria-label={controls ? 'Play Stocker swipe demo' : undefined}
+    data-swipe-control={controls ? '' : undefined}
   >
     <video
       width="720"
@@ -29,39 +29,9 @@ const preview = await getImage({ src: poster, width: 720, format: 'webp' });
     >
       Your browser does not support this app preview.
     </video>
-    {
-      manual && (
-        <span class="preview-play" aria-hidden="true">
-          ▶
-        </span>
-      )
-    }
-  </button>
+  </Frame>
 </div>
 
 <script>
   import '../scripts/swipe-preview';
 </script>
-
-<style>
-  [data-manual-preview] {
-    position: relative;
-  }
-
-  .preview-play {
-    position: absolute;
-    inset: 50% auto auto 50%;
-    display: grid;
-    width: 52px;
-    height: 52px;
-    place-items: center;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: #132440;
-    color: #fff;
-  }
-
-  [aria-label='Pause Stocker swipe demo'] .preview-play {
-    display: none;
-  }
-</style>

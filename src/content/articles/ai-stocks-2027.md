@@ -29,6 +29,8 @@ Start with three questions for every company on your AI stock watchlist. What do
 | **Manufacturing and component suppliers** make chips, memory or other components. | Look for the customers or end markets they disclose, how much they’re spending to expand capacity and when that capacity is expected to come online. |
 | **Cloud providers** sell access to computing power and related services. | Check cloud revenue and capital spending. Read how management explains which services drove sales and what the company is building. |
 
+Cooling equipment is another part of the supply chain. See who makes chillers and liquid cooling units, who installs them, and what each company reports. [Compare four data center cooling stocks](/companies/data-center-cooling-stocks/)
+
 A company can play more than one role. For each watchlist entry, write one sentence about the product or service you’re researching. That gives you something specific to look for in the next earnings report.
 
 ## Check how the company reports its AI exposure

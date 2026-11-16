@@ -42,14 +42,7 @@ const label =
 const contents = headings.filter((heading) => heading.depth === 2);
 const articleHtml = await Astro.slots.render('default');
 const sectionStarts = [...articleHtml.matchAll(/<h2(?:\s[^>]*)?>/g)];
-const promoHeading = data.inlinePromo?.afterHeading;
-const promoHeadingIndex = promoHeading
-  ? contents.findIndex((heading) => heading.slug === promoHeading)
-  : 0;
-if (promoHeadingIndex === -1) {
-  throw new Error(`Missing inline promo heading "${promoHeading}" in ${article.id}.`);
-}
-const promoOffset = sectionStarts[promoHeadingIndex + 1]?.index ?? articleHtml.length;
+const promoOffset = sectionStarts[1]?.index ?? articleHtml.length;
 const schema = [
   {
     '@context': 'https://schema.org',

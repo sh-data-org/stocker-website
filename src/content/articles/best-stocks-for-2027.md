@@ -5,7 +5,6 @@ section: 'companies'
 category: '2027 watchlist'
 cta: 'Save MSFT, NVDA, and V to your Stocker watchlist.'
 inlinePromo:
-  afterHeading: 'build-a-2027-watchlist-you-can-revisit'
   detailsLabel: 'See the Stocker watchlist'
 date: '2026-11-09'
 image: 'dataCenter'

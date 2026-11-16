@@ -1,22 +1,29 @@
-function preparePreview(button: HTMLButtonElement) {
-  const video = button.querySelector('video');
-  const source = video?.dataset.source;
-  if (!video || !source) return;
+function preparePreview(video: HTMLVideoElement) {
+  const source = video.dataset.source;
+  if (!source) return;
 
+  const button = video.closest<HTMLButtonElement>('[data-swipe-control]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let pausedByUser = false;
+  let inView = false;
+
+  const load = () => {
+    if (video.hasAttribute('src')) return;
+    video.preload = 'auto';
+    video.src = source;
+  };
 
   const pause = () => {
     video.pause();
-    button.setAttribute('aria-label', 'Play Stocker swipe demo');
+    button?.setAttribute('aria-label', 'Play Stocker swipe demo');
   };
 
   const play = async () => {
-    if (!video.src) video.src = source;
+    load();
     if (video.ended) video.currentTime = 0;
     try {
       await video.play();
-      button.setAttribute('aria-label', 'Pause Stocker swipe demo');
+      button?.setAttribute('aria-label', 'Pause Stocker swipe demo');
     } catch (error) {
       pause();
       if (
@@ -28,40 +35,55 @@ function preparePreview(button: HTMLButtonElement) {
     }
   };
 
-  button.addEventListener('click', () => {
+  const syncPlayback = () => {
+    if (!inView || document.hidden || reducedMotion.matches) {
+      if (!video.paused) pause();
+      return;
+    }
+    if (!pausedByUser && video.paused && !video.ended) void play();
+  };
+
+  button?.addEventListener('click', () => {
     pausedByUser = !video.paused && !video.ended;
     if (pausedByUser) pause();
     else void play();
   });
   video.addEventListener('ended', () => {
-    button.setAttribute('aria-label', 'Replay Stocker swipe demo');
+    button?.setAttribute('aria-label', 'Replay Stocker swipe demo');
   });
-  reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches) pause();
-  });
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) pause();
-  });
+  reducedMotion.addEventListener('change', syncPlayback);
+  document.addEventListener('visibilitychange', syncPlayback);
 
   if (!('IntersectionObserver' in window)) return;
+  if (!button) {
+    const preloader = new IntersectionObserver(
+      (entries) => {
+        if (
+          reducedMotion.matches ||
+          !entries.some((entry) => entry.isIntersecting)
+        )
+          return;
+        load();
+        preloader.disconnect();
+      },
+      { rootMargin: '360px 0px' },
+    );
+    preloader.observe(video);
+  }
+
+  const threshold = button ? 0.6 : 0.35;
   const observer = new IntersectionObserver(
     (entries) => {
-      for (const entry of entries) {
-        if (entry.intersectionRatio < 0.6) pause();
-        else if (
-          !button.hasAttribute('data-manual-preview') &&
-          !reducedMotion.matches &&
-          !pausedByUser &&
-          !video.ended
-        )
-          void play();
-      }
+      const entry = entries.at(-1);
+      if (!entry) return;
+      inView = entry.intersectionRatio >= threshold;
+      syncPlayback();
     },
-    { threshold: 0.6 },
+    { threshold },
   );
-  observer.observe(button);
+  observer.observe(button ?? video);
 }
 
 document
-  .querySelectorAll<HTMLButtonElement>('[data-swipe-control]')
+  .querySelectorAll<HTMLVideoElement>('.swipe-preview video[data-source]')
   .forEach(preparePreview);

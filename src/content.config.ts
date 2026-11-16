@@ -29,7 +29,7 @@ const articles = defineCollection({
     disclosure: z.string().optional(),
     cta: z.string().optional(),
     inlinePromo: z
-      .object({ afterHeading: z.string(), detailsLabel: z.string() })
+      .object({ detailsLabel: z.string() })
       .optional(),
     sources: z.array(z.object({ title: z.string(), url: z.url() })).min(1),
   }),
