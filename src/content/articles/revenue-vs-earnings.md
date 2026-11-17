@@ -60,3 +60,7 @@ Do not treat adjusted profit and reported profit as equivalent. Read the reconci
 Stocker's financial views let you explore annual and quarterly revenue and earnings. Use them to spot questions worth taking to the company's actual reports. If a value is missing, do not assume it is zero.
 
 Use the [stock research worksheet](/tools/research-template/) to save the reporting period, the original filing, and your explanation for the margin change. Continue with [how to research stocks](/learn/how-to-research-stocks/) or examine how losses affect a [negative P/E ratio](/learn/negative-pe-ratio/). The goal is to connect the numbers to the business, not to judge an investment from a single line.
+
+## Looking ahead to future sales
+
+A company may also report booked work that it has not recognized as revenue. Read [revenue backlog explained](/learn/revenue-backlog/) to separate the order book from recorded sales and cash.
