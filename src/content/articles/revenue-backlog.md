@@ -4,8 +4,11 @@ description: 'Learn how revenue backlog differs from sales, cash and remaining p
 section: 'learn'
 category: 'Financials'
 date: '2026-11-17'
-image: 'research'
-imageAlt: 'Illustration of company research sheets and a magnifying glass'
+image: 'warehouse'
+imageAlt: 'Warehouse shelves holding packed goods; illustrative logistics photograph'
+imageCredit:
+  photographer: 'ProjectManhattan · CC0 · resized'
+  url: 'https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg'
 order: 0.12
 sources:
   [
