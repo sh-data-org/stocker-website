@@ -1,3 +1,4 @@
+import warehouse from '../assets/revenue-backlog-warehouse.webp';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import research from '../assets/research.png';
 import phones from '../assets/phones.png';
@@ -9,6 +10,7 @@ import type { Section } from './site';
 
 export const articleImages = {
   research,
+  warehouse,
   phones,
   chips,
   retail,
