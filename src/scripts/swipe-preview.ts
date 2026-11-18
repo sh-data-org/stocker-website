@@ -4,6 +4,7 @@ function preparePreview(video: HTMLVideoElement) {
 
   const button = video.closest<HTMLButtonElement>('[data-swipe-control]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const shouldLoop = video.hasAttribute('data-loop-preview');
   let pausedByUser = false;
   let inView = false;
 
@@ -13,19 +14,13 @@ function preparePreview(video: HTMLVideoElement) {
     video.src = source;
   };
 
-  const pause = () => {
-    video.pause();
-    button?.setAttribute('aria-label', 'Play Stocker swipe demo');
-  };
-
   const play = async () => {
     load();
     if (video.ended) video.currentTime = 0;
     try {
       await video.play();
-      button?.setAttribute('aria-label', 'Pause Stocker swipe demo');
     } catch (error) {
-      pause();
+      video.pause();
       if (
         error instanceof DOMException &&
         (error.name === 'NotAllowedError' || error.name === 'AbortError')
@@ -36,8 +31,9 @@ function preparePreview(video: HTMLVideoElement) {
   };
 
   const syncPlayback = () => {
+    video.loop = shouldLoop && !reducedMotion.matches;
     if (!inView || document.hidden || reducedMotion.matches) {
-      if (!video.paused) pause();
+      if (!video.paused) video.pause();
       return;
     }
     if (!pausedByUser && video.paused && !video.ended) void play();
@@ -45,15 +41,23 @@ function preparePreview(video: HTMLVideoElement) {
 
   button?.addEventListener('click', () => {
     pausedByUser = !video.paused && !video.ended;
-    if (pausedByUser) pause();
+    if (pausedByUser) video.pause();
     else void play();
   });
-  video.addEventListener('ended', () => {
-    button?.setAttribute('aria-label', 'Replay Stocker swipe demo');
-  });
+  const updatePlaybackControl = () => {
+    if (!button) return;
+    const playing = !video.paused && !video.ended;
+    const action = playing ? 'Pause' : video.ended ? 'Replay' : 'Play';
+    button.toggleAttribute('data-swipe-playing', playing);
+    button.setAttribute('aria-label', `${action} Stocker swipe demo`);
+  };
+  video.addEventListener('play', updatePlaybackControl);
+  video.addEventListener('pause', updatePlaybackControl);
+  video.addEventListener('ended', updatePlaybackControl);
   reducedMotion.addEventListener('change', syncPlayback);
   document.addEventListener('visibilitychange', syncPlayback);
 
+  syncPlayback();
   if (!('IntersectionObserver' in window)) return;
   if (!button) {
     const preloader = new IntersectionObserver(

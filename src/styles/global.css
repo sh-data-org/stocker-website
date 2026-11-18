@@ -1062,6 +1062,20 @@ html {
 .download-bar .download-title {
   font-size: 17px;
 }
+.download-bar .swipe-preview-small,
+.download-bar-icon {
+  animation: download-preview-enter 450ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+@keyframes download-preview-enter {
+  from {
+    opacity: 0;
+    transform: translateY(7px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 .download-bar .download-copy {
   flex: 1;
 }
