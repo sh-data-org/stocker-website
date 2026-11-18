@@ -202,6 +202,7 @@ const schema = [
                 <a href={articleUrl(item)}>
                   <span>{item.data.category}</span>
                   <h3>{item.data.title}</h3>
+                  <p>{item.data.relatedSubtitle ?? item.data.description}</p>
                   <span aria-hidden="true">↗</span>
                 </a>
               ))}

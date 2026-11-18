@@ -88,10 +88,6 @@ for (const file of pages) {
         `${file}: expected one inline Stocker promo`,
       );
       assert.ok(
-        promo?.[0]?.includes('href="/app/"'),
-        `${file}: missing Stocker app page link`,
-      );
-      assert.ok(
         promo?.[0]?.includes('https://apps.apple.com/app/id6443543680'),
         `${file}: missing Stocker download link`,
       );

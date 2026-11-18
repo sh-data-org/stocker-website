@@ -1,6 +1,7 @@
 ---
 title: 'GTA 6 and Take-Two Stock: What to Watch After Launch'
 description: 'GTA 6 is scheduled for November 19. See how Rockstar connects to Take-Two stock and which bookings, revenue and cash-flow figures to watch after launch.'
+relatedSubtitle: 'How Rockstar’s launch could show up in Take-Two’s results.'
 section: 'companies'
 category: 'Stock news'
 date: '2026-11-14'

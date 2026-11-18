@@ -23,11 +23,13 @@ Start with three questions for every company on your AI stock watchlist. What do
 
 ## Start with three parts of the AI supply chain
 
-| Business | What to look for in the filings |
-|---|---|
-| **Chip designers** sell processors, networking products or complete systems. | Look for disclosed data center sales, margin changes and dependence on major customers or suppliers. |
+| Business                                                                          | What to look for in the filings                                                                                                                      |
+| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Chip designers** sell processors, networking products or complete systems.      | Look for disclosed data center sales, margin changes and dependence on major customers or suppliers.                                                 |
 | **Manufacturing and component suppliers** make chips, memory or other components. | Look for the customers or end markets they disclose, how much they’re spending to expand capacity and when that capacity is expected to come online. |
-| **Cloud providers** sell access to computing power and related services. | Check cloud revenue and capital spending. Read how management explains which services drove sales and what the company is building. |
+| **Cloud providers** sell access to computing power and related services.          | Check cloud revenue and capital spending. Read how management explains which services drove sales and what the company is building.                  |
+
+For a closer look at component suppliers, [compare three memory chip stocks for 2027](/companies/memory-chip-stocks-2027/) and see how they report sales of high-bandwidth memory.
 
 Cooling equipment is another part of the supply chain. See who makes chillers and liquid cooling units, who installs them, and what each company reports. [Compare four data center cooling stocks](/companies/data-center-cooling-stocks/)
 

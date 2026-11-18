@@ -1,6 +1,7 @@
 ---
 title: 'Jensen Huang Resigns: What Nvidia Investors Should Watch Next'
 description: 'Jensen Huang has resigned from Nvidia and CFO Colette Kress is interim CEO. Here’s what the company confirmed and what to watch at its November 17 earnings call.'
+relatedSubtitle: 'What the leadership change means for Nvidia’s next earnings call.'
 section: 'companies'
 category: 'Stock news'
 date: '2026-11-14'
