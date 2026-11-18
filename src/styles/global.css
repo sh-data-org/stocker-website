@@ -564,7 +564,13 @@ select {
 }
 .related-links h3 {
   font-size: 20px;
-  margin-block: 10px;
+  margin-block: 6px;
+}
+.related-links p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 6px;
 }
 .related-links span {
   font-size: 12px;
@@ -888,12 +894,31 @@ a:hover .arrow {
   }
   .prose th,
   .prose td {
-    min-width: 120px;
-    padding: 11px;
+    min-width: 94px;
+    padding: 9px;
+  }
+  .related-section {
+    margin-block: 36px;
   }
   .related-links {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 0;
+    margin-top: 16px;
+  }
+  .related-links a {
+    position: relative;
+    padding: 14px 22px 14px 0;
+  }
+  .related-links a > span[aria-hidden='true'] {
+    position: absolute;
+    top: 14px;
+    right: 0;
+  }
+  .related-links h3 {
+    font-size: 18px;
+  }
+  .related-links p {
+    margin-bottom: 0;
   }
   .calculator-layout {
     gap: 30px;

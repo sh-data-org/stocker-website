@@ -1,6 +1,7 @@
 ---
 title: 'Stocks to watch in November 2026: 3 earnings dates'
 description: 'Nvidia, Target and Walmart have November earnings calls scheduled. Here are the dates, the research questions and what could change the story.'
+relatedSubtitle: 'What to watch when Nvidia, Target, and Walmart report.'
 section: 'companies'
 category: 'Monthly watchlist'
 date: '2026-11-09'

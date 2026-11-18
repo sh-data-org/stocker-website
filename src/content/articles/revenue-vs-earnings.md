@@ -64,3 +64,5 @@ Use the [stock research worksheet](/tools/research-template/) to save the report
 ## Looking ahead to future sales
 
 A company may also report booked work that it has not recognized as revenue. Read [revenue backlog explained](/learn/revenue-backlog/) to separate the order book from recorded sales and cash.
+
+For examples from actual filings, see [how Reddit makes money from ads and content licensing](/companies/how-reddit-makes-money/) and [how Robinhood earns revenue from trading, interest, and subscriptions](/companies/how-robinhood-makes-money/).

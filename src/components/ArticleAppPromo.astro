@@ -10,11 +10,7 @@ interface Props {
   detailsLabel?: string | undefined;
 }
 
-const {
-  placement = 'article_inline',
-  title,
-  detailsLabel = 'See what’s inside Stocker',
-} = Astro.props;
+const { placement = 'article_inline', title, detailsLabel } = Astro.props;
 const inline = placement === 'article_inline';
 ---
 
@@ -56,7 +52,13 @@ const inline = placement === 'article_inline';
     <a class="button button-blue" href={SITE.appStore} data-primary-download>
       Download on the App Store
     </a>
-    <a class="app-details" href="/app/">{detailsLabel}</a>
+    {
+      detailsLabel && (
+        <a class="app-details" href="/app/">
+          {detailsLabel}
+        </a>
+      )
+    }
   </div>
 </aside>
 
@@ -109,6 +111,45 @@ const inline = placement === 'article_inline';
     min-height: 48px;
     color: #fff;
     text-decoration: none;
+  }
+
+  @media (max-width: 760px) {
+    .article-promo-card {
+      grid-template-columns: 88px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+      margin-block: 24px;
+      padding: 14px;
+      text-align: left;
+    }
+
+    .promo-copy {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: start;
+    }
+
+    .article-promo-card .promo-copy .promo-title {
+      font-size: 17px;
+    }
+
+    .article-promo-card .promo-copy p {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .article-promo-card > img,
+    .article-promo-card > :global(.swipe-preview) {
+      grid-column: 1;
+      grid-row: 1;
+      width: 88px;
+      margin: 0;
+    }
+
+    .promo-actions {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
   }
 
   .app-details {
