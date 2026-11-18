@@ -22,6 +22,7 @@ const preview = await getImage({ src: poster, width: 720, format: 'webp' });
       height="926"
       poster={preview.src}
       data-source="/videos/stocker-swipe-liked.mp4"
+      data-loop-preview={compact ? '' : undefined}
       muted
       playsinline
       preload="none"
@@ -29,9 +30,52 @@ const preview = await getImage({ src: poster, width: 720, format: 'webp' });
     >
       Your browser does not support this app preview.
     </video>
+    {
+      compact && controls && (
+        <span class="swipe-playback-icon" aria-hidden="true" />
+      )
+    }
   </Frame>
 </div>
 
 <script>
   import '../scripts/swipe-preview';
 </script>
+
+<style>
+  .swipe-preview-small .swipe-preview-control {
+    position: relative;
+  }
+
+  .swipe-playback-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: grid;
+    width: 21px;
+    height: 21px;
+    place-items: center;
+    border-radius: 50%;
+    background: #101f35d9;
+    color: #fff;
+    pointer-events: none;
+  }
+
+  .swipe-playback-icon::before {
+    content: '';
+    width: 7px;
+    height: 9px;
+    background: currentColor;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  [data-swipe-playing] .swipe-playback-icon::before {
+    background: linear-gradient(
+      to right,
+      currentColor 0 33%,
+      transparent 33% 67%,
+      currentColor 67%
+    );
+    clip-path: none;
+  }
+</style>
