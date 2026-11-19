@@ -1,3 +1,5 @@
+import peg from '../assets/peg-growth.webp';
+import affirm from '../assets/affirm-checkout.webp';
 import warehouse from '../assets/revenue-backlog-warehouse.webp';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import research from '../assets/research.png';
@@ -9,6 +11,8 @@ import exchange from '../assets/stock-nyse.webp';
 import type { Section } from './site';
 
 export const articleImages = {
+  peg,
+  affirm,
   research,
   warehouse,
   phones,

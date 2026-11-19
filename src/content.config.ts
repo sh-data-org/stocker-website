@@ -17,6 +17,8 @@ const articles = defineCollection({
     image: z.enum([
       'research',
       'warehouse',
+      'peg',
+      'affirm',
       'phones',
       'chips',
       'retail',
