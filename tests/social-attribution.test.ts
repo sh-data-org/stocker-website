@@ -181,6 +181,8 @@ test('consented social landing keeps campaign fields and counts one store click'
     articleClicks.map(([, name]) => name),
     ['site_click', 'article_app_page_click', 'app_store_click', 'site_click'],
   );
+  assert.equal(commands[0]?.[0], 'set');
+  assert.equal(Reflect.get(Object(commands[0]?.[1]), 'send_page_view'), false);
   assert.equal(config.send_page_view, false);
   assert.equal(config.page_referrer, 'https://example.com/');
   assert.equal(commands.filter(([, name]) => name === 'page_view').length, 1);

@@ -54,6 +54,8 @@ function startAnalytics(): void {
     // eslint-disable-next-line prefer-rest-params
     window.dataLayer?.push(arguments);
   };
+  // The Google tag can emit its own startup view before destination configuration.
+  window.gtag('set', { send_page_view: false });
   window.gtag('js', new Date());
   window.gtag('config', MEASUREMENT_ID, {
     ...socialCampaignParameters(new URL(location.href)),
