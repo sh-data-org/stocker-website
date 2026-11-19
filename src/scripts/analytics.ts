@@ -1,11 +1,15 @@
 import { socialCampaignParameters } from './social-campaign';
 
+import { clickedControl } from './analytics-interaction';
+import { publicPath } from './analytics-path';
+
 const MEASUREMENT_ID = 'G-4EJ7RNNCP8';
 const CONSENT_KEY = 'stocker-analytics-consent';
 type Consent = 'granted' | 'denied';
 
 declare global {
   interface Window {
+    'ga-disable-G-4EJ7RNNCP8'?: boolean;
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
   }
@@ -23,9 +27,27 @@ function storedConsent(): Consent | null {
   }
 }
 
+function pageContext() {
+  const referrer = document.referrer ? new URL(document.referrer) : undefined;
+  const path = publicPath(location.pathname) ?? '/404/';
+  return {
+    page_path: path,
+    page_location: location.origin + path,
+    page_title: document.title,
+    page_referrer:
+      referrer && ['https:', 'http:'].includes(referrer.protocol)
+        ? referrer.origin +
+          (referrer.origin === location.origin
+            ? (publicPath(referrer.pathname) ?? '/')
+            : '/')
+        : '',
+  };
+}
+
 function startAnalytics(): void {
   if (enabled || location.hostname !== 'stocker-invest.com') return;
   enabled = true;
+  window['ga-disable-G-4EJ7RNNCP8'] = false;
   window.dataLayer = window.dataLayer ?? [];
   window.gtag = function () {
     // Google's command queue uses Arguments objects for gtag commands.
@@ -35,11 +57,14 @@ function startAnalytics(): void {
   window.gtag('js', new Date());
   window.gtag('config', MEASUREMENT_ID, {
     ...socialCampaignParameters(new URL(location.href)),
-    page_location: `${location.origin}${location.pathname}`,
+    ...pageContext(),
+    send_page_view: false,
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
   });
+  window.gtag('event', 'page_view', pageContext());
   const script = document.createElement('script');
+  script.referrerPolicy = 'no-referrer';
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
   script.addEventListener('error', () =>
@@ -56,7 +81,7 @@ function chooseConsent(consent: Consent): void {
   }
   if (banner) banner.hidden = true;
   if (consent === 'granted') startAnalytics();
-  else if (enabled) location.reload();
+  else stopAnalytics();
 }
 
 banner
@@ -71,32 +96,58 @@ document
     if (banner) banner.hidden = false;
   });
 
-document.addEventListener('click', (event) => {
+function stopAnalytics(): void {
+  if (!enabled) return;
+  enabled = false;
+  window['ga-disable-G-4EJ7RNNCP8'] = true;
+  location.reload();
+}
+
+function trackClick(event: MouseEvent): void {
   if (!enabled || !(event.target instanceof Element)) return;
-  const link = event.target.closest('a');
-  if (!link) return;
-  const destination = new URL(link.href);
+  if (event.type === 'auxclick' ? event.button !== 1 : event.button !== 0)
+    return;
+  const click = clickedControl(event.target);
+  if (!click) return;
+  const { control, url, fields } = click;
   const isArticle =
     document.querySelector('[data-stock-research-article]') !== null;
-  const isAppPage =
-    isArticle &&
-    destination.origin === location.origin &&
-    destination.pathname === '/app/';
-  const eventName = isAppPage ? 'article_app_page_click' : 'app_store_click';
-  if (!isAppPage && destination.hostname !== 'apps.apple.com') return;
-
-  window.gtag?.('event', eventName, {
-    page_path: location.pathname,
-    link_url: isAppPage
-      ? `${destination.origin}${destination.pathname}`
-      : link.href,
+  let name = 'site_click';
+  if (url?.hostname === 'apps.apple.com') name = 'app_store_click';
+  else if (isArticle && fields.click_destination === '/app/')
+    name = 'article_app_page_click';
+  window.gtag?.('event', name, {
+    ...fields,
+    page_path: publicPath(location.pathname) ?? '/404/',
     page_type: isArticle ? 'article' : undefined,
+    ...(name !== 'site_click' && url
+      ? { link_url: url.origin + url.pathname }
+      : {}),
     link_placement:
-      link
+      control
         .closest('[data-app-placement]')
         ?.getAttribute('data-app-placement') ?? undefined,
     transport_type: 'beacon',
   });
+}
+
+document.addEventListener('click', trackClick, true);
+document.addEventListener('auxclick', trackClick, true);
+window.addEventListener('storage', (event) => {
+  if (event.key !== CONSENT_KEY && event.key !== null) return;
+  const consent = storedConsent();
+  if (banner) banner.hidden = consent !== null;
+  if (consent === 'granted') startAnalytics();
+  else stopAnalytics();
+});
+window.addEventListener('pageshow', (event) => {
+  if (!event.persisted) return;
+  const consent = storedConsent();
+  if (consent !== 'granted') {
+    if (banner) banner.hidden = consent !== null;
+    stopAnalytics();
+  } else if (enabled) window.gtag?.('event', 'page_view', pageContext());
+  else startAnalytics();
 });
 
 const consent = storedConsent();

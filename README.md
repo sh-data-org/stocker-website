@@ -53,6 +53,12 @@ Google ownership uses **Gaver Apps (`gaverapps@gmail.com`)**:
 - Google Analytics loads only after consent on the canonical host. Footer preferences allow changing the choice. Advertising personalization and Google signals are disabled.
 - Realtime verified page views and `app_store_click` receipt; the latter is a key event with no default monetary value.
 
+### Consented click paths
+
+Read `page_view`, `site_click`, `article_app_page_click`, and `app_store_click` in timestamp order within one GA4 session. A page entry or browser back/forward restoration sends one manual page view. A control activation sends one of the three click events. App Store and article-to-app links retain their existing event names for historical reports and key events.
+
+All three clicks carry `click_region`, `control_position` (one-based DOM order within the region), and `click_destination` (public page path or action category). Consent controls are excluded. Register these fields as event-scoped custom dimensions in GA4. The stream’s automatic outbound clicks, file downloads, and browser-history page views are disabled. Other enhanced-measurement events such as scrolls and form submissions describe separate actions. Filter to the four named events when reading a click path. Older events cannot be backfilled.
+
 Sitemaps were submitted, but Google currently reports **Couldn't fetch**. The homepage live test reports **Robots.txt unreachable**. Public robots.txt and sitemap checks return HTTP 200. Google's robots report has not populated, so its recrawl control is unavailable. This remains an open indexing issue; see [launch verification](docs/launch-verification.md).
 
 Install links currently go directly to app ID 6443543680. Configure valid App Store campaign links and agreed analytics before claiming measured installs. Search Console clicks, website outbound clicks and app installs are different metrics. Review the website privacy text against the chosen host and any measurement added.
