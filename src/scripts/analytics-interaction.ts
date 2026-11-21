@@ -6,6 +6,7 @@ const regions = [
   ['.sources', 'article_sources'],
   ['.related-section', 'related_articles'],
   ['[data-app-placement="article_inline"]', 'article_inline'],
+  ['[data-app-placement="article_middle"]', 'article_middle'],
   ['[data-app-placement="article_end"]', 'article_end'],
   ['.prose', 'article_body'],
   ['.download-bar', 'download_bar'],

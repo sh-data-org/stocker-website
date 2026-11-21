@@ -6,17 +6,17 @@ import { SITE } from '../lib/site';
 
 interface Props {
   title?: string | undefined;
-  placement?: 'article_inline' | 'article_end';
+  placement?: 'article_inline' | 'article_middle' | 'article_end';
   detailsLabel?: string | undefined;
 }
 
 const { placement = 'article_inline', title, detailsLabel } = Astro.props;
-const inline = placement === 'article_inline';
+const inline = placement !== 'article_end';
 ---
 
 <aside
-  class:list={[inline && 'article-app-promo', 'article-promo-card']}
-  id={inline ? 'stocker-app-preview' : undefined}
+  class:list={[placement === 'article_inline' && 'article-app-promo', 'article-promo-card']}
+  id={placement === 'article_inline' ? 'stocker-app-preview' : undefined}
   aria-label={inline ? 'Stocker watchlist' : 'Stocker swipe demo'}
   data-app-placement={placement}
 >
