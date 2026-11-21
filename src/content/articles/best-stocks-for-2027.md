@@ -1,29 +1,32 @@
 ---
-title: 'Best stocks for 2027? 3 companies to research'
-description: 'A 2027 research shortlist of Microsoft, Nvidia and Visa, with dated company evidence, valuation questions and risks to investigate before buying.'
+title: 'Stocks to Watch in 2027: Microsoft, Nvidia and Visa'
+description: 'Compare MSFT, NVDA and V for a 2027 watchlist using recent company results, risks and valuation questions. Build a shortlist you can revisit in Stocker.'
+seoTitle: 'Stocks to Watch in 2027: MSFT, NVDA and Visa'
 section: 'companies'
 category: '2027 watchlist'
-cta: 'Save MSFT, NVDA, and V to your Stocker watchlist.'
+cta: 'Keep MSFT, NVDA and V in one watchlist'
 inlinePromo:
-  detailsLabel: 'See the Stocker watchlist'
+  description: 'Download Stocker, search MSFT, NVDA and V, and save each company. Return to their charts, earnings and news as you update your research.'
+  detailsLabel: 'See how the Stocker watchlist works'
 date: '2026-11-09'
+updated: '2026-11-21'
 image: 'dataCenter'
 imageAlt: 'Blue-lit server equipment illustrating cloud and computing infrastructure'
 imageCredit:
   photographer: 'panumas nikhomkhai'
   url: 'https://www.pexels.com/photo/computer-server-in-data-center-room-17489163/'
 order: 0.1
-disclosure: 'Prepared November 9, 2026. An unranked research shortlist, not a forecast, model portfolio or recommendation to buy any stock.'
+disclosure: 'Research updated November 21, 2026. These three companies are an editorial shortlist. Consider valuation, concentration and your own circumstances before investing.'
 sources:
-  - title: 'Microsoft: 2026 annual report'
-    url: 'https://www.microsoft.com/investor/reports/ar26/index.html'
-  - title: 'Nvidia: fiscal 2027 second-quarter results'
-    url: 'https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx'
+  - title: 'Microsoft: fiscal 2027 first-quarter results'
+    url: 'https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast'
+  - title: 'Nvidia: fiscal 2027 third-quarter results'
+    url: 'https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx'
   - title: 'Visa: fiscal fourth-quarter and full-year 2026 results filed with the SEC'
     url: 'https://www.sec.gov/Archives/edgar/data/1403161/000140316126000126/q42026earningsrelease.htm'
 ---
 
-## A shortlist for research, not a prediction
+## Which stocks are on this 2027 watchlist?
 
 **Microsoft, Nvidia and Visa are three companies to research for a 2027 watchlist.** They offer different questions about cloud spending, computing infrastructure and payments. No one can establish today which stocks will produce the best returns in 2027.
 
@@ -31,15 +34,17 @@ Start with the table below to find each company’s ticker, source filing, and n
 
 ## How these companies were selected
 
-The selection is editorial: three publicly traded businesses with accessible company reporting, understandable revenue drivers and a distinct research question. We used Microsoft’s 2026 annual report, Nvidia’s fiscal 2027 second-quarter release and Visa’s full-year 2026 results as dated starting points.
+We selected three businesses with accessible company reporting and different revenue drivers. The comparison uses Microsoft’s fiscal 2027 Q1 results, Nvidia’s fiscal 2027 Q3 results and Visa’s fiscal 2026 results. The periods differ, so compare each company with its own prior period before comparing growth across companies.
 
 We did not screen the whole market, calculate a target price or backtest a strategy. Two selections are closely connected to technology spending, so this list also has concentration risk. It is not a substitute for diversification or an assessment of your personal circumstances.
 
-| Company          | Starting evidence         | Main 2027 research question                        | Risk to investigate                          |
-| ---------------- | ------------------------- | -------------------------------------------------- | -------------------------------------------- |
-| Microsoft (MSFT) | Fiscal 2026 annual report | Can cloud growth support the cost of expansion?    | Investment spending and competitive pressure |
-| Nvidia (NVDA)    | Fiscal 2027 Q2 results    | How durable is infrastructure demand?              | Customer spending and product transitions    |
-| Visa (V)         | Fiscal 2026 results       | How do payment activity and revenue grow together? | Competition, regulation and weaker spending  |
+| Company          | Dated starting evidence                                              | Question for the next report                                         | Risk to investigate                                  |
+| ---------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------- |
+| Microsoft (MSFT) | FY2027 Q1, ended September 30. Microsoft Cloud revenue grew 30%.     | Does cloud growth translate into cash after infrastructure spending? | Capital intensity and competition                    |
+| Nvidia (NVDA)    | FY2027 Q3, ended October 25. Revenue was $115.8 billion.             | How do margins compare with the next-quarter outlook?                | Product execution, exports and leadership transition |
+| Visa (V)         | FY2026, ended September 30. Net revenue grew 15% on a nominal basis. | How does payment activity translate into earnings?                   | Regulation, incentives and weaker spending           |
+
+The company sections below link to each original release. Microsoft’s quarter, Nvidia’s quarter and Visa’s full year are separate reporting windows.
 
 ## Build a 2027 watchlist you can revisit
 
@@ -49,29 +54,29 @@ Pick one company from the table and write down one question the next filing can 
 2. **Record the evidence.** Save the filing link, reporting period and one figure you can compare later.
 3. **Pick a follow-up.** Set a point to revisit your question, such as the next quarterly filing.
 
-[Open the free stock research worksheet](/tools/research-template/) to record the source and follow-up. Save the ticker in Stocker if you want it in your watchlist.
+[Open the free stock research worksheet](/tools/research-template/) to record the source and follow-up. Download Stocker, search **MSFT**, **NVDA** or **V**, and save the companies you want to revisit. Keep detailed assumptions and source notes in the worksheet.
 
 Use the [2027 AI stock watchlist](/companies/ai-stocks-2027/) to compare how chip designers, suppliers and cloud providers make money.
 
 ## Microsoft: connect cloud growth with investment
 
-[Microsoft’s 2026 annual report](https://www.microsoft.com/investor/reports/ar26/index.html) reports Microsoft Cloud revenue of $214.4 billion, up 27%, and Azure and other cloud services revenue growth of 41%. Those measures describe different scopes; Microsoft Cloud is broader than Azure.
+Microsoft reported **$63.9 billion in Microsoft Cloud revenue**, up **30%**, for the quarter ended September 30, 2026. Azure revenue grew **48%**. Microsoft Cloud covers a broader group of products than Azure, so keep their scopes separate in your notes. [Microsoft’s fiscal 2027 Q1 release](https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast)
 
 For 2027 research, follow how revenue growth translates into operating profit and cash flow. Read the cash-flow statement alongside the discussion of datacenter investment. Revenue can grow while the business commits substantial cash to infrastructure.
 
 **What would strengthen the research case:** evidence that demand and the economics of serving customers support the expansion. **What would weaken it:** spending that rises without a clear path to adequate returns, or competitive pressure that makes growth less profitable.
 
-These are evaluation criteria, not forecasts. Update the annual-report baseline with subsequent quarterly filings before making a decision.
+Record one operating measure and one cash-flow measure from the same quarter, then compare both with the next release.
 
 ## Nvidia: distinguish demand from expectations
 
-[Nvidia’s fiscal 2027 second-quarter release](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx) reports $96.2 billion of revenue for the quarter ended July 26, 2026. Data Center revenue was $89.0 billion. Fiscal 2027 reporting includes periods in calendar 2026.
+For the quarter ended October 25, Nvidia reported **$115.8 billion of revenue** and a **74.8% GAAP gross margin**. Its Q4 outlook calls for revenue of **$130 billion, plus or minus 3%**, and gross margin of **71%–72%**. These give the next results a dated comparison point. [Nvidia’s fiscal 2027 Q3 release](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx)
 
 The size of the reported business is a starting fact, not a valuation argument. Investigate how customer investment plans, product availability and margins affect future earnings. Separate completed sales from management’s outlook and announcements about future deployments.
 
 **What would strengthen the research case:** demand converting into profitable sales through product transitions. **What would weaken it:** slower customer investment, execution problems or expectations that outrun the business.
 
-Read [how Nvidia makes money](/companies/how-nvidia-makes-money/) and [Nvidia versus AMD](/compare/nvidia-vs-amd/) to compare products and business exposure before comparing tickers.
+Follow the [Nvidia CEO transition and results update](/companies/nvidia-ceo-transition/) for the latest reporting context. Read [how Nvidia makes money](/companies/how-nvidia-makes-money/) and [Nvidia versus AMD](/compare/nvidia-vs-amd/) to compare products and business exposure before comparing tickers.
 
 ## Visa: follow activity through to revenue
 
@@ -83,7 +88,19 @@ For a 2027 watchlist, ask how transaction activity, cross-border business and th
 
 Our [Visa business-model guide](/companies/how-visa-makes-money/) and [Visa versus Mastercard comparison](/compare/visa-vs-mastercard/) provide the background for that investigation.
 
-## Add a valuation before calling any stock a buy
+## What would change your mind about each company?
+
+Use the same three fields for every ticker. This makes the shortlist easier to revisit after a strong headline or a disappointing quarter.
+
+| Ticker | Starting research question                          | Evidence that would prompt a review                                                                            |
+| ------ | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| MSFT   | Can cloud expansion generate cash after investment? | Cash generation weakens while infrastructure commitments rise.                                                 |
+| NVDA   | Can growth hold up alongside margins and execution? | The next results diverge from management’s guidance, or a filing changes the export or leadership assumptions. |
+| V      | Can payment activity support profitable growth?     | Incentives, costs or regulatory changes offset the benefit of higher activity.                                 |
+
+These are research prompts. Write your own threshold before the next report, record why you chose it and check the original filing when the evidence changes.
+
+## Add a valuation before making an investment decision
 
 Use a current share price and a dated earnings figure. Our [P/E calculator](/tools/pe-ratio-calculator/) can do the arithmetic, but the output is only as useful as the inputs. Do not mix a trailing earnings figure with a forward multiple or compare adjusted earnings with GAAP earnings without identifying the difference.
 
@@ -97,4 +114,4 @@ Save the company, one thesis, one risk and the next piece of evidence you need. 
 
 For near-term events, see the [November 2026 earnings watchlist](/companies/stocks-to-watch-november-2026/). For your notes, use the [research worksheet](/tools/research-template/).
 
-**[Download Stocker](https://apps.apple.com/app/id6443543680)** to discover companies and save a watchlist to research at your own pace.
+**[Get Stocker on the App Store](https://apps.apple.com/app/id6443543680)**, then search MSFT, NVDA and V and save each company you want to follow. [Preview the Stocker watchlist](/app/) before downloading.

@@ -27,12 +27,16 @@ const socialImage = await getImage({
   fit: 'cover',
 });
 const imageUrl = canonicalUrl(socialImage.src);
-const publishedDate = new Intl.DateTimeFormat('en-US', {
+const dateFormat = new Intl.DateTimeFormat('en-US', {
   month: 'long',
   day: 'numeric',
   year: 'numeric',
   timeZone: 'UTC',
-}).format(new Date(`${data.date}T00:00:00Z`));
+});
+const publishedDate = dateFormat.format(new Date(`${data.date}T00:00:00Z`));
+const updatedDate = data.updated
+  ? dateFormat.format(new Date(`${data.updated}T00:00:00Z`))
+  : undefined;
 const label =
   data.section === 'learn'
     ? 'Learn'
@@ -54,7 +58,7 @@ const schema = [
     articleSection: data.category,
     citation: data.sources.map((source) => source.url),
     datePublished: data.date,
-    dateModified: data.date,
+    dateModified: data.updated ?? data.date,
     author: {
       '@type': 'Organization',
       '@id': organizationId,
@@ -115,6 +119,14 @@ const schema = [
           <a href="/about/">By the Stocker team</a> · <time datetime={data.date}
             >{publishedDate}</time
           > · {readingTime(article.body)} min read
+          {
+            updatedDate && (
+              <>
+                {' '}
+                · Updated <time datetime={data.updated}>{updatedDate}</time>
+              </>
+            )
+          }
         </p>
         {data.disclosure && <p class="disclosure">{data.disclosure}</p>}
       </div>
@@ -160,6 +172,7 @@ const schema = [
           <ArticleAppPromo
             title={data.cta}
             detailsLabel={data.inlinePromo?.detailsLabel}
+            description={data.inlinePromo?.description}
           />
           <Fragment set:html={articleHtml.slice(promoOffset)} />
         </div>

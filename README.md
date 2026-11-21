@@ -59,6 +59,12 @@ Read `page_view`, `site_click`, `article_app_page_click`, and `app_store_click` 
 
 All three clicks carry `click_region`, `control_position` (one-based DOM order within the region), and `click_destination` (public page path or action category). Consent controls are excluded. Register these fields as event-scoped custom dimensions in GA4. The stream’s automatic outbound clicks, file downloads, and browser-history page views are disabled. Other enhanced-measurement events such as scrolls and form submissions describe separate actions. Filter to the four named events when reading a click path. Older events cannot be backfilled.
 
+### Excluding QA activity
+
+Before testing production, open `https://stocker-invest.com/?analytics_qa=1` in each browser profile used for QA. This saves `stocker-analytics-qa=1` in that origin’s local storage and prevents the Google tag, page views and click events from loading or firing. The preference persists across article and app-page navigation and synchronizes with open tabs. Tag Assistant URLs containing `gtm_debug` also enable this exclusion. If the QA preference cannot be read or saved, analytics stays paused and the browser console reports the failure.
+
+Open `https://stocker-invest.com/?analytics_qa=0` to restore normal consent-based collection. QA mode leaves the visitor’s consent choice intact. A different browser profile or cleared local storage needs QA mode enabled again. Existing November 14 test events remain in GA4. Exclude the three known article-to-app test clicks when reporting that historical period, and keep any uncertain traffic labelled as unverified.
+
 Sitemaps were submitted, but Google currently reports **Couldn't fetch**. The homepage live test reports **Robots.txt unreachable**. Public robots.txt and sitemap checks return HTTP 200. Google's robots report has not populated, so its recrawl control is unavailable. This remains an open indexing issue; see [launch verification](docs/launch-verification.md).
 
 Install links currently go directly to app ID 6443543680. Configure valid App Store campaign links and agreed analytics before claiming measured installs. Search Console clicks, website outbound clicks and app installs are different metrics. Review the website privacy text against the chosen host and any measurement added.

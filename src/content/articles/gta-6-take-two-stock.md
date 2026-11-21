@@ -1,15 +1,21 @@
 ---
-title: 'GTA 6 and Take-Two Stock: What to Watch After Launch'
-description: 'GTA 6 is scheduled for November 19. See how Rockstar connects to Take-Two stock and which bookings, revenue and cash-flow figures to watch after launch.'
-relatedSubtitle: 'How Rockstar’s launch could show up in Take-Two’s results.'
+title: 'GTA 6 Sales and Take-Two Stock: What to Watch Next'
+description: 'GTA 6’s estimated day-one retail sales reached $3.79 billion. See what Take-Two investors can compare next in bookings, revenue and cash flow.'
+relatedSubtitle: 'The reported launch figures and a TTWO research checklist.'
 section: 'companies'
 category: 'Stock news'
 date: '2026-11-14'
+updated: '2026-11-21'
 image: 'research'
 imageAlt: 'Stocker illustration of financial research'
 order: -1
-cta: 'Save TTWO in your Stocker watchlist.'
+cta: 'Follow TTWO after the GTA 6 launch'
+inlinePromo:
+  description: 'Download Stocker, search TTWO and save Take-Two to your watchlist. Revisit its chart, earnings and news as new figures arrive.'
+  detailsLabel: 'See how the Stocker watchlist works'
 sources:
+  - title: 'Take-Two’s November 20 GTA 6 retail-sales announcement'
+    url: 'https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records'
   - title: 'Take-Two’s definition of net bookings'
     url: 'https://www.take2games.com/ir/news/take-two-interactive-software-inc-reports-results-fiscal-4'
   - title: 'Rockstar’s launch announcement'
@@ -18,9 +24,13 @@ sources:
 
 ## Who owns GTA 6, and what is the stock ticker?
 
-Rockstar Games makes Grand Theft Auto and is part of Take-Two Interactive, which trades on Nasdaq as **TTWO**. Take-Two’s November 9 earnings release lists GTA 6 for **November 19, 2026** on PlayStation 5 and Xbox Series X|S. For anyone researching the stock, the next question is how the launch changes Take-Two’s bookings, profit and cash flow. [Take-Two’s November 9 earnings release](https://www.take2games.com/ir/news/take-two-interactive-software-inc-reports-results-fiscal-4) · [Rockstar’s launch announcement](https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026)
+Rockstar Games makes Grand Theft Auto and is part of Take-Two Interactive, which trades on Nasdaq as **TTWO**. GTA 6 launched on **November 19, 2026**. Take-Two’s November 20 announcement puts estimated day-one retail sales at **$3.79 billion**, measured through the end of November 19 worldwide. For a TTWO watchlist, the next step is to connect that retail-sales measure with Take-Two’s financial reporting. [Take-Two’s November 9 earnings release](https://www.take2games.com/ir/news/take-two-interactive-software-inc-reports-results-fiscal-4) · [Take-Two’s launch-sales announcement](https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records)
 
-## What Take-Two has already put into its outlook
+## How to read the $3.79 billion launch figure
+
+The company labels the figure as estimated **retail sales**. Keep its definition and measurement window with the number before comparing it with net bookings, GAAP revenue or operating cash flow. A useful research note has separate rows for each measure, the period it covers and the source that reported it. [Take-Two’s November 20 announcement](https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records)
+
+## Compare the next outlook with the November 9 baseline
 
 On November 9, Take-Two reiterated **$8.0 billion to $8.2 billion in net bookings** for the fiscal year ending March 31, 2027. The range covers the entire company, including Rockstar, 2K and Zynga. Management already included the November 19 release in its plans, so the most informative post-launch comparison is whether reported results or the next outlook exceed, meet or fall short of that baseline. [Take-Two earnings release and outlook](https://www.take2games.com/ir/news/take-two-interactive-software-inc-reports-results-fiscal-4)
 
@@ -35,4 +45,6 @@ Take-Two uses **net bookings** to track sales activity across its business, incl
 3. **Profit and cash.** Review operating income and operating cash flow alongside bookings. Look for management’s explanation of launch spending and any change in expected profitability.
 4. **Spending after launch.** Watch for company disclosures about recurring spending or player engagement. Those figures can help show how much activity continues after the initial release.
 
-Write down the November guidance before launch, then add the next company-reported figures with their dates. That gives you a record of what changed as you follow TTWO. Use the [free stock research worksheet](/tools/research-template/) to keep the numbers and source links together.
+Record the **November 9 guidance** and **November 20 retail-sales announcement** as separate entries, then add the next company-reported figures with their dates. Use the [free stock research worksheet](/tools/research-template/) for the figures and source links. In Stocker, search **TTWO** and save Take-Two so you can revisit its chart, earnings and news.
+
+For another example of comparing reported results with a new outlook, see our [Nvidia results update](/companies/nvidia-ceo-transition/). The [2027 stock shortlist](/companies/best-stocks-for-2027/) shows how to turn company evidence into a repeatable research checklist.
