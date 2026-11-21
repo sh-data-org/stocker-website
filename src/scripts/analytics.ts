@@ -33,7 +33,7 @@ function pageContext() {
   return {
     page_path: path,
     page_location: location.origin + path,
-    page_title: document.title,
+    page_title: path === '/' ? 'Home – Stock Research' : document.title,
     page_referrer:
       referrer && ['https:', 'http:'].includes(referrer.protocol)
         ? referrer.origin +
