@@ -13,10 +13,8 @@ imageCredit:
   photographer: 'panumas nikhomkhai'
   url: 'https://www.pexels.com/photo/computer-server-in-data-center-room-17489163/'
 order: 0.1
-disclosure: 'Research updated November 21, 2026. An unranked research shortlist, not a forecast, model portfolio or recommendation to buy any stock.'
+disclosure: 'Updated November 21, 2026. An unranked research shortlist, not a forecast, model portfolio or recommendation to buy any stock.'
 sources:
-  - title: 'Microsoft: 2026 annual report'
-    url: 'https://www.microsoft.com/investor/reports/ar26/index.html'
   - title: 'Microsoft: fiscal 2027 first-quarter results'
     url: 'https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast'
   - title: 'Nvidia: fiscal 2027 third-quarter results'
@@ -25,25 +23,29 @@ sources:
     url: 'https://www.sec.gov/Archives/edgar/data/1403161/000140316126000126/q42026earningsrelease.htm'
 ---
 
-## A shortlist for research, not a prediction
+## Three companies to watch in 2027
 
-**Microsoft, Nvidia and Visa are three companies to research for a 2027 watchlist.** They offer different questions about cloud spending, computing infrastructure and payments. No one can establish today which stocks will produce the best returns in 2027.
+**Microsoft, Nvidia and Visa** give investors three different questions to follow. Microsoft spends money building cloud capacity. Nvidia sells equipment that goes into those data centers. Visa earns fees as payments move across its network. Here’s the latest quarter available for each company as of November 21, 2026.
 
-Use the shortlist below to find each ticker, its biggest risk, and what to check in the next filing. Use the [US market holidays calendar](/learn/stock-market-holidays-2026-2027/#stock-market-holidays-in-2027) to plan around the 2027 trading schedule.
+| Company | Latest quarterly evidence | Question for the next filing |
+| --- | --- | --- |
+| Microsoft (MSFT) | [$63.9B in Microsoft Cloud revenue](https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast), up 30% year over year | How much cash does Microsoft spend adding capacity to serve that demand? |
+| Nvidia (NVDA) | [$107.6B in Data Center revenue](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx), up 110% year over year | As new systems ship, how much of each sales dollar remains after production costs? |
+| Visa (V) | [$12.1B in net revenue](https://www.sec.gov/Archives/edgar/data/1403161/000140316126000126/q42026earningsrelease.htm), up 13% year over year | Are payment activity and cross-border spending keeping pace with revenue growth? |
+
+Microsoft Cloud and Nvidia Data Center are parts of their respective businesses. Visa’s figure covers the whole company. The dollar amounts are useful baselines for following each company over time.
 
 ## How these companies were selected
 
-**Research snapshot, November 21, 2026**
+**Research snapshot, November 21, 2026.** These are the risks that would change the case for keeping each company on the watchlist.
 
-| Company | Research case and what could change it |
+| Company | When to revisit the research case |
 | --- | --- |
-| Microsoft (MSFT) | **Why:** $63.9 billion in quarterly cloud revenue (FY27 Q1). **Risk:** Datacenter spending absorbs cash. **Revisit if:** Cloud growth slows and capital spending keeps outpacing operating cash flow growth. |
-| Nvidia (NVDA) | **Why:** $107.6 billion in quarterly Data Center revenue (FY27 Q3). **Risk:** Large customers could slow spending. **Revisit if:** Data Center growth and gross margin both weaken through a product transition. |
-| Visa (V) | **Why:** Processed transactions rose 9% in fiscal 2026. **Risk:** Competition and regulation can put pressure on fees. **Revisit if:** Payments volume keeps growing while net revenue growth repeatedly slows. |
+| Microsoft | Cloud growth slows while spending on data centers repeatedly grows faster than operating cash flow. |
+| Nvidia | Data Center growth and gross margin both weaken as customers switch to a new generation of systems. |
+| Visa | Payments volume keeps growing while net revenue growth repeatedly slows. |
 
-The shortlist uses three publicly traded businesses with accessible filings and distinct revenue drivers. It draws on Microsoft’s fiscal 2027 first-quarter results and 2026 annual report, Nvidia’s fiscal 2027 third-quarter results, and Visa’s full-year 2026 results.
-
-We did not screen the whole market, calculate a target price or backtest a strategy. Two selections are closely connected to technology spending, so this list also has concentration risk. It is not a substitute for diversification or an assessment of your personal circumstances.
+We chose three businesses with public filings and a question readers can revisit each quarter. Microsoft and Nvidia share exposure to cloud infrastructure spending, so owning both can leave an investor sensitive to the same slowdown. Visa brings a different exposure through consumer payments. Use the [2027 trading calendar](/learn/stock-market-holidays-2026-2027/#stock-market-holidays-in-2027) when planning your next review.
 
 ## Build a 2027 watchlist you can revisit
 
@@ -59,19 +61,15 @@ Use the [2027 AI stock watchlist](/companies/ai-stocks-2027/) to compare how chi
 
 ## Microsoft: connect cloud growth with investment
 
-[Microsoft’s 2026 annual report](https://www.microsoft.com/investor/reports/ar26/index.html) reports Microsoft Cloud revenue of $214.4 billion, up 27%, and Azure and other cloud services revenue growth of 41%. Those measures describe different scopes; Microsoft Cloud is broader than Azure.
-
-In the quarter ended September 30, 2026, [Microsoft reported](https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast) $63.9 billion in Microsoft Cloud revenue, up 30% year over year. Use the quarterly release to track changes since the annual-report baseline.
+For the quarter ended September 30, 2026, Microsoft Cloud revenue reached $63.9 billion, up 30% year over year. Microsoft Cloud includes Azure alongside cloud products such as Microsoft 365. [Microsoft quarterly results](https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast)
 
 For 2027 research, follow how revenue growth translates into operating profit and cash flow. Read the cash-flow statement alongside the discussion of datacenter investment. Revenue can grow while the business commits substantial cash to infrastructure.
 
 **What would strengthen the research case:** evidence that demand and the economics of serving customers support the expansion. **What would weaken it:** spending that rises without a clear path to adequate returns, or competitive pressure that makes growth less profitable.
 
-These are evaluation criteria, not forecasts. Update the annual-report baseline with subsequent quarterly filings before making a decision.
-
 ## Nvidia: distinguish demand from expectations
 
-[Nvidia’s fiscal 2027 third-quarter release](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx) reports $115.8 billion of revenue for the quarter ended October 25, 2026. Data Center revenue was $107.6 billion. Fiscal 2027 reporting includes periods in calendar 2026.
+Nvidia recorded $115.8 billion in sales in the quarter ended October 25, 2026. Data Center contributed $107.6 billion, up from $89.0 billion in the prior quarter. As the first Vera Rubin systems shipped, companywide GAAP gross margin edged down from 75.0% to 74.8%. Track both figures through the rollout. [Nvidia quarterly results](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx)
 
 The size of the reported business is a starting fact, not a valuation argument. Investigate how customer investment plans, product availability and margins affect future earnings. Separate completed sales from management’s outlook and announcements about future deployments.
 

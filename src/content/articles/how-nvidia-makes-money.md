@@ -1,8 +1,6 @@
 ---
-title: 'How does Nvidia make money?'
-description: 'Look past the ticker and the AI headlines. Start with the products, the customers and the questions behind the business.'
-seoTitle: 'How Does Nvidia Make Money? Revenue by Business'
-seoDescription: 'See what Nvidia sells, who buys its products and how to read its Data Center and Gaming revenue in the company’s filings.'
+title: 'How Nvidia Makes Money From Data Centers and Gaming'
+description: 'Data centers brought in $107.6 billion of Nvidia’s $115.8 billion in quarterly sales. See who buys its systems and where GeForce gaming fits in the figures.'
 section: 'companies'
 category: 'Business models'
 date: '2026-11-07'
@@ -10,65 +8,38 @@ image: 'chips'
 imageAlt: 'Editorial illustration of two processor chips'
 order: 20
 sources:
-  [
-    {
-      'title': 'Nvidia: Company profile',
-      'url': 'https://investor.nvidia.com/home/default.aspx',
-    },
-    {
-      'title': 'Nvidia: Fiscal 2027 second-quarter report',
-      'url': 'https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf',
-    },
-  ]
+  - title: 'Nvidia fiscal 2027 third-quarter results, November 17, 2026'
+    url: 'https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx'
 ---
 
-## The short answer
+## Where Nvidia’s revenue comes from
 
-Nvidia earns revenue from processors, networking, computing systems and software. Its Data Center business serves customers building and operating computing infrastructure. Its Gaming business includes graphics products for PCs. Equipment makers, distributors and cloud providers can buy directly, while many users access the technology through those buyers.
+When a cloud provider buys Nvidia processors and networking equipment for an AI cluster, Nvidia earns money on the sale. The cloud provider can then earn its own revenue renting computing time to developers. On the gaming side, a laptop maker can buy a GeForce GPU to power the graphics in a computer it sells to a player.
 
-Nvidia reports **Compute & Networking** and **Graphics** as operating segments. **Data Center** and **Gaming** are end markets. In its [FY 2026 annual filing](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/R25.htm), Nvidia reported $193.7 billion in Data Center revenue for the year ended January 25, 2026. To see where growth came from, compare the same end markets across periods and record what management says changed. Then compare [revenue and earnings](/learn/revenue-vs-earnings/) to see how sales growth translated into profit. Use the [stock research worksheet](/tools/research-template/) to save the original filing and your next question.
+The two businesses operate at very different scales. In the quarter ended October 25, 2026, **about 93 cents of every dollar Nvidia earned in sales came from Data Center**. Here is the breakdown from its [fiscal 2027 third-quarter results](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx).
 
-## Start with the customer problem
+| Market | Quarterly revenue | Share of sales |
+| --- | ---: | ---: |
+| Data Center | $107.6 billion | 92.9% |
+| Edge Computing, including gaming | $8.2 billion | 7.1% |
+| **Total** | **$115.8 billion** | **100%** |
 
-Nvidia describes itself as a GPU-accelerated computing company serving markets including data center, gaming, professional visualization and automotive. A useful research question is not simply “Is AI growing?” but “What does Nvidia sell to a customer solving a specific computing problem?”
+The percentages use Nvidia’s rounded revenue figures. Edge Computing includes GeForce products, local AI computers and automotive technology. Nvidia reported one figure for that group, so this release doesn’t tell us how much gaming earned on its own.
 
-That keeps the business model separate from a broad technology theme. A theme can create demand without telling you how the value is divided among suppliers, customers and competitors.
+## What a data center buys
+
+A cloud provider needs processors to run AI models and a fast network so those processors can work together. Nvidia can sell both as parts of a rack-scale system. During the quarter it began shipping Vera Rubin NVL72 systems, and Google Cloud and Oracle began offering customers access to infrastructure built with them.
+
+Data Center revenue grew 21% from the previous quarter and 110% from a year earlier. One question for the next filing is how much demand for new systems turns into delivered sales as customers bring power, cooling and network capacity online.
 
 ![Processor chips connected to a data center and a desktop computer](../../assets/article-chips.png)
 
-_Follow the products, customers and systems behind the reported business results._
+## Why a gaming purchase looks different
 
-## Products sit inside a wider system
+A player choosing a GeForce-equipped PC is paying for the whole computer. Nvidia supplies graphics technology, the manufacturer assembles the machine, and a retailer may handle the final sale. The retail price therefore tells you little about Nvidia’s revenue on that purchase. The same distinction applies to cars sold with Nvidia computing hardware.
 
-Nvidia's filings discuss computing and networking activities alongside graphics. Research the relationship between processors, systems, networking and software rather than treating the company as one undifferentiated chip product.
+## What to check next quarter
 
-The importance of each activity changes over time. Use the company's current reporting for the mix, rather than assuming a historical reputation—such as gaming graphics—fully describes today's economics.
+Look at Data Center revenue and companywide gross margin together. In fiscal Q3, Data Center sales grew 21% sequentially while GAAP gross margin edged down from 75.0% to 74.8%. The two figures answer different questions. Sales show how much customers bought. Gross margin shows how much of each sales dollar remained after the cost of revenue across the whole company.
 
-This guide intentionally does not freeze a revenue percentage or market share into an evergreen explanation. Those figures need a date, a definition and an up-to-date source.
-
-## Follow the route from demand to revenue
-
-Try tracing one customer need through four steps:
-
-1. **The task:** what computation or experience does the customer need?
-2. **The purchase:** which hardware, system or service addresses it?
-3. **The adoption:** what integration, software or infrastructure is required?
-4. **The economics:** what costs and competitive alternatives affect the supplier's results?
-
-This is a research method, not a claim that every customer follows the same path. It helps reveal the questions a simple product list leaves unanswered.
-
-## What to investigate in the filings
-
-Look for explanations of revenue changes, customer exposure, product transitions and material risks. Distinguish recognized revenue from announcements about possible future deployments.
-
-A strong product announcement may be important, but its financial effect depends on timing and execution. Ask what has already shipped, what is contracted, and what remains an expectation. If the available source does not answer that, keep the uncertainty visible.
-
-Use [revenue and earnings together](/learn/revenue-vs-earnings/), and check the period behind each figure. Growth in one market is not the same as growth in every part of the business.
-
-Use the [November 2026 earnings watchlist](/companies/stocks-to-watch-november-2026/) for specific questions to bring to Nvidia’s fiscal third-quarter report.
-
-## Compare before concluding
-
-[Nvidia and AMD](/compare/nvidia-vs-amd/) overlap in some markets while retaining different product mixes. A useful comparison explains those differences rather than picking a winner from one headline.
-
-You can save companies in Stocker as research starting points and use the [worksheet](/tools/research-template/) to collect evidence. Understanding how a business makes money is an early research step; it does not, by itself, establish what you should pay for its shares.
+Compare [Nvidia and AMD](/compare/nvidia-vs-amd/) for differences in their product mix, or see how Nvidia’s sales connect to Microsoft’s infrastructure spending in the [2027 stock watchlist](/companies/best-stocks-for-2027/). The [stock research worksheet](/tools/research-template/) gives you a place to record the quarter and compare it with the next release.
