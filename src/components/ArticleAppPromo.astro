@@ -174,6 +174,15 @@ const inline = placement !== 'article_end';
       margin: 0;
     }
 
+    .article-promo-card[data-app-placement='article_end'] {
+      grid-template-columns: 108px minmax(0, 1fr);
+    }
+
+    .article-promo-card[data-app-placement='article_end']
+      > :global(.swipe-preview) {
+      width: 100%;
+    }
+
     .promo-actions {
       grid-column: 1 / -1;
       width: 100%;
