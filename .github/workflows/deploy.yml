@@ -1,0 +1,79 @@
+name: Verify and deploy Stocker
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stocker-site-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  site:
+    name: Check site and publish main
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HAS_PAGES_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check types
+        run: npm run typecheck
+
+      - name: Lint source
+        run: npm run lint
+
+      - name: Test calculators
+        run: npm test
+
+      - name: Build articles and metadata
+        run: npm run build
+
+      - name: Check pages, links, metadata and sitemap
+        run: npm run check:site
+
+      - name: Deploy production
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && env.HAS_PAGES_TOKEN == 'true'
+        id: deploy
+        uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0 # v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: e646bcff38192c38c43d9bd838125600
+          wranglerVersion: '4.158.0'
+          command: pages deploy dist --project-name=stocker-website --branch=main --commit-hash=${{ github.sha }}
+
+      - name: Record deployment
+        if: steps.deploy.outcome == 'success'
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment-url }}
+          DEPLOYMENT_ID: ${{ steps.deploy.outputs.pages-deployment-id }}
+        run: |
+          {
+            printf 'Published commit: `%s`\n\n' "$GITHUB_SHA"
+            printf 'Website: https://stocker-invest.com\n\n'
+            printf 'Deployment: %s\n\n' "$DEPLOYMENT_URL"
+            printf 'Cloudflare deployment ID: `%s`\n' "$DEPLOYMENT_ID"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report manual publication requirement
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && env.HAS_PAGES_TOKEN != 'true'
+        run: echo 'Site checks passed. Publishing requires a direct Pages upload or the configured CLOUDFLARE_API_TOKEN.' >> "$GITHUB_STEP_SUMMARY"
