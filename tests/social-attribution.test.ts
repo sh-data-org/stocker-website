@@ -18,6 +18,7 @@ type Listener = (event: {
   type?: string;
   key?: string;
   persisted?: boolean;
+  preventDefault?: () => void;
 }) => void;
 
 class TestLink {
@@ -104,7 +105,11 @@ test('consented social landing keeps campaign fields and counts one store click'
       return { socialCampaignParameters };
     },
     Element: TestLink,
-    location: Object.assign(url, { reload: () => reloads++ }),
+    location: Object.assign(url, {
+      reload: () => reloads++,
+      assign() {},
+    }),
+    setTimeout() {},
     window,
     localStorage: {
       getItem: () => savedChoice,
@@ -122,7 +127,9 @@ test('consented social landing keeps campaign fields and counts one store click'
         return null;
       },
       addEventListener: (name: string, listener: Listener) =>
-        listeners.set(name, listener),
+        listeners.set(name, (event) =>
+          listener({ preventDefault() {}, ...event }),
+        ),
       createElement: () => ({ addEventListener() {} }),
       head: { append() {} },
     },

@@ -27,12 +27,16 @@ const socialImage = await getImage({
   fit: 'cover',
 });
 const imageUrl = canonicalUrl(socialImage.src);
-const publishedDate = new Intl.DateTimeFormat('en-US', {
+const dateFormat = new Intl.DateTimeFormat('en-US', {
   month: 'long',
   day: 'numeric',
   year: 'numeric',
   timeZone: 'UTC',
-}).format(new Date(`${data.date}T00:00:00Z`));
+});
+const publishedDate = dateFormat.format(new Date(`${data.date}T00:00:00Z`));
+const updatedDate = data.updated
+  ? dateFormat.format(new Date(`${data.updated}T00:00:00Z`))
+  : undefined;
 const label =
   data.section === 'learn'
     ? 'Learn'
@@ -43,9 +47,10 @@ const contents = headings.filter((heading) => heading.depth === 2);
 const articleHtml = await Astro.slots.render('default');
 const sectionStarts = [...articleHtml.matchAll(/<h2(?:\s[^>]*)?>/g)];
 const promoOffset = sectionStarts[1]?.index ?? articleHtml.length;
-const middleOffset = sectionStarts.length >= 6
-  ? sectionStarts[Math.ceil(sectionStarts.length / 2)]?.index
-  : undefined;
+const middleOffset =
+  sectionStarts.length >= 6
+    ? sectionStarts[Math.ceil(sectionStarts.length / 2)]?.index
+    : undefined;
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -57,7 +62,7 @@ const schema = [
     articleSection: data.category,
     citation: data.sources.map((source) => source.url),
     datePublished: data.date,
-    dateModified: data.date,
+    dateModified: data.updated ?? data.date,
     author: {
       '@type': 'Organization',
       '@id': organizationId,
@@ -118,6 +123,14 @@ const schema = [
           <a href="/about/">By the Stocker team</a> · <time datetime={data.date}
             >{publishedDate}</time
           > · {readingTime(article.body)} min read
+          {
+            updatedDate && (
+              <>
+                {' '}
+                · Updated <time datetime={data.updated}>{updatedDate}</time>
+              </>
+            )
+          }
         </p>
         {data.disclosure && <p class="disclosure">{data.disclosure}</p>}
       </div>
@@ -163,14 +176,17 @@ const schema = [
           <ArticleAppPromo
             title={data.cta}
             detailsLabel={data.inlinePromo?.detailsLabel}
+            description={data.inlinePromo?.description}
           />
           <Fragment set:html={articleHtml.slice(promoOffset, middleOffset)} />
-          {middleOffset !== undefined && (
-            <>
-              <ArticleAppPromo placement="article_middle" title={data.cta} />
-              <Fragment set:html={articleHtml.slice(middleOffset)} />
-            </>
-          )}
+          {
+            middleOffset !== undefined && (
+              <>
+                <ArticleAppPromo placement="article_middle" title={data.cta} />
+                <Fragment set:html={articleHtml.slice(middleOffset)} />
+              </>
+            )
+          }
         </div>
         <section class="sources" id="sources">
           <h2>Sources & further reading</h2><p>

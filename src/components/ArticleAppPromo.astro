@@ -8,14 +8,23 @@ interface Props {
   title?: string | undefined;
   placement?: 'article_inline' | 'article_middle' | 'article_end';
   detailsLabel?: string | undefined;
+  description?: string | undefined;
 }
 
-const { placement = 'article_inline', title, detailsLabel } = Astro.props;
+const {
+  placement = 'article_inline',
+  title,
+  detailsLabel,
+  description,
+} = Astro.props;
 const inline = placement !== 'article_end';
 ---
 
 <aside
-  class:list={[placement === 'article_inline' && 'article-app-promo', 'article-promo-card']}
+  class:list={[
+    placement === 'article_inline' && 'article-app-promo',
+    'article-promo-card',
+  ]}
   id={placement === 'article_inline' ? 'stocker-app-preview' : undefined}
   aria-label={inline ? 'Stocker watchlist' : 'Stocker swipe demo'}
   data-app-placement={placement}
@@ -28,11 +37,19 @@ const inline = placement !== 'article_end';
           : 'See how a swipe saves a stock'
       }
     </p>
-    <p>
+    <p class="promo-description">
       {
         inline
-          ? 'Save companies to one watchlist and come back to their charts, earnings and news.'
+          ? (description ??
+            'Save companies to one watchlist and come back to their charts, earnings and news.')
           : 'Watch a stock go from discovery to your watchlist in Stocker.'
+      }
+    </p>
+    <p class="promo-mobile-description">
+      {
+        inline
+          ? 'Save your picks. Follow charts, earnings and news.'
+          : 'Discover a stock. Save it to your watchlist.'
       }
     </p>
   </div>
@@ -78,6 +95,10 @@ const inline = placement !== 'article_end';
 
   .promo-copy {
     max-width: 34ch;
+  }
+
+  .promo-mobile-description {
+    display: none;
   }
 
   .article-promo-card .promo-copy p {
@@ -130,12 +151,19 @@ const inline = placement !== 'article_end';
     }
 
     .article-promo-card .promo-copy .promo-title {
+      margin-bottom: 6px;
       font-size: 17px;
     }
 
-    .article-promo-card .promo-copy p {
+    .article-promo-card .promo-mobile-description {
+      display: block;
       font-size: 13px;
       line-height: 1.5;
+    }
+
+    .article-promo-card .promo-description,
+    .article-promo-card .app-details {
+      display: none;
     }
 
     .article-promo-card > img,
@@ -144,6 +172,15 @@ const inline = placement !== 'article_end';
       grid-row: 1;
       width: 88px;
       margin: 0;
+    }
+
+    .article-promo-card[data-app-placement='article_end'] {
+      grid-template-columns: 108px minmax(0, 1fr);
+    }
+
+    .article-promo-card[data-app-placement='article_end']
+      > :global(.swipe-preview) {
+      width: 100%;
     }
 
     .promo-actions {
