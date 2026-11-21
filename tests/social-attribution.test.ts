@@ -18,6 +18,7 @@ type Listener = (event: {
   type?: string;
   key?: string;
   persisted?: boolean;
+  preventDefault?: () => void;
 }) => void;
 
 class TestLink {
@@ -72,7 +73,7 @@ test('consented social landing keeps campaign fields and counts one store click'
   };
   const routeModule = {
     publicPath: (path: string) =>
-      ['/app/', '/tools/research-template/'].includes(path) ? path : undefined,
+      ['/', '/app/', '/tools/research-template/'].includes(path) ? path : undefined,
   };
   const interaction = {};
   runInNewContext(script('analytics-interaction'), {
@@ -104,7 +105,11 @@ test('consented social landing keeps campaign fields and counts one store click'
       return { socialCampaignParameters };
     },
     Element: TestLink,
-    location: Object.assign(url, { reload: () => reloads++ }),
+    location: Object.assign(url, {
+      reload: () => reloads++,
+      assign() {},
+    }),
+    setTimeout() {},
     window,
     localStorage: {
       getItem: () => savedChoice,
@@ -122,7 +127,9 @@ test('consented social landing keeps campaign fields and counts one store click'
         return null;
       },
       addEventListener: (name: string, listener: Listener) =>
-        listeners.set(name, listener),
+        listeners.set(name, (event) =>
+          listener({ preventDefault() {}, ...event }),
+        ),
       createElement: () => ({ addEventListener() {} }),
       head: { append() {} },
     },
@@ -194,9 +201,13 @@ test('consented social landing keeps campaign fields and counts one store click'
     assert.equal(parameters(click).page_type, 'article');
     assert.equal(parameters(click).link_placement, 'article_inline');
   }
+  assert.equal(config.page_title, 'Stock research template');
+  url.pathname = '/';
   const beforeRestore = window.dataLayer.length;
   listeners.get('pageshow')?.({ persisted: true });
   assert.equal(window.dataLayer.length, beforeRestore + 1);
+  const restored = Array.from<unknown>(window.dataLayer[beforeRestore] ?? []);
+  assert.equal(parameters(restored).page_title, 'Home – Stock Research');
   listeners.get('reject')?.({});
   listeners.get('click')?.({
     type: 'click',

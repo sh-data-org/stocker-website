@@ -42,7 +42,13 @@ The library works without JavaScript. Calculator inputs stay disabled until loca
 
 Launched 8 November 2026. Cloudflare Pages project `stocker-website` serves the apex domain over HTTPS. The www host returns a 301 redirect preserving the path and query. Static output is `dist/`; build command is `npm run build`.
 
-This is a **direct-upload Pages project**, not a GitHub-linked build. Pushing source does not deploy it. Build locally, ZIP the contents of `dist/` at the archive root, then upload a production deployment in the [Cloudflare project](https://dash.cloudflare.com/e646bcff38192c38c43d9bd838125600/pages/view/stocker-website). The Pages production label `main` is a hosting label; source remains on `yoav-dev`.
+This is a **direct-upload Pages project**. The [deployment workflow](.github/workflows/deploy.yml) builds and checks PRs targeting `main`, then uses Wrangler to upload `dist/` after a merge or push to `main`. Deployment includes article pages, images, metadata, robots.txt and the generated sitemap. A failed check prevents publication. Development work on `yoav-dev` does not publish.
+
+Before enabling the workflow, add the repository Actions secret `CLOUDFLARE_API_TOKEN`. Create a Cloudflare token with **Account → Cloudflare Pages → Edit**, restricted to account `e646bcff38192c38c43d9bd838125600`. Pages permissions are account-scoped; this token can edit other Pages projects in that account. Never commit the token. The account ID is public configuration already present in the Cloudflare project URL.
+
+After the workflow and secret are configured, merge an approved PR into `main` and verify a successful [Actions run](https://github.com/sh-data-org/stocker-website/actions). The run summary records the source commit, deployment URL and Cloudflare deployment ID. Check that deployment in the [Cloudflare project](https://dash.cloudflare.com/e646bcff38192c38c43d9bd838125600/pages/view/stocker-website), then reload the changed page and sitemap on the domain. Hosting deployment does not mean Google has indexed the pages.
+
+The workflow can also be run manually with branch `main` selected. To retry a failed publication, rerun that Actions job after resolving the failure. For an emergency manual release, build and check locally, ZIP the contents of `dist/` at the archive root, and upload a production deployment in Cloudflare. Use a known `main` commit so production matches the repository.
 
 Google ownership uses **Gaver Apps (`gaverapps@gmail.com`)**:
 
@@ -59,6 +65,12 @@ Read `page_view`, `site_click`, `article_app_page_click`, and `app_store_click` 
 
 All three clicks carry `click_region`, `control_position` (one-based DOM order within the region), and `click_destination` (public page path or action category). Consent controls are excluded. Register these fields as event-scoped custom dimensions in GA4. The stream’s automatic outbound clicks, file downloads, and browser-history page views are disabled. Other enhanced-measurement events such as scrolls and form submissions describe separate actions. Filter to the four named events when reading a click path. Older events cannot be backfilled.
 
+### Excluding QA activity
+
+Before testing production, open `https://stocker-invest.com/?analytics_qa=1` in each browser profile used for QA. This saves `stocker-analytics-qa=1` in that origin’s local storage and prevents the Google tag, page views and click events from loading or firing. The preference persists across article and app-page navigation and synchronizes with open tabs. Tag Assistant URLs containing `gtm_debug` also enable this exclusion. If the QA preference cannot be read or saved, analytics stays paused and the browser console reports the failure.
+
+Open `https://stocker-invest.com/?analytics_qa=0` to restore normal consent-based collection. QA mode leaves the visitor’s consent choice intact. A different browser profile or cleared local storage needs QA mode enabled again. Existing November 14 test events remain in GA4. Exclude the three known article-to-app test clicks when reporting that historical period, and keep any uncertain traffic labelled as unverified.
+
 Sitemaps were submitted, but Google currently reports **Couldn't fetch**. The homepage live test reports **Robots.txt unreachable**. Public robots.txt and sitemap checks return HTTP 200. Google's robots report has not populated, so its recrawl control is unavailable. This remains an open indexing issue; see [launch verification](docs/launch-verification.md).
 
 Install links currently go directly to app ID 6443543680. Configure valid App Store campaign links and agreed analytics before claiming measured installs. Search Console clicks, website outbound clicks and app installs are different metrics. Review the website privacy text against the chosen host and any measurement added.
@@ -67,7 +79,7 @@ Repository: https://github.com/sh-data-org/stocker-website. Source is on `yoav-d
 
 ## Shoham handoff
 
-Keep deployment instructions above with the existing publish task. Build with Node 22+ and `npm ci && npm run build`; no server, database or private API keys are required for the website.
+Keep deployment instructions above with the existing publish task. Build with Node 22+ and `npm ci && npm run build`; the static website needs no server or database. The Cloudflare deployment token stays in GitHub Actions secrets and is never included in the built website.
 
 Shoham owns the remaining indexing follow-up and admin dashboard integration. Use the shared Gaver Apps providers above. Connect Search Console API and Google Analytics Data API server-side with separate search, visit, outbound-click and attributable-install metrics. Show source freshness and unavailable data explicitly. Reconcile a matching date range against the provider UI before moving the task to Review.
 

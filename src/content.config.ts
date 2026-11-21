@@ -14,6 +14,7 @@ const articles = defineCollection({
     section: z.enum(SECTIONS),
     category: z.string(),
     date: z.iso.date(),
+    updated: z.iso.date().optional(),
     image: z.enum([
       'research',
       'warehouse',
@@ -32,7 +33,12 @@ const articles = defineCollection({
     order: z.number(),
     disclosure: z.string().optional(),
     cta: z.string().optional(),
-    inlinePromo: z.object({ detailsLabel: z.string() }).optional(),
+    inlinePromo: z
+      .object({
+        detailsLabel: z.string(),
+        description: z.string().optional(),
+      })
+      .optional(),
     sources: z.array(z.object({ title: z.string(), url: z.url() })).min(1),
   }),
 });

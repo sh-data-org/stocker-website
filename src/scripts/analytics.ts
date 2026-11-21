@@ -5,6 +5,7 @@ import { publicPath } from './analytics-path';
 
 const MEASUREMENT_ID = 'G-4EJ7RNNCP8';
 const CONSENT_KEY = 'stocker-analytics-consent';
+const QA_KEY = 'stocker-analytics-qa';
 type Consent = 'granted' | 'denied';
 
 declare global {
@@ -17,6 +18,36 @@ declare global {
 
 const banner = document.querySelector<HTMLElement>('[data-consent-banner]');
 let enabled = false;
+let qaExcluded = initialiseQaMode();
+if (qaExcluded) window['ga-disable-G-4EJ7RNNCP8'] = true;
+
+function storedQaMode(): boolean {
+  try {
+    return localStorage.getItem(QA_KEY) === '1';
+  } catch {
+    console.warn(
+      'Analytics QA preference could not be read. Analytics paused.',
+    );
+    return true;
+  }
+}
+
+function initialiseQaMode(): boolean {
+  const parameters = new URL(location.href).searchParams;
+  const requested = parameters.has('gtm_debug')
+    ? '1'
+    : parameters.get('analytics_qa');
+  if (requested !== '1' && requested !== '0') return storedQaMode();
+  try {
+    localStorage.setItem(QA_KEY, requested);
+  } catch {
+    console.warn(
+      'Analytics QA preference could not be saved. Analytics paused.',
+    );
+    return true;
+  }
+  return requested === '1';
+}
 
 function storedConsent(): Consent | null {
   try {
@@ -33,7 +64,7 @@ function pageContext() {
   return {
     page_path: path,
     page_location: location.origin + path,
-    page_title: document.title,
+    page_title: path === '/' ? 'Home – Stock Research' : document.title,
     page_referrer:
       referrer && ['https:', 'http:'].includes(referrer.protocol)
         ? referrer.origin +
@@ -45,7 +76,8 @@ function pageContext() {
 }
 
 function startAnalytics(): void {
-  if (enabled || location.hostname !== 'stocker-invest.com') return;
+  if (enabled || qaExcluded || location.hostname !== 'stocker-invest.com')
+    return;
   enabled = true;
   window['ga-disable-G-4EJ7RNNCP8'] = false;
   window.dataLayer = window.dataLayer ?? [];
@@ -99,9 +131,9 @@ document
   });
 
 function stopAnalytics(): void {
+  window['ga-disable-G-4EJ7RNNCP8'] = true;
   if (!enabled) return;
   enabled = false;
-  window['ga-disable-G-4EJ7RNNCP8'] = true;
   location.reload();
 }
 
@@ -118,6 +150,29 @@ function trackClick(event: MouseEvent): void {
   if (url?.hostname === 'apps.apple.com') name = 'app_store_click';
   else if (isArticle && fields.click_destination === '/app/')
     name = 'article_app_page_click';
+  let finishNavigation: (() => void) | undefined;
+  if (
+    name !== 'site_click' &&
+    url &&
+    event.type === 'click' &&
+    !event.defaultPrevented &&
+    !event.metaKey &&
+    !event.ctrlKey &&
+    !event.shiftKey &&
+    !event.altKey &&
+    !control.getAttribute('target') &&
+    control.getAttribute('download') === null
+  ) {
+    // Give the Google tag time to process the event before this document unloads.
+    event.preventDefault();
+    let navigated = false;
+    finishNavigation = () => {
+      if (navigated) return;
+      navigated = true;
+      location.assign(url.href);
+    };
+    setTimeout(finishNavigation, 800);
+  }
   window.gtag?.('event', name, {
     ...fields,
     page_path: publicPath(location.pathname) ?? '/404/',
@@ -130,22 +185,29 @@ function trackClick(event: MouseEvent): void {
         .closest('[data-app-placement]')
         ?.getAttribute('data-app-placement') ?? undefined,
     transport_type: 'beacon',
+    ...(finishNavigation
+      ? { event_callback: finishNavigation, event_timeout: 700 }
+      : {}),
   });
 }
 
 document.addEventListener('click', trackClick, true);
 document.addEventListener('auxclick', trackClick, true);
 window.addEventListener('storage', (event) => {
-  if (event.key !== CONSENT_KEY && event.key !== null) return;
+  if (event.key !== CONSENT_KEY && event.key !== QA_KEY && event.key !== null)
+    return;
+  qaExcluded = storedQaMode();
   const consent = storedConsent();
   if (banner) banner.hidden = consent !== null;
-  if (consent === 'granted') startAnalytics();
+  if (qaExcluded) stopAnalytics();
+  else if (consent === 'granted') startAnalytics();
   else stopAnalytics();
 });
 window.addEventListener('pageshow', (event) => {
   if (!event.persisted) return;
+  qaExcluded = storedQaMode();
   const consent = storedConsent();
-  if (consent !== 'granted') {
+  if (qaExcluded || consent !== 'granted') {
     if (banner) banner.hidden = consent !== null;
     stopAnalytics();
   } else if (enabled) window.gtag?.('event', 'page_view', pageContext());

@@ -20,7 +20,6 @@ function preparePreview(video: HTMLVideoElement) {
     try {
       await video.play();
     } catch (error) {
-      video.pause();
       if (
         error instanceof DOMException &&
         (error.name === 'NotAllowedError' || error.name === 'AbortError')
@@ -59,31 +58,30 @@ function preparePreview(video: HTMLVideoElement) {
 
   syncPlayback();
   if (!('IntersectionObserver' in window)) return;
-  if (!button) {
-    const preloader = new IntersectionObserver(
-      (entries) => {
-        if (
-          reducedMotion.matches ||
-          !entries.some((entry) => entry.isIntersecting)
-        )
-          return;
-        load();
-        preloader.disconnect();
-      },
-      { rootMargin: '360px 0px' },
-    );
-    preloader.observe(video);
-  }
+  const preloader = new IntersectionObserver(
+    (entries) => {
+      if (
+        reducedMotion.matches ||
+        !entries.some((entry) => entry.isIntersecting)
+      )
+        return;
+      load();
+      preloader.disconnect();
+    },
+    { rootMargin: '360px 0px' },
+  );
+  preloader.observe(video);
 
   const threshold = button ? 0.6 : 0.35;
   const observer = new IntersectionObserver(
     (entries) => {
       const entry = entries.at(-1);
       if (!entry) return;
-      inView = entry.intersectionRatio >= threshold;
+      if (!entry.isIntersecting) inView = false;
+      else if (entry.intersectionRatio >= threshold) inView = true;
       syncPlayback();
     },
-    { threshold },
+    { threshold: [0, threshold] },
   );
   observer.observe(button ?? video);
 }
