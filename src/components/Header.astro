@@ -1,7 +1,7 @@
 ---
 import Brand from './Brand.astro';
 import Arrow from './Arrow.astro';
-import { SITE } from '../lib/site';
+import { appStoreUrl } from '../lib/site';
 const links = [
   { href: '/articles/', title: 'Articles' },
   { href: '/tools/', title: 'Tools' },
@@ -13,6 +13,7 @@ const isArticlePage = [
   '/compare/',
   '/companies/',
 ].some((path) => Astro.url.pathname.startsWith(path));
+const downloadUrl = appStoreUrl(Astro.url.pathname);
 ---
 
 <header class="site-header container">
@@ -39,7 +40,7 @@ const isArticlePage = [
   </nav>
   <a
     class="button button-blue header-download"
-    href={SITE.appStore}
+    href={downloadUrl}
     data-primary-download>Download Stocker <Arrow diagonal /></a
   >
   <details class="mobile-menu">
@@ -52,7 +53,7 @@ const isArticlePage = [
     </summary>
     <nav aria-label="Mobile navigation">
       {links.map((link) => <a href={link.href}>{link.title}</a>)}
-      <a href={SITE.appStore}>Download Stocker ↗</a>
+      <a href={downloadUrl}>Download Stocker ↗</a>
     </nav>
   </details>
 </header>

@@ -104,4 +104,4 @@ Save the company, one thesis, one risk and the next piece of evidence you need. 
 
 For near-term events, see the [November 2026 earnings watchlist](/companies/stocks-to-watch-november-2026/). For your notes, use the [research worksheet](/tools/research-template/).
 
-**[Get Stocker on the App Store](https://apps.apple.com/app/id6443543680)**, then search MSFT, NVDA and V and save each company you want to follow. [Preview the Stocker watchlist](/app/) before downloading.
+**[Get Stocker on the App Store](https://apps.apple.com/app/id6443543680?pt=125042532&ct=stocker-web-2027-watchlist&mt=8)**, then search MSFT, NVDA and V and save each company you want to follow. [Preview the Stocker watchlist](/app/) before downloading.

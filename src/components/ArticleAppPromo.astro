@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import watchlist from '../assets/app-watchlist.png';
 import SwipePreview from './SwipePreview.astro';
-import { SITE } from '../lib/site';
+import { appStoreUrl } from '../lib/site';
 
 interface Props {
   title?: string | undefined;
@@ -66,7 +66,11 @@ const inline = placement !== 'article_end';
     )
   }
   <div class="promo-actions">
-    <a class="button button-blue" href={SITE.appStore} data-primary-download>
+    <a
+      class="button button-blue"
+      href={appStoreUrl(Astro.url.pathname)}
+      data-primary-download
+    >
       Download on the App Store
     </a>
     {

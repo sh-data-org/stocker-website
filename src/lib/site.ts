@@ -12,6 +12,16 @@ export const SITE = {
 export const SECTIONS = ['learn', 'compare', 'companies'] as const;
 export type Section = (typeof SECTIONS)[number];
 
+export function appStoreUrl(pathname: string): string {
+  if (pathname !== '/companies/best-stocks-for-2027/') return SITE.appStore;
+
+  const url = new URL(SITE.appStore);
+  url.searchParams.set('pt', '125042532');
+  url.searchParams.set('ct', 'stocker-web-2027-watchlist');
+  url.searchParams.set('mt', '8');
+  return url.href;
+}
+
 export function canonicalUrl(pathname: string): string {
   return new URL(pathname, SITE.origin).href;
 }
