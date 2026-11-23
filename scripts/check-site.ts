@@ -27,6 +27,28 @@ let articleSchemas = 0;
 let links = 0;
 for (const file of pages) {
   const html = await readFile(file, 'utf8');
+  const appleLinks = Array.from(
+    html.matchAll(/href="(https:\/\/apps\.apple\.com\/app\/id6443543680[^"]*)"/g),
+    ([, href]) => {
+      assert.ok(href, `${file}: missing App Store URL`);
+      return new URL(href.replaceAll('&amp;', '&'));
+    },
+  );
+  if (file.endsWith('/companies/best-stocks-for-2027/index.html')) {
+    assert.ok(appleLinks.length > 0, 'The 2027 watchlist needs a store link');
+    for (const link of appleLinks) {
+      assert.equal(link.searchParams.get('pt'), '125042532');
+      assert.equal(link.searchParams.get('ct'), 'stocker-web-2027-watchlist');
+      assert.equal(link.searchParams.get('mt'), '8');
+    }
+  } else {
+    assert.ok(
+      appleLinks.every(
+        (link) => link.searchParams.get('ct') !== 'stocker-web-2027-watchlist',
+      ),
+      `${file}: the watchlist campaign must stay on the watchlist`,
+    );
+  }
   const title = html.match(/<title>(.*?)<\/title>/s)?.[1];
   assert.ok(title, `${file}: title missing`);
   assert.ok(!titles.has(title), `${file}: duplicate title`);

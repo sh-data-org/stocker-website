@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import icon from '../assets/stocker-icon.png';
 import SwipePreview from './SwipePreview.astro';
 import Arrow from './Arrow.astro';
-import { SITE } from '../lib/site';
+import { appStoreUrl } from '../lib/site';
 interface Props {
   variant: 'sidebar' | 'bar';
 }
@@ -42,7 +42,7 @@ const { variant } = Astro.props;
   {variant === 'sidebar' && <SwipePreview />}
   <a
     class="button button-blue download-button"
-    href={SITE.appStore}
+    href={appStoreUrl(Astro.url.pathname)}
     aria-label="Download Stocker on the App Store"
     data-primary-download={variant === 'sidebar' ? '' : undefined}
   >
