@@ -1,7 +1,7 @@
 ---
 import Arrow from './Arrow.astro';
 import SwipePreview from './SwipePreview.astro';
-import { SITE } from '../lib/site';
+import { appStoreUrl } from '../lib/site';
 interface Props {
   title?: string;
   compact?: boolean;
@@ -15,8 +15,10 @@ const { title = 'Swipe to discover.', compact = false } = Astro.props;
   </div>
   <div class="app-cta-action">
     <SwipePreview />
-    <a class="button button-blue" href={SITE.appStore} data-primary-download
-      >Download Stocker <Arrow diagonal /></a
+    <a
+      class="button button-blue"
+      href={appStoreUrl(Astro.url.pathname)}
+      data-primary-download>Download Stocker <Arrow diagonal /></a
     >
   </div>
 </aside>

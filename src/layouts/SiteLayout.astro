@@ -3,7 +3,7 @@ import Header from '../components/Header.astro';
 import AnalyticsConsent from '../components/AnalyticsConsent.astro';
 import Footer from '../components/Footer.astro';
 import DownloadCta from '../components/DownloadCta.astro';
-import { APP_STORE_ID, SITE, canonicalUrl, safeJson } from '../lib/site';
+import { SITE, canonicalUrl, safeJson, smartAppBanner } from '../lib/site';
 import { websiteSchema } from '../lib/structured-data';
 import '../styles/global.css';
 interface Props {
@@ -22,8 +22,7 @@ const {
 } = Astro.props;
 const { pathname } = Astro.url;
 const canonical = canonicalUrl(pathname);
-const showSmartAppBanner =
-  pathname === '/app/' || pathname.startsWith('/companies/');
+const banner = smartAppBanner(pathname);
 const pageTitle =
   title === 'Stocker'
     ? 'Stocker — Stock research guides & app comparisons'
@@ -40,11 +39,7 @@ const isArticle = pageSchema.some((item) => item['@type'] === 'Article');
     <meta name="theme-color" content="#101f35" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    {
-      showSmartAppBanner && (
-        <meta name="apple-itunes-app" content={`app-id=${APP_STORE_ID}`} />
-      )
-    }
+    {banner && <meta name="apple-itunes-app" content={banner} />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link
