@@ -8,7 +8,10 @@ category: 'Business models'
 date: '2026-11-19'
 updated: '2026-11-25'
 image: 'affirm'
-imageAlt: 'Illustrative checkout receipt showing a $100 purchase, a hypothetical $5 merchant fee, and $95 in proceeds for the merchant.'
+imageAlt: 'A shopper holds a smartphone near a handheld payment terminal.'
+imageCredit:
+  photographer: 'iMin Technology'
+  url: 'https://www.pexels.com/photo/a-person-holding-a-payment-terminal-12935076/'
 order: 0.116
 sources:
   - title: 'Affirm Holdings FY2026 Form 10-K, business description, financial statements and notes'
