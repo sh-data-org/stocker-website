@@ -40,6 +40,7 @@ function browser(
   query = '',
   storage = new Map<string, string>([[consentKey, 'granted']]),
   blockedStorage = false,
+  page: { path?: string; title?: string; referrer?: string } = {},
 ) {
   const listeners = new Map<string, (event: BrowserEvent) => void>();
   const commands: IArguments[] = [];
@@ -51,7 +52,7 @@ function browser(
   const timers: Array<() => void> = [];
   const location = Object.assign(
     new URL(
-      `https://stocker-invest.com/companies/best-stocks-for-2027/${query}`,
+      `https://stocker-invest.com${page.path ?? '/companies/best-stocks-for-2027/'}${query}`,
     ),
     { reload: () => reloads++, assign: (url: string) => navigation.push(url) },
   );
@@ -91,8 +92,8 @@ function browser(
       },
     },
     document: {
-      title: 'Stocks to Watch in 2027',
-      referrer: '',
+      title: page.title ?? 'Stocks to Watch in 2027',
+      referrer: page.referrer ?? '',
       querySelector: (selector: string) =>
         selector === '[data-consent-banner]' ? banner : null,
       addEventListener: (
@@ -184,6 +185,63 @@ test('QA opt-out preserves a denied consent choice', () => {
   visitor.click();
   assert.equal(visitor.loads(), 0);
   assert.equal(visitor.commands.length, 0);
+});
+
+test('a consented Google landing keeps the search origin and records one store tap', () => {
+  const path = '/companies/how-affirm-makes-money/';
+  const title = 'How Does Affirm Make Money on a 0% APR Purchase? | Stocker';
+  const visitor = browser('', new Map(), false, {
+    path,
+    title,
+    referrer: 'https://www.google.com/search?q=private',
+  });
+  visitor.click();
+  assert.equal(visitor.loads(), 0);
+  assert.equal(visitor.commands.length, 0);
+
+  visitor.listeners.get('accept')?.({});
+  visitor.click();
+  const events = visitor.commands
+    .map((command) => Array.from<unknown>(command))
+    .filter(([type]) => type === 'event');
+  assert.deepEqual(
+    events.map(([, name]) => name),
+    ['page_view', 'app_store_click'],
+  );
+  const [, , landing] = events[0] ?? [];
+  const [, , click] = events[1] ?? [];
+  assert(landing && typeof landing === 'object');
+  assert(click && typeof click === 'object');
+  assert.equal(
+    'page_referrer' in landing && landing.page_referrer,
+    'https://www.google.com/',
+  );
+  assert.equal('page_title' in landing && landing.page_title, title);
+  assert.equal(
+    'page_location' in landing && landing.page_location,
+    'https://stocker-invest.com' + path,
+  );
+  assert.equal('page_path' in click && click.page_path, path);
+  assert.equal(
+    'click_destination' in click && click.click_destination,
+    'app_store',
+  );
+  assert.doesNotMatch(JSON.stringify(visitor.commands), /private/);
+
+  const internal = browser('', visitor.storage, false, {
+    path,
+    title,
+    referrer: 'https://stocker-invest.com/companies/?private',
+  });
+  const view = internal.commands
+    .map((command) => Array.from<unknown>(command))
+    .find(([, name]) => name === 'page_view')?.[2];
+  assert(view && typeof view === 'object');
+  assert.equal('page_title' in view && view.page_title, title);
+  assert.equal(
+    'page_referrer' in view && view.page_referrer,
+    'https://stocker-invest.com/companies/',
+  );
 });
 
 test('Tag Assistant preview enters QA mode before analytics starts', () => {
