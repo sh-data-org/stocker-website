@@ -1,8 +1,6 @@
 const APP_STORE_ID = '6443543680';
 const APP_STORE_PROVIDER = '125042532';
 const WEBSITE_CPP_ID = 'ff0e30b6-122a-4a61-9b6f-a276cf17f599';
-// Turn on the website listing when Apple approves the page and its route is live in iOS.
-const WEBSITE_CPP_READY = false;
 
 function promotesStockerApp(pathname: string): boolean {
   return pathname === '/app/' || pathname.startsWith('/companies/');
@@ -35,7 +33,7 @@ export type Section = (typeof SECTIONS)[number];
 export function appStoreUrl(pathname: string): string {
   const isWatchlistCampaign = pathname === '/companies/best-stocks-for-2027/';
   const useWebsiteCpp =
-    WEBSITE_CPP_READY && promotesStockerApp(pathname) && !isWatchlistCampaign;
+    !isWatchlistCampaign && (pathname === '/' || promotesStockerApp(pathname));
   if (!isWatchlistCampaign && !useWebsiteCpp) return SITE.appStore;
 
   const url = new URL(SITE.appStore);

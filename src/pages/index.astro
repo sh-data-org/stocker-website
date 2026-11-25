@@ -4,7 +4,7 @@ import Arrow from '../components/Arrow.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import SwipePreview from '../components/SwipePreview.astro';
 import { getArticles, articleUrl, readingTime } from '../lib/articles';
-import { SITE } from '../lib/site';
+import { appStoreUrl } from '../lib/site';
 import research from '../assets/research.png';
 import valuation from '../assets/article-valuation.png';
 import phones from '../assets/phones.png';
@@ -84,7 +84,10 @@ const more = articles
         <SwipePreview />
       </div>
       <div class="journal-download-action">
-        <a class="button button-blue" href={SITE.appStore} data-primary-download
+        <a
+          class="button button-blue"
+          href={appStoreUrl(Astro.url.pathname)}
+          data-primary-download
           >Download Stocker <Arrow diagonal /></a
         >
       </div>
