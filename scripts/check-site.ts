@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readdir, readFile, access } from 'node:fs/promises';
-import { join } from 'node:path';
+import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = new URL('../dist/', import.meta.url);
 async function files(directory: string): Promise<string[]> {
@@ -34,8 +34,11 @@ for (const file of pages) {
       return new URL(href.replaceAll('&amp;', '&'));
     },
   );
-  if (file.endsWith('/companies/best-stocks-for-2027/index.html')) {
+  const page = relative(fileURLToPath(root), file);
+  const cppLinks = appleLinks.filter((link) => link.searchParams.has('ppid'));
+  if (page === 'companies/best-stocks-for-2027/index.html') {
     assert.ok(appleLinks.length > 0, 'The 2027 watchlist needs a store link');
+    assert.equal(cppLinks.length, 0, 'The watchlist uses its own campaign');
     for (const link of appleLinks) {
       assert.equal(link.searchParams.get('pt'), '125042532');
       assert.equal(link.searchParams.get('ct'), 'stocker-web-2027-watchlist');
@@ -48,6 +51,21 @@ for (const file of pages) {
       ),
       `${file}: the watchlist campaign must stay on the watchlist`,
     );
+  }
+  if (page === 'index.html' || page === 'app/index.html') {
+    assert.ok(
+      cppLinks.length >= 2,
+      `${file}: the header and primary download must link to Swipe to Discover`,
+    );
+  }
+  for (const link of cppLinks) {
+    assert.equal(
+      link.searchParams.get('ppid'),
+      'ff0e30b6-122a-4a61-9b6f-a276cf17f599',
+    );
+    assert.equal(link.searchParams.get('pt'), '125042532');
+    assert.equal(link.searchParams.get('ct'), 'stocker-web-cpp');
+    assert.equal(link.searchParams.get('mt'), '8');
   }
   const title = html.match(/<title>(.*?)<\/title>/s)?.[1];
   assert.ok(title, `${file}: title missing`);
