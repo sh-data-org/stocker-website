@@ -6,7 +6,7 @@ import Arrow from '../components/Arrow.astro';
 import discovery from '../assets/app-discovery.png';
 import watchlist from '../assets/app-watchlist.png';
 import financials from '../assets/app-financials.png';
-import { SITE } from '../lib/site';
+import { SITE, appStoreUrl } from '../lib/site';
 ---
 
 <SiteLayout
@@ -18,7 +18,7 @@ import { SITE } from '../lib/site';
         Choose your interests, explore companies, and keep the ones you want to
         understand better in your watchlist.
       </p><div class="hero-actions">
-        <a class="button button-blue" href={SITE.appStore}
+        <a class="button button-blue" href={appStoreUrl(Astro.url.pathname)}
           >Download on the App Store <Arrow diagonal /></a
         >
       </div><p class="disclosure">
