@@ -6,6 +6,7 @@ description: 'Follow a $100 checkout to see who pays Affirm when the shopper owe
 section: 'companies'
 category: 'Business models'
 date: '2026-11-19'
+updated: '2026-11-25'
 image: 'affirm'
 imageAlt: 'Illustrative checkout receipt showing a $100 purchase, a hypothetical $5 merchant fee, and $95 in proceeds for the merchant.'
 order: 0.116
@@ -22,12 +23,9 @@ sources:
 
 Say you buy shoes for $100 and choose four equal payments at 0% APR. Assume the store has agreed to a **$5 merchant fee**. That fee is hypothetical and chosen for easy arithmetic. Leave sales tax, returns and any other merchant charges out of the example.
 
-| Whose money? | What happens              |           Amount |
-| ------------ | ------------------------- | ---------------: |
-| Shopper      | Four payments of $25      |       $100 total |
-| Store        | $100 sale less a $5 fee   | $95 net proceeds |
-| Affirm       | Merchant fee before costs |               $5 |
-| Shopper      | Interest over the plan    |               $0 |
+- **Shopper pays $100.** That's four payments of $25, with $0 in interest.
+- **Store receives $95.** That's the $100 sale minus the $5 merchant fee.
+- **Affirm receives $5.** That's the merchant fee before funding and other costs.
 
 The store receives its settlement without waiting for you to finish paying. Over the plan, your four payments repay the purchase price. Adding those payments to the fee would count the return of loan principal as income. The fee comes out of the store’s side of this sale. The shopper’s receipt still adds up to $100.
 

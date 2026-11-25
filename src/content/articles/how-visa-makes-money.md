@@ -49,6 +49,8 @@ A merchant's total card-acceptance cost is not all Visa revenue. Interchange gen
 
 For research, draw the participants separately: shopper, merchant, issuer, acquirer and network. That makes it easier to see which company's economics you are analyzing.
 
+Installment financing has a different fee flow. Follow a [$100 Affirm purchase at 0% APR](/companies/how-affirm-makes-money/) to see how the merchant fee works when the shopper pays no interest.
+
 ## Questions to bring to the reports
 
 | Question                                 | Why it helps                                                              |
