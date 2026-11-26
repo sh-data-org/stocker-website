@@ -50,6 +50,8 @@ The integrated store’s fee contributes to **merchant network revenue**. Across
 
 Affirm also earns card network revenue on eligible card transactions and interest income on interest-bearing loans it holds. It can earn fees for servicing loans owned by investors. Each line answers a different question. For a closer look at the card-network side of a payment, see [how Visa makes money](/companies/how-visa-makes-money/).
 
+For another example of an interest-free checkout, see [how Klarna makes money on Pay in 4](/companies/how-klarna-makes-money/).
+
 ## How much of the $5 does Affirm keep?
 
 The receipt alone cannot tell you. Someone has to fund the balance while the shopper repays, process the payments and absorb losses if borrowers fail to repay. Who bears each cost depends in part on who holds the loan. Affirm’s accounts show funding costs and provisions for credit losses separately from its revenue. It also discloses that buying a below-market-rate loan from a bank partner can create an accounting loss when the purchase price exceeds the loan’s fair value. [Affirm’s annual report, loan purchases and credit losses](https://www.sec.gov/Archives/edgar/data/1820953/000162828026059279/afrm-20260630.htm)
