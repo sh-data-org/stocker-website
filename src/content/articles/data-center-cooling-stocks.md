@@ -65,6 +65,8 @@ Vertiv, Modine’s Airedale brand and Carrier all sell **coolant distribution un
 
 **Comfort Systems USA sells the contracting work.** On large jobs, its mechanical teams can install chillers, air handlers, cooling towers and the piping that connects them. In its September 2026 filing, it pointed to strong data center demand and discussed growth across mechanical, modular and electrical operations. To follow that business, look at how the company describes new project bookings and the timing of work in its backlog. The filings group cooling installation with other contracting services. [Comfort Systems USA 2025 Form 10-K](https://www.sec.gov/Archives/edgar/data/1035983/000110465926017530/fix-20251231x10k.htm) · [Comfort Systems USA September 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1035983/000110465926118159/fix-20260930x10q.htm)
 
+To follow electricity supply and distribution for the same projects, see the [2027 data center power watchlist](/companies/data-center-power-stocks-2027/).
+
 ## Build a data center cooling watchlist
 
 Start with one equipment maker and one installer. For each, write down what the customer buys, the exact revenue line the company reports, and one thing you want to check next quarter. For example, you could compare Modine’s cooling margins with Comfort Systems’ comments about the timing of data center projects.

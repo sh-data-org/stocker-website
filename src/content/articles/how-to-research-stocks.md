@@ -66,6 +66,8 @@ The SEC's financial-statement guide explains how income statements, balance shee
 
 Start with [revenue and earnings](/learn/revenue-vs-earnings/). If you use a P/E ratio, check whether the earnings are historical or estimated. A [negative P/E](/learn/negative-pe-ratio/) requires a different interpretation from a small positive multiple.
 
+If you’re researching a dividend-paying stock, use the [dividend yield calculator](/tools/dividend-yield-calculator/) to compare its annual dividend per share with its current share price.
+
 Consider the business model when comparing companies. An equipment maker and a subscription software business may share a sector while having very different economics.
 
 ## Write down the case against your idea

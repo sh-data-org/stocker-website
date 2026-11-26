@@ -50,6 +50,8 @@ Microsoft Cloud and Nvidia Data Center are parts of their respective businesses.
 
 We chose three businesses with public filings and a question readers can revisit each quarter. Microsoft and Nvidia share exposure to cloud infrastructure spending, so owning both can leave an investor sensitive to the same slowdown. Visa brings a different exposure through consumer payments. Use the [2027 trading calendar](/learn/stock-market-holidays-2026-2027/#stock-market-holidays-in-2027) when planning your next review.
 
+For a closer look at the electricity and equipment behind new cloud campuses, see the [2027 data center power watchlist](/companies/data-center-power-stocks-2027/).
+
 ## Build a 2027 watchlist you can revisit
 
 Pick one company from the table and write down one question the next filing can answer. For Nvidia, that might be whether growth in Data Center revenue is still showing up in companywide operating profit. Open the same reporting period for both figures and record the original source.
